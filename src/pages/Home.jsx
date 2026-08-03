@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { home, caseStudies } from "../data/content.js";
 import { MediaFrame } from "../components/Media.jsx";
-import { Ribbon } from "../components/Squiggle.jsx";
 import Marquee from "../components/Marquee.jsx";
 import Reveal from "../components/Reveal.jsx";
 import CaseStudyCard from "../components/CaseStudyCard.jsx";
@@ -26,8 +25,6 @@ export default function Home() {
           <div className="hero-art">
             <MediaFrame item={heroMedia} ratio="16 / 9" label="Hero image" />
           </div>
-
-          <Ribbon variant="a" className="hero-ribbon" />
 
           <div className="hero-links shell">
             <Link to="/case-studies" className="dot-link">
