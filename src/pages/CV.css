@@ -1,0 +1,237 @@
+.cv-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+}
+
+.cv-name {
+  font-size: var(--t-h1);
+  margin-top: 0.9rem;
+}
+
+.cv-role {
+  margin-top: 0.6rem;
+  font-size: var(--t-lead);
+  color: var(--ink-3);
+}
+
+.cv-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-top: 0.6rem;
+}
+
+.cv-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: var(--t-small);
+  color: var(--ink-3);
+}
+
+.cv-meta-item svg {
+  flex-shrink: 0;
+  color: var(--ink-4);
+}
+
+/* ---- Profile ------------------------------------------------------- */
+
+.cv-profile {
+  padding: clamp(1.6rem, 1.2rem + 1.5vw, 2.25rem);
+  background: var(--surface-muted);
+  border-radius: var(--radius-lg);
+  margin-bottom: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+}
+
+.cv-profile-text {
+  font-size: 1.01rem;
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+
+/* ---- Sections ------------------------------------------------------ */
+
+.cv-section {
+  margin-bottom: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+}
+
+/* ---- Experience timeline ------------------------------------------- */
+
+.cv-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 1.2rem + 2.5vw, 3.25rem);
+}
+
+.cv-job {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.34fr) minmax(0, 1fr);
+  gap: clamp(1rem, 0.5rem + 2vw, 2.25rem);
+}
+
+.cv-job-dates {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+}
+
+.cv-job-place {
+  margin-top: 0.2rem;
+  font-size: var(--t-small);
+  color: var(--ink-4);
+}
+
+.cv-job-what {
+  padding-left: clamp(1rem, 0.5rem + 1.5vw, 1.75rem);
+  border-left: 1px solid var(--line);
+}
+
+.cv-job-title {
+  font-family: var(--font-body);
+  font-size: 1.06rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.cv-job-company {
+  margin-top: 0.25rem;
+  font-size: 0.94rem;
+  color: var(--accent);
+}
+
+.cv-job-desc {
+  margin-top: 1rem;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+
+.cv-job-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1.1rem;
+}
+
+.cv-job-points li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+
+.cv-job-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ink-4);
+}
+
+/* ---- Capabilities table ------------------------------------------- */
+
+.cv-capabilities {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.cv-capabilities li {
+  padding: 1.05rem 1.25rem;
+  font-size: 0.93rem;
+  color: var(--ink-2);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: background-color 0.3s var(--ease);
+}
+
+.cv-capabilities li:hover {
+  background: var(--surface-muted);
+}
+
+/* Trim the outer edges so the grid reads as a clean box */
+.cv-capabilities li:nth-child(3n) {
+  border-right: 0;
+}
+
+.cv-capabilities li:nth-last-child(-n + 3) {
+  border-bottom: 0;
+}
+
+.cv-industries {
+  gap: 0.6rem;
+}
+
+/* ---- Download ------------------------------------------------------ */
+
+.cv-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+}
+
+.btn.is-pending {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn.is-pending:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 760px) {
+  .cv-capabilities {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cv-capabilities li:nth-child(3n) {
+    border-right: 1px solid var(--line);
+  }
+
+  .cv-capabilities li:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .cv-capabilities li:nth-last-child(-n + 3) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .cv-capabilities li:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .cv-job {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .cv-job-what {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .cv-capabilities {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-capabilities li {
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--line) !important;
+  }
+
+  .cv-capabilities li:last-child {
+    border-bottom: 0 !important;
+  }
+}

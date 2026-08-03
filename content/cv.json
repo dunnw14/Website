@@ -72,7 +72,9 @@
   ],
   "cta": {
     "label": "Download Full CV",
-    "icon": "download"
+    "icon": "download",
+    "file": null,
+    "fileNote": "Drop a PDF into public/cv/ and set this to e.g. \"cv/william-dunn-cv.pdf\" to activate the button."
   },
   "footer": {
     "copyright": "© 2026 William Dunn. Senior Service Designer & CX Strategist.",
