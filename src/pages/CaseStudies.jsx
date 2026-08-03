@@ -7,20 +7,20 @@ export default function CaseStudies() {
   return (
     <div className="page">
       <div className="shell">
-        <header className="cs-head">
+        <header className="csl-head">
           <Reveal>
-            <p className="eyebrow">{caseStudiesPage.eyebrow}</p>
-            <h1 className="cs-head-title">{caseStudiesPage.heading}</h1>
+            <p className="label">{caseStudiesPage.eyebrow}</p>
+            <h1 className="display csl-title">{caseStudiesPage.heading}</h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="lead cs-head-intro">{caseStudiesPage.intro}</p>
+            <p className="lead csl-intro">{caseStudiesPage.intro}</p>
           </Reveal>
         </header>
 
-        <div className="cs-grid">
+        <div className="csl-grid">
           {caseStudies.map((item, i) => (
-            <Reveal key={item.slug} delay={(i % 3) * 0.08}>
-              <CaseStudyCard item={item} />
+            <Reveal key={item.slug} delay={(i % 2) * 0.08}>
+              <CaseStudyCard item={item} index={i} />
             </Reveal>
           ))}
         </div>

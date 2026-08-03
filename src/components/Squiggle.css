@@ -1,0 +1,37 @@
+.ribbon {
+  position: absolute;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* A dark halo under a bright core, so the ribbon holds up both against the
+   flat background and over a photograph once one is dropped in. */
+.ribbon-outline {
+  stroke: var(--art-fill);
+  stroke-width: 24;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.85;
+}
+
+.ribbon-fill {
+  stroke: var(--art-stroke);
+  stroke-width: 13;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.blob {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .ribbon,
+  .blob {
+    display: none;
+  }
+}

@@ -11,7 +11,9 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     if (hash) return;
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" in window ? "instant" : "auto" });
+    // "instant" is required here: the page sets scroll-behavior:smooth, and
+    // "auto" defers to that, which animates a long scroll on every navigation.
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname, hash]);
 
   return null;

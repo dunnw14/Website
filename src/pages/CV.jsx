@@ -23,7 +23,7 @@ export default function CV() {
       <div className="shell-narrow">
         <header className="cv-head">
           <Reveal>
-            <p className="eyebrow">{cv.eyebrow}</p>
+            <p className="label">{cv.eyebrow}</p>
             <h1 className="cv-name">{cv.name}</h1>
             <p className="cv-role">{cv.title}</p>
           </Reveal>
@@ -111,7 +111,7 @@ export default function CV() {
               {cv.cta.label}
             </a>
           ) : (
-            <button className="btn is-pending" disabled title={cv.cta.fileNote}>
+            <button className="btn" disabled title={cv.cta.fileNote}>
               <DownloadIcon />
               {cv.cta.label}
             </button>

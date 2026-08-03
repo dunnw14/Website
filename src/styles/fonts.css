@@ -1,14 +1,13 @@
 /* ------------------------------------------------------------------
-   Self-hosted variable fonts (latin subset) — no third-party requests,
-   so the site renders identically offline and behind strict networks.
-   Files live in public/fonts/.
+   Self-hosted variable fonts (latin subset) — no third-party requests.
+   Archivo carries the display voice; Inter handles small UI + body copy.
+   Files live in src/assets/fonts/ and are hashed into the build by Vite.
    ------------------------------------------------------------------ */
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("../assets/fonts/fraunces-latin.woff2") format("woff2-variations");
-  font-weight: 300 700;
-  font-stretch: 100%;
+  font-family: "Archivo";
+  src: url("../assets/fonts/archivo-latin.woff2") format("woff2-variations");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
