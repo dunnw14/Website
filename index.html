@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>William Dunn — Senior Service Designer &amp; CX Strategist</title>
+    <meta
+      name="description"
+      content="Senior Service Designer & CX Strategist shaping the future of customer experience, service design, and product innovation across banking, superannuation, retail, and government."
+    />
+    <meta name="theme-color" content="#14140f" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="William Dunn — Senior Service Designer & CX Strategist" />
+    <meta
+      property="og:description"
+      content="Making sense of complexity through human-centred design."
+    />
+
+    <script>
+      // Applied before first paint so the page never flashes the wrong theme.
+      (function () {
+        try {
+          var saved = localStorage.getItem("wd-theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.dataset.theme = saved || (prefersDark ? "dark" : "light");
+        } catch (e) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
