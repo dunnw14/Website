@@ -38,7 +38,7 @@ export default function CaseStudyDetail() {
               </span>
             ))}
           </div>
-          <h1 className="csd-title">{item.title}</h1>
+          <h1 className="display csd-title">{item.title}</h1>
           <p className="csd-subtitle">{item.subtitle}</p>
         </header>
 
@@ -74,7 +74,7 @@ export default function CaseStudyDetail() {
             {role.responsibilities.map((entry, i) => (
               <li className="csd-role-card" key={i}>
                 <strong>{entry.title}</strong>
-                <span> — {entry.desc}</span>
+                <span>{entry.desc}</span>
               </li>
             ))}
           </ul>

@@ -22,6 +22,16 @@
       { "label": "View my CV", "style": "link" }
     ]
   },
+  "contact": {
+    "label": "Get in touch",
+    "email": null,
+    "emailNote": "Set this to your address (e.g. \"you@example.com\") and every 'Get in touch' link becomes a mailto. Until then they point at the CV page."
+  },
+  "heroMedia": {
+    "src": null,
+    "alt": "William Dunn at work",
+    "note": "Drop a portrait or project shot in public/media/ and set src to e.g. \"media/hero.jpg\"."
+  },
   "tagTicker": [
     "SERVICE DESIGN",
     "CX STRATEGY",

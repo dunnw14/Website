@@ -8,7 +8,7 @@ export default function Skills() {
       <div className="shell">
         <header className="skills-head">
           <Reveal>
-            <p className="eyebrow">{skills.eyebrow}</p>
+            <p className="label">{skills.eyebrow}</p>
             <h1 className="skills-title">{skills.heading}</h1>
           </Reveal>
           <Reveal delay={0.1}>

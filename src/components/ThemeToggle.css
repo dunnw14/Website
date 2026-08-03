@@ -1,22 +1,25 @@
 .theme-toggle {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  color: var(--ink-3);
-  transition: color 0.3s var(--ease), background-color 0.3s var(--ease);
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: var(--pill);
+  color: var(--ink-2);
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease),
+    background-color 0.3s var(--ease);
 }
 
 .theme-toggle:hover {
-  color: var(--ink);
-  background: var(--surface-muted);
+  color: var(--on-accent);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .theme-toggle svg {
-  transition: transform 0.5s var(--ease);
+  transition: transform 0.55s var(--ease-back);
 }
 
 .theme-toggle:hover svg {
-  transform: rotate(18deg);
+  transform: rotate(22deg);
 }

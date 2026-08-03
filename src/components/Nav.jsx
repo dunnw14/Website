@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle.jsx";
+import { home } from "../data/content.js";
 import "./Nav.css";
 
 const LINKS = [
-  { label: "Case Studies", to: "/case-studies" },
+  { label: "Work", to: "/case-studies" },
   { label: "Skills", to: "/skills" },
   { label: "CV", to: "/cv" },
 ];
@@ -12,11 +13,10 @@ const LINKS = [
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const email = home.contact?.email;
 
-  // Close the mobile menu whenever the route changes.
   useEffect(() => setOpen(false), [pathname]);
 
-  // Stop the page behind the mobile menu from scrolling.
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -24,13 +24,16 @@ export default function Nav() {
     };
   }, [open]);
 
+  // Falls back to the CV page until an email address is added to home.json.
+  const contactHref = email ? `mailto:${email}` : "/cv";
+  const ContactTag = email ? "a" : Link;
+  const contactProps = email ? { href: contactHref } : { to: contactHref };
+
   return (
     <header className="nav">
       <div className="nav-inner shell">
-        <Link to="/" className="nav-logo">
-          <span className="nav-logo-name">William Dunn</span>
-          <span className="nav-logo-sep">—</span>
-          <span className="nav-logo-role">Senior Service Designer</span>
+        <Link to="/" className="nav-logo btn-outline">
+          William Dunn
         </Link>
 
         <nav className="nav-links" aria-label="Primary">
@@ -43,11 +46,13 @@ export default function Nav() {
               {link.label}
             </NavLink>
           ))}
-          <ThemeToggle />
         </nav>
 
-        <div className="nav-mobile-controls">
+        <div className="nav-end">
           <ThemeToggle />
+          <ContactTag className="btn nav-cta" {...contactProps}>
+            {home.contact?.label ?? "Get in touch"}
+          </ContactTag>
           <button
             className="nav-burger"
             onClick={() => setOpen((v) => !v)}
@@ -68,12 +73,19 @@ export default function Nav() {
           <NavLink
             key={link.to}
             to={link.to}
-            className="nav-drawer-link"
-            style={{ transitionDelay: `${0.06 + i * 0.06}s` }}
+            className="nav-drawer-link display"
+            style={{ transitionDelay: `${0.05 + i * 0.06}s` }}
           >
             {link.label}
           </NavLink>
         ))}
+        <ContactTag
+          className="nav-drawer-link display is-cta"
+          style={{ transitionDelay: `${0.05 + LINKS.length * 0.06}s` }}
+          {...contactProps}
+        >
+          {home.contact?.label ?? "Get in touch"}
+        </ContactTag>
       </div>
     </header>
   );

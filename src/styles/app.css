@@ -1,19 +1,31 @@
+/* The whole site sits inside a rounded card that floats on the opposite
+   brand colour — the frame is the most recognisable part of the identity. */
+
 #root {
+  padding: clamp(6px, 0.7vw, 14px);
+}
+
+.frame {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: calc(100dvh - clamp(12px, 1.4vw, 28px));
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--frame-radius);
+  transition: background-color 0.45s var(--ease), border-color 0.45s var(--ease);
+  /* No overflow clipping here — the sticky nav depends on it staying visible.
+     Sections that contain rotated art clip themselves instead. */
 }
 
 .app-main {
   flex: 1;
-  animation: page-in 0.5s var(--ease) both;
+  animation: page-in 0.55s var(--ease) both;
 }
 
 @keyframes page-in {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;

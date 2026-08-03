@@ -1,90 +1,103 @@
 /* ------------------------------------------------------------------
-   Design tokens. Change a value here and it updates across the site.
+   Design tokens.
+
+   The identity is two colours: a deep espresso brown and a pale ice
+   blue. The page sits inside a rounded "card" that floats on the
+   opposite colour, so the two swap roles between themes.
    ------------------------------------------------------------------ */
 
 :root {
-  /* Surfaces — warm off-whites rather than pure grey */
-  --bg: #fbfaf8;
-  --bg-sunken: #f4f1ec;
-  --surface: #ffffff;
-  --surface-muted: #f3f1eb;
-
-  /* Ink, from strongest to faintest */
-  --ink: #16150f;
-  --ink-2: #4a473f;
-  --ink-3: #7c776c;
-  --ink-4: #a9a398;
-
-  /* Accents */
-  --accent: #bc5b2e;
-  --accent-hover: #a34d25;
-  --accent-wash: rgba(188, 91, 46, 0.09);
-  --accent-green: #7b8f6b;
-  --accent-blue: #6f79b5;
-
-  /* Lines */
-  --line: rgba(22, 21, 15, 0.1);
-  --line-strong: rgba(22, 21, 15, 0.2);
-
-  /* Chrome */
-  --nav-bg: #14140f;
-  --nav-ink: #fbfaf8;
-  --nav-ink-dim: rgba(251, 250, 248, 0.62);
+  /* Raw brand colours */
+  --espresso: #3a1a11;
+  --espresso-deep: #2a1109;
+  --espresso-soft: #4b2619;
+  --ice: #bde9f1;
+  --ice-deep: #97d5e2;
+  --ice-wash: #dff2f7;
+  --cream: #f4efe9;
 
   /* Type */
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  /* Fluid type scale */
-  --t-hero: clamp(2.75rem, 1.4rem + 5.6vw, 6rem);
-  --t-h1: clamp(2.5rem, 1.6rem + 3.6vw, 4.5rem);
-  --t-h2: clamp(1.75rem, 1.3rem + 1.7vw, 2.6rem);
-  --t-h3: clamp(1.15rem, 1rem + 0.6vw, 1.45rem);
-  --t-lead: clamp(1.05rem, 0.98rem + 0.35vw, 1.28rem);
+  /* Display scale — deliberately oversized */
+  --t-mega: clamp(3.4rem, 0.2rem + 13.4vw, 12rem);
+  --t-h1: clamp(2.6rem, 1rem + 6.4vw, 6rem);
+  --t-h2: clamp(1.9rem, 1.1rem + 3.2vw, 3.4rem);
+  --t-h3: clamp(1.2rem, 1rem + 0.9vw, 1.75rem);
+  --t-lead: clamp(1.05rem, 0.96rem + 0.42vw, 1.32rem);
   --t-body: 1rem;
   --t-small: 0.875rem;
-  --t-eyebrow: 0.72rem;
+  --t-label: 0.72rem;
 
   /* Rhythm */
-  --shell: 1240px;
-  --shell-narrow: 880px;
-  --gutter: clamp(1.25rem, 0.6rem + 2.6vw, 4rem);
-  --section-y: clamp(4rem, 2rem + 7vw, 8.5rem);
+  --shell: 1400px;
+  --shell-narrow: 940px;
+  --gutter: clamp(1.1rem, 0.4rem + 2.8vw, 3.5rem);
+  --section-y: clamp(4rem, 2rem + 7vw, 9rem);
 
-  --radius: 4px;
-  --radius-lg: 10px;
-
-  --shadow-card: 0 1px 2px rgba(22, 21, 15, 0.04), 0 8px 28px rgba(22, 21, 15, 0.05);
-  --shadow-lift: 0 2px 6px rgba(22, 21, 15, 0.06), 0 22px 48px rgba(22, 21, 15, 0.11);
+  /* Shape — soft, pill-heavy language */
+  --frame-radius: clamp(18px, 1.4vw, 30px);
+  --radius: 14px;
+  --radius-lg: 24px;
+  --pill: 999px;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur: 0.55s;
+  --ease-back: cubic-bezier(0.34, 1.4, 0.5, 1);
 }
 
+/* ---- Default: espresso card floating on cream --------------------- */
+
+:root,
 [data-theme="dark"] {
-  --bg: #100f0d;
-  --bg-sunken: #171613;
-  --surface: #1a1815;
-  --surface-muted: #201e19;
+  --page: var(--cream);
+  --surface: var(--espresso);
+  --surface-2: var(--espresso-soft);
+  --surface-3: var(--espresso-deep);
 
-  --ink: #f6f3ed;
-  --ink-2: #c9c4b9;
-  --ink-3: #979186;
-  --ink-4: #6f6a60;
+  --ink: var(--ice);
+  --ink-2: rgba(189, 233, 241, 0.74);
+  --ink-3: rgba(189, 233, 241, 0.52);
 
-  --accent: #e08a5c;
-  --accent-hover: #eb9d74;
-  --accent-wash: rgba(224, 138, 92, 0.13);
-  --accent-green: #9bb089;
-  --accent-blue: #929bd4;
+  --accent: var(--ice);
+  --on-accent: var(--espresso);
 
-  --line: rgba(246, 243, 237, 0.12);
-  --line-strong: rgba(246, 243, 237, 0.24);
+  --line: rgba(189, 233, 241, 0.26);
+  --line-soft: rgba(189, 233, 241, 0.14);
 
-  --nav-bg: #070706;
-  --nav-ink: #f6f3ed;
-  --nav-ink-dim: rgba(246, 243, 237, 0.6);
+  --art-fill: var(--espresso-deep);
+  --art-stroke: var(--ice);
 
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 28px rgba(0, 0, 0, 0.34);
-  --shadow-lift: 0 2px 6px rgba(0, 0, 0, 0.44), 0 22px 48px rgba(0, 0, 0, 0.5);
+  /* Empty media slots sit lighter than the page so they stay legible */
+  --placeholder-bg: #55301f;
+  --placeholder-hatch: rgba(189, 233, 241, 0.13);
+  --placeholder-ink: rgba(189, 233, 241, 0.66);
+}
+
+/* ---- Inverted: ice card floating on espresso ---------------------- */
+
+[data-theme="light"] {
+  --page: var(--espresso);
+  --surface: var(--ice-wash);
+  --surface-2: #cbe8ef;
+  --surface-3: #eef8fa;
+
+  --ink: var(--espresso);
+  --ink-2: rgba(58, 26, 17, 0.76);
+  --ink-3: rgba(58, 26, 17, 0.55);
+
+  --accent: var(--espresso);
+  --on-accent: var(--ice-wash);
+
+  --line: rgba(58, 26, 17, 0.24);
+  --line-soft: rgba(58, 26, 17, 0.12);
+
+  /* --art-fill is the halo, --art-stroke the core: the core must always be
+     the colour that contrasts with --surface, so these invert per theme. */
+  --art-fill: var(--surface-3);
+  --art-stroke: var(--espresso);
+
+  --placeholder-bg: #c2e2ea;
+  --placeholder-hatch: rgba(58, 26, 17, 0.14);
+  --placeholder-ink: rgba(58, 26, 17, 0.66);
 }

@@ -13,7 +13,7 @@ export default function App() {
   const location = useLocation();
 
   return (
-    <>
+    <div className="frame">
       <ScrollToTop />
       <Nav />
       {/* Keying on pathname replays the fade for every navigation */}
@@ -28,6 +28,6 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
