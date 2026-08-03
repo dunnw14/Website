@@ -1,0 +1,81 @@
+{
+  "page": "CV",
+  "route": "/CV",
+  "eyebrow": "CAREER",
+  "name": "William Dunn",
+  "title": "Senior Service Designer & CX Strategist",
+  "location": "Sydney, Australia",
+  "availability": "Available for new opportunities",
+  "profile": {
+    "label": "PROFILE",
+    "text": "Senior Service Designer & CX Strategist with 5+ years at AKQA shaping the future of customer experience, service design, and product innovation for high-profile brands across banking, superannuation, retail, and government. Expert at leading cross-functional teams through complex initiatives, translating deep customer insights into evidence-based strategies and service solutions that enhance experiences, strengthen loyalty, and drive measurable business growth."
+  },
+  "experience": [
+    {
+      "dateRange": "Sep 2021 — Present",
+      "location": "Sydney, NSW, Australia",
+      "title": "Senior Service Designer & CX Strategist",
+      "company": "AKQA",
+      "description": "Leading end-to-end service design engagements for high-profile brands across banking, superannuation, retail, and government. Translating deep customer insights into evidence-based strategies and service solutions.",
+      "highlights": [
+        "Delivered transformational service design outcomes for a major Australian bank",
+        "Led 3-year CX digital transformation roadmap for a global fast food chain",
+        "Designed journey maps and service blueprints for a luxury outdoor architecture brand",
+        "Transformed the Forms & Guides experience for a federal government agency",
+        "Facilitated co-design workshops and design sprints across cross-functional client teams"
+      ]
+    },
+    {
+      "dateRange": "Apr 2020 — Sep 2021",
+      "location": "Sydney, NSW, Australia",
+      "title": "Service Designer",
+      "company": "Australian Taxation Office (ATO)",
+      "description": "Mapped complex backstage processes and compliance workflows within a heavily regulated environment to identify operational bottlenecks and improve taxpayer experiences.",
+      "highlights": [
+        "Diagnosed operational challenges across compliance-heavy workflows",
+        "Conducted ethnographic research and synthesised findings into actionable opportunities",
+        "Built capability across multidisciplinary teams through shared methods and service standards"
+      ]
+    },
+    {
+      "dateRange": "Jul 2019 — Apr 2020",
+      "location": "Sydney, NSW, Australia",
+      "title": "Service Designer",
+      "company": "WAVE.Design",
+      "description": "Partnered with clients to design and validate early-stage service concepts, synthesise research into compelling narratives, and build capability across government teams.",
+      "highlights": [
+        "Designed and executed structured concept testing and low-fidelity prototyping with customers",
+        "Synthesised qualitative research into journey maps and service narratives for diverse stakeholders",
+        "Facilitated service design training and co-creation workshops for large state government cohorts"
+      ]
+    }
+  ],
+  "coreCapabilities": [
+    "Service Design & Blueprinting",
+    "Customer Experience Strategy",
+    "Qualitative Research",
+    "Journey Mapping",
+    "Product Concept Ideation",
+    "Workshop Facilitation",
+    "Cross-functional Leadership",
+    "Digital Transformation",
+    "Stakeholder Management"
+  ],
+  "industryExperience": [
+    "Banking & Finance",
+    "Superannuation",
+    "Retail & E-commerce",
+    "Government",
+    "QSR / Fast Food",
+    "Luxury Brands",
+    "Architecture"
+  ],
+  "cta": {
+    "label": "Download Full CV",
+    "icon": "download"
+  },
+  "footer": {
+    "copyright": "© 2026 William Dunn. Senior Service Designer & CX Strategist.",
+    "links": ["Case Studies", "Skills", "CV"]
+  }
+}

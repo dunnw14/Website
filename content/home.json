@@ -1,0 +1,37 @@
+{
+  "page": "Home",
+  "route": "/",
+  "nav": {
+    "logo": {
+      "name": "William Dunn",
+      "title": "Senior Service Designer"
+    },
+    "links": ["Case Studies", "Skills", "CV"]
+  },
+  "hero": {
+    "eyebrow": "SENIOR SERVICE DESIGNER & CX STRATEGIST",
+    "headline": "Making sense of complexity through human-centred design.",
+    "headlineEmphasis": ["complexity", "human-centred"],
+    "body": [
+      "Senior Service Designer & CX Strategist shaping the future of customer experience, service design, and product innovation.",
+      "Over the past 5 years at AKQA, I've partnered with leading brands across banking, superannuation, retail, and government to design services that work — for people and for business.",
+      "I translate deep human insight into clear strategy, tangible experiences, and scalable service solutions that drive growth, loyalty, and real-world impact."
+    ],
+    "ctas": [
+      { "label": "See my work", "style": "primary", "icon": "arrow-right" },
+      { "label": "View my CV", "style": "link" }
+    ]
+  },
+  "tagTicker": [
+    "SERVICE DESIGN",
+    "CX STRATEGY",
+    "SERVICE BLUEPRINTING",
+    "HUMAN-CENTRED DESIGN",
+    "JOURNEY MAPPING",
+    "DIGITAL TRANSFORMATION"
+  ],
+  "footer": {
+    "copyright": "© 2026 William Dunn. Senior Service Designer & CX Strategist.",
+    "links": ["Case Studies", "Skills", "CV"]
+  }
+}

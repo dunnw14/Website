@@ -1,0 +1,391 @@
+{
+  "page": "Case Studies",
+  "route": "/CaseStudies",
+  "listing": {
+    "eyebrow": "PORTFOLIO",
+    "heading": "Case Studies",
+    "intro": "A selection of work spanning banking, government, retail, and superannuation — all grounded in human-centred design."
+  },
+  "note": "Work sample images, illustrations, and embedded videos on each case study page were intentionally excluded from this content capture per user request. Only text/copy content is included below.",
+  "items": [
+    {
+      "slug": "major-australian-bank",
+      "title": "Major Australian Bank",
+      "subtitle": "Service/Product Design",
+      "tags": ["BANKING", "SERVICE DESIGN", "PRODUCT"],
+      "overview": "The Major Australian Bank engaged AKQA to run a design sprint focused on the Chief Family Financial Officer (CFFO) segment — the household member who takes primary responsibility for managing family finances. The goal was to explore, prototype, and test solutions that could simplify family finance management, improve cashflow predictability, and enhance financial wellbeing.",
+      "backgroundChallenge": {
+        "intro": "CFFOs represent a large, influential customer base, yet no Australian bank was directly targeting their unique needs.",
+        "challenges": [
+          "Complex, fragmented family finance management across multiple accounts and providers.",
+          "Misaligned pay cycles and bill due dates creating cashflow stress.",
+          "Limited tools to plan for both unexpected expenses and family enjoyment goals.",
+          "Desire for control and visibility without replacing established personal systems."
+        ],
+        "goals": [
+          "Identify and validate concepts that simplify financial management for CFFOs.",
+          "Build a clear direction for a signature digital experience that differentiates the bank."
+        ]
+      },
+      "role": {
+        "intro": "I led the service design and CX strategy stream within the sprint, ensuring concepts were grounded in customer insight and business feasibility.",
+        "responsibilities": [
+          { "title": "Research Synthesis", "desc": "Reviewed existing insights and market research on CFFOs." },
+          { "title": "Sprint Facilitation", "desc": "Led ideation and decision-making activities across Understand → Ideate → Decide → Prototype → Test." },
+          { "title": "Concept Development", "desc": "Defined four concept territories and refined them into testable prototypes." },
+          { "title": "Testing Design", "desc": "Designed, facilitated and analysed resonance testing results with CFFOs." },
+          { "title": "Concept Evolution", "desc": "Guided the narrowing from four territories to a single refined concept." }
+        ]
+      },
+      "process": [
+        { "phase": "Phase 1 – Understand", "desc": "Conducted qualitative research on CFFO behaviours, needs, and pain points with 10 participants. Identified four solution territories: Stronger Together (collaborative family savings), Sharing Responsibility (delegating financial tasks), Balancing Act (smoothing bill payments and cashflow), and Emotional Spending (reflecting on spending behaviours)." },
+        { "phase": "Phase 2 – Ideate & Decide", "desc": "Facilitated ideation sessions to generate concept sketches. Prioritised concepts against CX principles and feasibility. Selected features to prototype for each territory." },
+        { "phase": "Phase 3 – Prototype & Test", "desc": "Built low-fidelity prototypes for each concept. Conducted resonance testing with CFFOs. Key finding: One Pay (Balancing Act) was most desirable — consolidated all bills into a single monthly payment with visibility of leftover funds." },
+        { "phase": "Phase 4 – Refine", "desc": "Evolved One Pay into Billio — a predictive cashflow management tool. Core features: consolidates all bills into one monthly payment, holds funds in advance in a bonus interest account, and shows leftover funds after bills for savings and enjoyment planning." }
+      ],
+      "keyDeliverables": [
+        "Concept One-Pagers – 4 Territories",
+        "Customer Resonance Testing Insights",
+        "Concept Evolution & Refinement into Final Prototype",
+        "Billio Prototype"
+      ],
+      "impact": [
+        "Validated cashflow predictability as a top priority for CFFOs.",
+        "Positioned the bank to differentiate in the family finance space.",
+        "Created a clear, customer-backed direction for product development.",
+        "Delivered a detailed prototype with requirements for Billio ready for the bank's roadmap."
+      ],
+      "reflection": [
+        "CFFOs value tools that support existing systems, not replace them.",
+        "Predictability and visibility drive adoption more than novelty.",
+        "Emotional spending tools must be framed carefully to avoid perceptions of judgement."
+      ]
+    },
+    {
+      "slug": "global-fast-food-chain",
+      "title": "Global Fast Food Chain",
+      "subtitle": "CX Digital Transformation",
+      "tags": ["QSR", "CX STRATEGY", "DIGITAL TRANSFORMATION"],
+      "overview": "The client engaged us to define and deliver a customer experience vision and omni-channel strategy to guide transformation over the next three years. The goal was to create a single, distinctive, and consistent omni-channel experience that improves accuracy, speed, and customer satisfaction across all channels — while empowering team members and franchisees with the tools and processes to deliver it.",
+      "backgroundChallenge": {
+        "intro": "The client's customer experience was fragmented across channels (delivery, take-away, drive-thru, dine-in, click & collect), with siloed teams and limited tools to prioritise initiatives.",
+        "challenges": [
+          "Accuracy was the most underserved driver across the journey, impacting trust and repeat visits.",
+          "In-store take-away experiences were least satisfying, especially for light users and ESL customers.",
+          "Delivery processes lacked consistency, visibility, and spaces optimised for drivers.",
+          "Training was heavily theory-based, with high turnover and long time-to-competency.",
+          "Low adoption of omni/eComm channels among light users."
+        ],
+        "goals": [
+          "Develop a balanced, modular CX strategy that addresses underserved areas.",
+          "Empower team members and create a prioritised roadmap for channel-specific initiatives."
+        ]
+      },
+      "role": {
+        "intro": "Worked alongside a Senior Service Designer to deliver the CX vision and service design streams throughout all three project phases.",
+        "responsibilities": [
+          { "title": "Research Synthesis", "desc": "Synthesised quantitative and qualitative research from 550 participants across Australia." },
+          { "title": "Omni-Channel Principles", "desc": "Defined omni-channel principles to improve accuracy, speed, and customer satisfaction." },
+          { "title": "Vision Co-Creation", "desc": "Co-created the 'Be the King of Treats' vision." },
+          { "title": "Concept Design", "desc": "Designed four flagship concepts addressing critical pain points." },
+          { "title": "Prioritisation Framework", "desc": "Built a repeatable prioritisation framework aligning initiatives to customer value, business value, and effort." },
+          { "title": "Roadmapping", "desc": "Sequenced initiatives into a three-year roadmap." }
+        ]
+      },
+      "process": [
+        { "phase": "Phase 1 – Learn", "desc": "Mapped current state journeys for all channels. Conducted opportunity analysis using importance/satisfaction scoring. Applied KANO analysis to assess desirability of existing initiatives. Identified top underserved drivers: Order Accuracy, Taste, Order Confirmation & Speed." },
+        { "phase": "Phase 2 – Envision", "desc": "Defined future state vision: 'Be the King of Treats' — an effortless, fast, and accurate treat. Developed four flagship concepts: Applied Learning, Step-by-Step, Delivery 2.0, and Pocket Order." },
+        { "phase": "Phase 3 – Plan", "desc": "Built prioritisation framework scoring initiatives on Audience Value, Business Value, and Effort. Sequenced initiatives into a 3-year roadmap balancing foundational improvements with innovation." }
+      ],
+      "keyDeliverables": [
+        "CX Vision Pack – Vision statement, principles, accuracy journey",
+        "Service Blueprints – Macro and channel-specific",
+        "Concept Designs – Applied Learning, Step-by-Step, Delivery 2.0, Pocket Order",
+        "Prioritisation Framework",
+        "3-Year Roadmap"
+      ],
+      "impact": [
+        "Unified CX vision adopted across Australia.",
+        "Clear prioritisation of initiatives based on customer value and feasibility.",
+        "Roadmap balancing foundational improvements with innovation.",
+        "Concepts addressing top underserved drivers ready for pilot and scale."
+      ],
+      "reflection": [
+        "Accuracy is the foundation for trust and repeat visits — it must be solved before layering on new tech.",
+        "Channel-specific strategies outperform one-size-fits-all approaches.",
+        "Internal team empowerment translates directly into better customer experiences.",
+        "Bridging offline and online with simple digital touchpoints increases adoption and efficiency."
+      ]
+    },
+    {
+      "slug": "major-australian-super-fund",
+      "title": "Major Australian Super Fund",
+      "subtitle": "Service Design",
+      "tags": ["SUPERANNUATION", "SERVICE DESIGN", "RETIREMENT"],
+      "overview": "The Major Australian Super Fund engaged AKQA to reimagine the cessation journey for members approaching or experiencing retirement/resignation. The aim was to empower members to make confident, informed decisions while strengthening retention and lifetime value.",
+      "backgroundChallenge": {
+        "intro": "The existing cessation experience was fragmented and reactive, with members often receiving inconsistent communication and support.",
+        "challenges": [
+          "Drop-off in engagement after members ceased active employment.",
+          "Low awareness of available support and product options (e.g., Lump Sum Account, Retirement Income Stream).",
+          "Complexity and emotional weight of retirement decisions, often triggered by major life events.",
+          "Inconsistent employer support and fragmented communication channels."
+        ],
+        "goals": [
+          "Transform the cessation journey into a supportive, confidence-building experience.",
+          "Strengthen retention, improve decision-making, and position the fund as a trusted partner for life."
+        ]
+      },
+      "role": {
+        "intro": "I led the service design and CX strategy stream, ensuring the future-state experience was grounded in member insight and organisational capability.",
+        "responsibilities": [
+          { "title": "Member & Stakeholder Research", "desc": "Designed and conducted interviews to uncover needs, pain points, and decision triggers." },
+          { "title": "Insight Synthesis", "desc": "Translated research into opportunity areas and CX principles." },
+          { "title": "Co-Design Facilitation", "desc": "Led ideation workshops to develop future-state concepts." },
+          { "title": "Experience Vision", "desc": "Defined and prioritised experience solutions for implementation." },
+          { "title": "Artefact Delivery", "desc": "Produced journey maps, service blueprint, opportunity frameworks, and concept one-pagers." }
+        ]
+      },
+      "process": [
+        { "phase": "Phase 1 – Diagnose", "desc": "14 in-depth member interviews and 5 stakeholder interviews. Identified 13 key insights (e.g., 'Creating trust through human connection', 'The control premium'). Created current-state cessation journey map." },
+        { "phase": "Phase 2 – Envision", "desc": "Facilitated co-design workshops. Developed 4 prioritised concepts: Engagement Strategy (life-event-based member contact), Self-Service Education (personalised learning platform), Repackaging LSA ('retirement launchpad'), and People Like Me (real member ambassadors)." },
+        { "phase": "Phase 3 – Plan & Create", "desc": "Delivered detailed concept documentation including engagement plan templates, education platform content structure, LSA campaign messaging, and persona library for 'People Like Me'." }
+      ],
+      "keyDeliverables": [
+        "Current-State Journey Map",
+        "Research Synthesis & Insight Themes",
+        "Opportunity Framework",
+        "4 Detailed Concepts",
+        "Future State Journey Map/Blueprint"
+      ],
+      "impact": [
+        "Created a clear, member-validated roadmap for improving the cessation experience.",
+        "Positioned the fund to retain more members post-cessation.",
+        "Introduced scalable frameworks for engagement, education, and product positioning.",
+        "Enabled internal teams to align around a unified member experience vision."
+      ],
+      "reflection": [
+        "Emotional and identity-based factors are as important as financial considerations.",
+        "Proactive engagement before key decision points is critical for retention.",
+        "Real member stories are powerful in building trust and relatability."
+      ]
+    },
+    {
+      "slug": "major-luxury-retailer",
+      "title": "Major Luxury Retailer",
+      "subtitle": "CX Strategy & E-comm Experience Design",
+      "tags": ["LUXURY RETAIL", "E-COMMERCE", "CX STRATEGY"],
+      "overview": "The client, an iconic Australian luxury fashion brand, engaged AKQA to redesign its website as part of a broader brand and digital transformation. The aim was to elevate the online experience to match their luxury positioning, improve conversion, and create a platform for richer storytelling and customer engagement.",
+      "backgroundChallenge": {
+        "intro": "The client's existing website was not meeting the expectations of modern luxury e-commerce customers.",
+        "challenges": [
+          "Outdated technology stack limiting scalability and performance.",
+          "Inconsistent brand storytelling and inability to fully express their heritage online.",
+          "Gaps in customer confidence when purchasing higher-value items online.",
+          "Lack of advanced personalisation and omnichannel integration."
+        ],
+        "goals": [
+          "Create a global digital flagship that inspires, builds confidence, and drives deeper engagement.",
+          "Increase online sales and average order value (AOV).",
+          "Establish a scalable foundation for ongoing optimisation."
+        ]
+      },
+      "role": {
+        "intro": "I led the service design and CX strategy stream, ensuring the redesign was grounded in customer insight and aligned with business and technical realities.",
+        "responsibilities": [
+          { "title": "Customer & Stakeholder Research", "desc": "Designed and conducted interviews to uncover needs, pain points, and opportunities." },
+          { "title": "Insight Synthesis", "desc": "Translated research into strategic design principles and experience concepts." },
+          { "title": "Concept Development", "desc": "Facilitated ideation and resonance testing with customers." },
+          { "title": "Experience Vision", "desc": "Defined the future-state experience and prioritised initiatives for delivery." },
+          { "title": "Collaboration", "desc": "Worked closely with design, technology, and business teams to align on execution." }
+        ]
+      },
+      "process": [
+        { "phase": "Phase 1 – Diagnose", "desc": "7 customer interviews, 5 stakeholder interviews, competitive benchmarking. Identified 6 key customer insights (e.g., 'Customers need greater assurance when buying online'). Created opportunity maps across the customer lifecycle." },
+        { "phase": "Phase 2 – Envision", "desc": "Developed 4 future-state concepts: Complete My Look (outfit inspiration and cross-sell), Shop Your Way (seamless online/offline integration), Filter for Me (personalised browsing filters), Smart Shop (AI-powered conversational commerce). Conducted resonance testing with 8 customers." }
+      ],
+      "keyDeliverables": [
+        "Customer & Stakeholder Research Synthesis",
+        "Experience Principles & Vision",
+        "Concept Testing Results & Prioritisation",
+        "Future-State Journeys & Core Experience"
+      ],
+      "impact": [
+        "Established a clear, customer-validated roadmap for digital transformation.",
+        "Defined a future-state experience blending storytelling, inspiration, and effortless service.",
+        "Positioned to increase conversion, AOV, and brand advocacy through richer online experiences."
+      ],
+      "reflection": [
+        "Customer validation was critical in prioritising features with real impact.",
+        "Balancing inspiration and utility ensures both brand storytelling and conversion goals are met.",
+        "Early technology alignment avoids feasibility issues later in the design process."
+      ]
+    },
+    {
+      "slug": "federal-government-agency",
+      "title": "Federal Government Agency",
+      "subtitle": "CX Digital Transformation & Service Design",
+      "tags": ["GOVERNMENT", "DIGITAL TRANSFORMATION", "SERVICE DESIGN"],
+      "overview": "The agency's Forms & Guides (F&G) experience was a critical customer touchpoint for meeting tax obligations — but it was fragmented, outdated, and not aligned with modern digital expectations. Over multiple design sprints, we reimagined the F&G experience, from discovery and opportunity framing through to validated, integrated concepts and a proof-of-concept for a future-state solution: My Tax Guide.",
+      "backgroundChallenge": {
+        "intro": "Disconnected guidance and submission processes for taxpayers, with over-reliance on PDFs not optimised for digital use.",
+        "challenges": [
+          "Disconnected guidance and submission processes (myIR vs. website).",
+          "Over-reliance on PDFs not optimised for digital use.",
+          "Customers unsure where to start, what obligations applied to them, or if they'd completed everything correctly.",
+          "High cost-to-serve due to customers seeking reassurance through multiple channels."
+        ],
+        "goals": [
+          "Map the current state and identify opportunities to improve the experience.",
+          "Design an integrated, accessible, and personalised digital experience for Forms & Guides.",
+          "Reduce customer effort, improve accuracy, and streamline internal governance."
+        ]
+      },
+      "role": {
+        "intro": "I led the service design and CX strategy stream across four sprints, ensuring the future-state vision and experience was grounded in customer insight, business needs, and technical feasibility.",
+        "responsibilities": [
+          { "title": "Research Synthesis", "desc": "Consolidated three prior research streams with new SME interviews." },
+          { "title": "Journey Mapping", "desc": "Created current-state maps for Identify → Find → Review → Use stages." },
+          { "title": "Opportunity Framing", "desc": "Defined opportunity areas aligned to CX principles." },
+          { "title": "Concept Development", "desc": "Facilitated ideation workshops to create and refine concepts." },
+          { "title": "Concept Validation & Testing", "desc": "Designed and ran customer and business concept testing." },
+          { "title": "Experience Vision", "desc": "Integrated validated concepts into a unified 'My Tax Guide' experience." },
+          { "title": "POC Oversight", "desc": "Oversaw proof-of-concept to test new experience with taxpayers." }
+        ]
+      },
+      "process": [
+        { "phase": "Sprint 1 – Discovery", "desc": "Orientation workshop to align on objectives. Stakeholder interviews and SME workshops. Customer validation interview to confirm pain points. Consolidated research into a Current State Map." },
+        { "phase": "Sprint 2 – Future State Concepting", "desc": "Defined CX principles: Instill Confidence, Provide Guidance, Tailor Information. Created concepts to address opportunity areas. Created future-state journey blueprint." },
+        { "phase": "Sprint 3 – Validation", "desc": "Customer Validation with members to assess clarity, usability, and value. Business Validation workshops with SMEs. Technology Validation — proof-of-concept to test Guided Help framework and Light Login API integration." },
+        { "phase": "Sprint 4 – Integration & POC", "desc": "Combined validated concepts into My Tax Guide — a personalised, end-to-end guidance and submission tool. Designed Identify → Find → Review → Use flow. Delivered prototype screens and POC." }
+      ],
+      "keyDeliverables": [
+        "Current State Map",
+        "CX Principles & Opportunity Framework",
+        "Concept One-Pagers",
+        "Future-State Journey Blueprint",
+        "My Tax Guide Prototype & POC"
+      ],
+      "impact": [
+        "Created a validated, integrated solution ready for development.",
+        "Established a scalable, modular design approach aligned with the agency's tech capabilities.",
+        "Reduced customer effort and increased confidence in completing obligations.",
+        "Improved content governance and accessibility compliance."
+      ],
+      "reflection": [
+        "Integration of guidance and action is critical to customer comprehension and confidence.",
+        "Progressive disclosure and personalisation reduce overwhelm.",
+        "Early tech validation prevents feasibility issues later on.",
+        "Content governance is key to enabling personalisation at scale."
+      ]
+    },
+    {
+      "slug": "major-australian-retailer",
+      "title": "Major Australian Retailer",
+      "subtitle": "Service Design",
+      "tags": ["RETAIL", "SERVICE DESIGN", "BLUEPRINTING"],
+      "overview": "The client engaged AKQA to create an Education Experience Blueprint mapping the end-to-end journey for schools, parents and themselves. The goal was to identify friction points, surface opportunity areas, and prioritise initiatives that would improve efficiency, scalability, and customer satisfaction across both Business-as-Usual (BAU) and Back-to-School (BTS) contexts.",
+      "backgroundChallenge": {
+        "intro": "The client's Education Business includes B2B services for schools and B2C services for parents, with fragmented experiences between touchpoints.",
+        "challenges": [
+          "Fragmented experiences between school and parent touchpoints.",
+          "Heavy reliance on manual processes (lead generation, booklist handling, fulfilment).",
+          "Disconnected systems limiting scalability and cross-sell opportunities.",
+          "Inconsistent onboarding and support for school accounts."
+        ],
+        "goals": [
+          "Map the current state journeys for schools and parents.",
+          "Identify pain points and opportunity areas across the ecosystem.",
+          "Prioritise initiatives for delivery planning and MVP scoping."
+        ]
+      },
+      "role": {
+        "intro": "I led the strategy, design and facilitation of the blueprinting process, applying service design methods to ensure the output was both strategically valuable and immediately actionable.",
+        "responsibilities": [
+          { "title": "Discovery Leadership", "desc": "Designed and facilitated stakeholder workshops and SME interviews." },
+          { "title": "Research Synthesis", "desc": "Merged existing research with new insights to form a unified evidence base." },
+          { "title": "Journey Mapping", "desc": "Created the Education Experience Blueprint in Figma." },
+          { "title": "Opportunity Framing", "desc": "Defined 25+ opportunity areas with strategic value and ease-of-implementation scoring." },
+          { "title": "Prioritisation Facilitation", "desc": "Ran cross-functional sessions to align on Priority 1–4 initiatives." },
+          { "title": "Initiative Scoping", "desc": "Partnered with the CX Design function to shape MVP scope and future roadmap." }
+        ]
+      },
+      "process": [
+        { "phase": "Phase 1 – Discovery", "desc": "Orientation workshop, stakeholder interviews from sales, operations, fulfilment, and digital. Customer validation interviews with school business managers. Review and synthesis of existing research and operational documentation." },
+        { "phase": "Phase 2 – Envision", "desc": "Mapped school journeys (BAU, BTS, booklist ordering, fulfilment) and parent journeys (SLS, BTS retail, fulfilment). Identified frontstage and backstage processes. Highlighted pain points and opportunity areas." },
+        { "phase": "Phase 3 – Opportunity Framing", "desc": "Identified 25+ opportunity areas grouped into 9 thematic areas: lead generation, BAU optimisation, scalability of CES & SLS, delivery and click & collect, account preference centre, booklist self-service, digital unpacking support, account set-up & support, and unified school accounts." },
+        { "phase": "Phase 4 – Prioritisation", "desc": "Scored each opportunity on Strategic Value and Ease of Implementation. Plotted on a prioritisation matrix to identify quick wins vs. strategic plays. Facilitated alignment between CX, sales, and operations on Priority 1–4 initiatives." }
+      ],
+      "keyDeliverables": [
+        "Education Service Experience Blueprint",
+        "Opportunity Framework (25+ prioritised opportunities)",
+        "Prioritisation Matrix (strategic value vs. ease)",
+        "MVP Roadmap (sequenced initiatives)"
+      ],
+      "impact": [
+        "Created a single source of truth for the Education experience.",
+        "Aligned cross-functional teams on a clear, prioritised roadmap.",
+        "Identified both quick wins and strategic initiatives for long-term transformation.",
+        "Positioned the client to scale Education services into secondary schools and beyond."
+      ],
+      "reflection": [
+        "Blueprinting transforms siloed teams into a connected system, making hidden interdependencies visible.",
+        "Bringing B2B and B2C perspectives together reveals leverage points that neither side can see alone.",
+        "Leaders value these intersections because they expose scalable opportunities, making them powerful catalysts for senior buy-in."
+      ]
+    },
+    {
+      "slug": "luxury-architecture-brand",
+      "title": "Luxury Architecture Brand",
+      "subtitle": "CX Strategy & Service Design",
+      "tags": ["ARCHITECTURE", "LUXURY", "JOURNEY MAPPING"],
+      "overview": "The client wanted to create a Service Blueprint to visualise the end-to-end experience of their customers — from initial inspiration through to purchase, delivery, and post-purchase engagement. The aim was to identify key moments of truth, friction points, and opportunities to enhance the customer experience across both digital and in-store channels.",
+      "backgroundChallenge": {
+        "intro": "The client's customer experience was split across multiple touchpoints — showroom visits, online browsing, trade partner engagement, and logistics — with no single, unified view of the customer journey.",
+        "challenges": [
+          "Disconnected data, journeys and processes between online and offline experiences.",
+          "Limited visibility of how customers transition between inspiration, selection, and purchase.",
+          "Inconsistent post-purchase engagement."
+        ],
+        "goals": [
+          "Map the current state customer flow across all channels including internal staff processes.",
+          "Identify pain points and opportunity areas.",
+          "Create a Service Blueprint used as a central reference for aligning teams and guiding CX improvements."
+        ]
+      },
+      "role": {
+        "intro": "I led the strategy, design, research and facilitation of the mapping process, ensuring the Journey Map was grounded in both customer insight and operational reality.",
+        "responsibilities": [
+          { "title": "Discovery Leadership", "desc": "Designed and facilitated stakeholder workshops across sales, marketing, logistics, and digital teams." },
+          { "title": "Research Design & Facilitation", "desc": "Conducted 15 in-depth customer interviews with architects, designers and installers." },
+          { "title": "Research Synthesis", "desc": "Reviewed existing customer feedback, NPS data, and operational reports." },
+          { "title": "Journey Mapping", "desc": "Created the Service Blueprint in Figma, integrating frontstage and backstage processes." },
+          { "title": "Opportunity Framing", "desc": "Identified and documented 42 key opportunities across 12 distinct moments." },
+          { "title": "CEO/Executive Alignment", "desc": "Presented the Journey Map & opportunity areas to leadership." }
+        ]
+      },
+      "process": [
+        { "phase": "Phase 1 – Discovery", "desc": "Stakeholder interviews with showroom staff, trade account managers, and digital team members. Customer interviews with architects, designers, and installers. Review of customer feedback, NPS scores, and sales funnel data." },
+        { "phase": "Phase 2 – Service Blueprinting", "desc": "Defined journey stages: Inspire → Explore → Select → Purchase → Fulfil → Enjoy. Mapped customer actions, touchpoints, and expectations at each stage for all three customer types. Documented backstage processes and dependencies of the 5 internal teams." },
+        { "phase": "Phase 3 – Opportunity Framing", "desc": "Identified friction points and underserved moments. Synthesised and created 42 unique opportunities across 12 distinct moments within the Journey Map." },
+        { "phase": "Phase 4 – Prioritisation", "desc": "Facilitated session with leadership to score opportunities by impact and effort. Created a priority matrix to identify quick wins vs. transformational and strategic plays." }
+      ],
+      "keyDeliverables": [
+        "Service Blueprint (full journey view)",
+        "Opportunity Areas for CX Improvement (grouped by theme)",
+        "Prioritisation Matrix (impact vs. effort)",
+        "MVP Roadmap (sequenced initiatives)"
+      ],
+      "impact": [
+        "Created a single, visual reference for the service blueprint used for all strategic decision making and global market expansion (USA).",
+        "Aligned cross-functional teams on priority CX initiatives.",
+        "Provided a roadmap for improving both digital and in-store experiences."
+      ],
+      "reflection": [
+        "Cookie cutter approaches don't work — confidently modify and customise tools to serve each client's distinct situation.",
+        "A Service Blueprint can be a powerful alignment tool for leadership, especially when the company is experiencing rapid growth.",
+        "Embedding opportunities directly into the blueprint ensures it's actionable, not just descriptive."
+      ]
+    }
+  ]
+}
