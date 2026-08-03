@@ -1,0 +1,91 @@
+{
+  "page": "Skills",
+  "route": "/Skills",
+  "eyebrow": "CAPABILITIES",
+  "heading": "My Skills",
+  "intro": "A toolkit built across years of complex design engagements — spanning research, strategy, and delivery.",
+  "sections": [
+    {
+      "name": "Service Design",
+      "accentColor": "green",
+      "groups": [
+        {
+          "label": "DISCOVERY & RESEARCH",
+          "items": [
+            "Qualitative & Ethnographic Research",
+            "Behavioural & Cognitive Insights",
+            "Customer Journey & Pain Point Mapping",
+            "Complex Service Blueprinting",
+            "Persona Development & JTBD Frameworks",
+            "Insight Synthesis & Opportunity Framing"
+          ]
+        },
+        {
+          "label": "IDEATION & CONCEPTING",
+          "items": [
+            "Concept Generation & Solution Framing",
+            "Co-Creation & Participatory Design",
+            "Experience Principles & Design Criteria"
+          ]
+        },
+        {
+          "label": "PROTOTYPING & TESTING",
+          "items": [
+            "Concept & Prototype Testing",
+            "UX Research & Usability Testing",
+            "A/B & Multivariate Testing"
+          ]
+        },
+        {
+          "label": "IMPLEMENTATION & EMBEDDING",
+          "items": [
+            "Operationalising Service Design",
+            "Change Management & Adoption"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CX Strategy",
+      "accentColor": "orange",
+      "groups": [
+        {
+          "label": "CX STRATEGY & TRANSFORMATION",
+          "items": [
+            "Future-State CX Visioning & Roadmapping",
+            "Omnichannel Experience Strategy",
+            "Service Model & Value Proposition Innovation",
+            "Emerging Technology Integration"
+          ]
+        },
+        {
+          "label": "LEADERSHIP & INFLUENCE",
+          "items": [
+            "Executive-Level Engagement & Storytelling",
+            "Cross-Functional Alignment",
+            "Mentoring & Capability Building",
+            "Design Culture & Continuous Improvement"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GenAI",
+      "accentColor": "blue",
+      "groups": [
+        {
+          "label": "GENAI COMPETENCIES",
+          "items": [
+            "AI Enabled Workflows",
+            "Agent Creation",
+            "Service Design Acceleration"
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "copyright": "© 2026 William Dunn. Senior Service Designer & CX Strategist.",
+    "links": ["Case Studies", "Skills", "CV"]
+  }
+}
