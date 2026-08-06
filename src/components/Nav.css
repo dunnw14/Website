@@ -34,6 +34,11 @@
 
 .nav-link {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  min-width: 28px;
+  justify-content: center;
   font-family: var(--font-display);
   font-size: 0.9rem;
   font-weight: 500;
@@ -148,8 +153,10 @@
   transform: none;
 }
 
+/* Ink like the rest, not accent. Large accent display type is the one
+   thing the rest of the site no longer does. */
 .nav-drawer-link.is-cta {
-  color: var(--accent);
+  color: var(--ink);
 }
 
 @media (max-width: 1080px) {
@@ -168,7 +175,11 @@
 }
 
 @media (max-width: 600px) {
-  .nav-cta {
+  /* Scoped to .nav-end so it outranks .btn's own display. Both classes sit
+     on this element and a bare .nav-cta ties with .btn on specificity, so
+     whichever loads last wins — which silently left the button visible and
+     pushed the bar past the viewport. */
+  .nav-end .nav-cta {
     display: none;
   }
 }

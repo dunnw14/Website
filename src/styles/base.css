@@ -212,6 +212,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  min-height: 32px;
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--ink-2);
@@ -219,11 +220,12 @@ button {
   transition: color 0.3s var(--ease);
 }
 
+/* Anchored to the text, not the padded box the tap target added */
 .link-quiet::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 6px;
   width: 100%;
   height: 1px;
   background: currentColor;
