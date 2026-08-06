@@ -3,80 +3,71 @@ import "./HeroIllustration.css";
 export default function HeroIllustration() {
   return (
     <svg
-      viewBox="0 0 300 400"
+      viewBox="0 0 280 320"
       className="hero-illustration"
       aria-hidden="true"
     >
-      {/* Hand sketching gesture */}
-      <g className="hand-group">
-        {/* Arm */}
-        <path
-          d="M 80 320 Q 120 280 160 250"
-          className="sketch-line"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+      {/* Nested organic circles - representing layers/complexity */}
+      <g className="circles-group">
+        {/* Outer circle - largest */}
+        <circle
+          cx="140"
+          cy="140"
+          r="110"
+          className="circle circle-1"
         />
 
-        {/* Hand fingers - simplified */}
-        <path
-          d="M 160 250 L 170 230"
-          className="sketch-line sketch-thin"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <path
-          d="M 160 250 L 165 225"
-          className="sketch-line sketch-thin"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <path
-          d="M 160 250 L 160 220"
-          className="sketch-line sketch-thin"
-          fill="none"
-          strokeLinecap="round"
+        {/* Mid circle */}
+        <circle
+          cx="140"
+          cy="140"
+          r="75"
+          className="circle circle-2"
         />
 
-        {/* Pencil/pen */}
-        <path
-          d="M 165 225 L 200 190"
-          className="sketch-accent"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+        {/* Inner circle */}
+        <circle
+          cx="140"
+          cy="140"
+          r="45"
+          className="circle circle-3"
         />
-        <circle cx="202" cy="188" r="3" className="sketch-accent" />
-      </g>
 
-      {/* Organic flowing lines representing journey/flow */}
-      <g className="flow-lines">
-        <path
-          d="M 200 150 Q 240 120 260 80"
-          className="flow-line"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <path
-          d="M 190 180 Q 250 160 280 130"
-          className="flow-line flow-line-secondary"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <path
-          d="M 210 200 Q 260 190 290 160"
-          className="flow-line flow-line-secondary"
-          fill="none"
-          strokeLinecap="round"
+        {/* Center accent circle */}
+        <circle
+          cx="140"
+          cy="140"
+          r="15"
+          className="circle circle-center"
         />
       </g>
 
-      {/* Small accent dots/nodes */}
-      <g className="accent-dots">
-        <circle cx="200" cy="150" r="2.5" className="dot" />
-        <circle cx="260" cy="80" r="2.5" className="dot" />
-        <circle cx="250" cy="160" r="2" className="dot-secondary" />
-        <circle cx="280" cy="130" r="2" className="dot-secondary" />
+      {/* Flowing connector lines - representing connections/flow */}
+      <g className="connectors">
+        <path
+          d="M 140 30 Q 180 70 180 140"
+          className="connector-line"
+        />
+        <path
+          d="M 250 140 Q 210 100 180 70"
+          className="connector-line"
+        />
+        <path
+          d="M 140 250 Q 100 200 70 170"
+          className="connector-line"
+        />
+        <path
+          d="M 30 140 Q 80 170 110 200"
+          className="connector-line"
+        />
+      </g>
+
+      {/* Small accent elements */}
+      <g className="accents">
+        <circle cx="180" cy="70" r="3" className="accent-dot" />
+        <circle cx="250" cy="140" r="3" className="accent-dot" />
+        <circle cx="140" cy="250" r="3" className="accent-dot" />
+        <circle cx="30" cy="140" r="3" className="accent-dot" />
       </g>
     </svg>
   );
