@@ -13,36 +13,33 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <div className="hero-top shell">
-          <p className="label hero-label">{hero.eyebrow}</p>
-          <h1 className="display hero-title">
-            <span className="hero-line">Service</span>
-            <span className="hero-line hero-line-wide">Designer</span>
-          </h1>
+        <div className="hero-greeting shell-narrow">
+          <p className="hero-greeting-text">{hero.greeting}</p>
         </div>
 
-        <div className="hero-stage">
-          <div className="hero-art">
-            <MediaFrame item={heroMedia} ratio="16 / 9" label="Hero image" />
-          </div>
-
-          <div className="hero-links shell">
-            <Link to="/case-studies" className="dot-link">
-              Projects
-            </Link>
-            <Link to="/cv" className="dot-link is-reversed">
-              Say hello
-            </Link>
-          </div>
+        <div className="hero-tagline-section shell-narrow">
+          <p className="hero-tagline">{hero.tagline}</p>
         </div>
 
-        <div className="hero-intro shell">
-          <p className="hero-tagline">{hero.headline}</p>
+        <div className="hero-copy-section shell-narrow">
           <div className="hero-copy">
             {hero.body.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
           </div>
+        </div>
+
+        <div className="hero-media-section shell">
+          <MediaFrame item={heroMedia} ratio="16 / 9" label="Hero image" />
+        </div>
+
+        <div className="hero-links shell-narrow">
+          <Link to="/case-studies" className="dot-link">
+            Projects
+          </Link>
+          <Link to="/cv" className="dot-link is-reversed">
+            Say hello
+          </Link>
         </div>
       </section>
 
