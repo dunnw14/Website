@@ -60,7 +60,7 @@ export default function Home() {
           <div className="home-work-grid">
             {featured.map((item, i) => (
               <Reveal key={item.slug} delay={(i % 2) * 0.08}>
-                <CaseStudyCard item={item} index={i} />
+                <CaseStudyCard item={item} />
               </Reveal>
             ))}
           </div>

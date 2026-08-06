@@ -20,7 +20,7 @@ export default function CaseStudies() {
         <div className="csl-grid">
           {caseStudies.map((item, i) => (
             <Reveal key={item.slug} delay={(i % 2) * 0.08}>
-              <CaseStudyCard item={item} index={i} />
+              <CaseStudyCard item={item} />
             </Reveal>
           ))}
         </div>

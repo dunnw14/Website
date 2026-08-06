@@ -24,6 +24,11 @@ computed-value time and silently drops the colour sitewide.
 - **`--surface`** – Primary surface (sand)
 - **`--surface-2`** – Secondary surface (darker sand)
 - **`--surface-3`** – Tertiary surface (lighter for contrast)
+- **`--raised`** – A surface sitting *above* the page (cards). Prefer this
+  over `--surface-N` for anything meant to read as lifted: the numbered
+  surfaces step away from the page in whichever direction the theme runs, so
+  `--surface-3` is lighter than the page in light mode but darker in dark,
+  which makes a card look raised in one theme and cut-in in the other.
 - **`--ink`** – Primary text (dark taupe)
 - **`--ink-2`** – Secondary text (taupe with 74% opacity)
 - **`--ink-3`** – Tertiary text (taupe with 52% opacity)

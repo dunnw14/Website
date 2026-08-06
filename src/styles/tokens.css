@@ -59,6 +59,10 @@
   --accent: var(--apricot);
   --on-accent: var(--cream);
 
+  /* A surface that sits *above* the page. Unlike --surface-N it means the
+     same thing in both themes, so cards read as raised in each. */
+  --raised: #f5f2ed;
+
   --line: rgba(42, 37, 32, 0.16);
   --line-soft: rgba(42, 37, 32, 0.08);
 
@@ -84,6 +88,9 @@
 
   --accent: var(--apricot);
   --on-accent: var(--taupe);
+
+  /* Lighter than --surface here, mirroring what #f5f2ed does in light */
+  --raised: #443d34;
 
   --line: rgba(250, 247, 243, 0.16);
   --line-soft: rgba(250, 247, 243, 0.08);

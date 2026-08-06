@@ -1,19 +1,19 @@
+/* Card sits lighter than the page rather than darker — paper raised off a
+   surface, not a panel cut into it */
 .cs-card {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: clamp(0.75rem, 0.5rem + 0.7vw, 1.1rem);
-  background: var(--surface-2);
+  padding: clamp(0.8rem, 0.6rem + 0.6vw, 1.1rem);
+  background: var(--raised);
   border: 1px solid var(--line-soft);
   border-radius: var(--radius-lg);
-  transition: transform 0.55s var(--ease), border-color 0.45s var(--ease),
-    background-color 0.45s var(--ease);
-  will-change: transform;
+  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease);
 }
 
 .cs-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent);
+  transform: translateY(-3px);
+  border-color: var(--line);
 }
 
 .cs-card-media {
@@ -25,26 +25,21 @@
   border-radius: var(--radius);
 }
 
-.cs-card-media .media-el,
-.cs-card-media .media-placeholder {
-  transition: transform 0.8s var(--ease);
+.cs-card-media .media-el {
+  transition: transform 0.7s var(--ease);
 }
 
-/* Slight counter-tilt on hover, alternating by card position */
-.cs-card[data-tilt="left"]:hover .cs-card-media .media-el {
-  transform: scale(1.06) rotate(-1.2deg);
-}
-
-.cs-card[data-tilt="right"]:hover .cs-card-media .media-el {
-  transform: scale(1.06) rotate(1.2deg);
+/* A straight scale, no rotation — the tilt was the poster language */
+.cs-card:hover .cs-card-media .media-el {
+  transform: scale(1.03);
 }
 
 .cs-card-body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: clamp(1.1rem, 0.8rem + 1vw, 1.6rem) clamp(0.4rem, 0.2rem + 0.5vw, 0.75rem)
-    clamp(0.4rem, 0.3rem + 0.4vw, 0.7rem);
+  padding: clamp(1.2rem, 0.9rem + 1vw, 1.7rem) clamp(0.5rem, 0.3rem + 0.5vw, 0.85rem)
+    clamp(0.5rem, 0.4rem + 0.4vw, 0.8rem);
 }
 
 .cs-card-headline {
@@ -56,37 +51,51 @@
 
 .cs-card-title {
   font-size: var(--t-h3);
-  line-height: 0.98;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
   color: var(--ink);
 }
 
 .cs-card-arrow {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   flex-shrink: 0;
   border-radius: var(--pill);
   border: 1px solid var(--line);
   color: var(--ink-2);
-  transition: background-color 0.4s var(--ease), color 0.4s var(--ease),
-    transform 0.5s var(--ease-back), border-color 0.4s var(--ease);
+  transition: background-color 0.35s var(--ease), color 0.35s var(--ease),
+    border-color 0.35s var(--ease), transform 0.35s var(--ease);
 }
 
+/* Travels along its own diagonal instead of spinning 45 degrees */
 .cs-card:hover .cs-card-arrow {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--on-accent);
-  transform: rotate(45deg);
+  transform: translate(2px, -2px);
 }
 
 .cs-card-sub {
-  margin-top: 0.5rem;
+  margin-top: 0.55rem;
   font-size: 0.95rem;
-  color: var(--ink-3);
+  line-height: 1.5;
+  color: var(--ink-2);
 }
 
 .cs-card-tags {
   margin-top: auto;
-  padding-top: 1.35rem;
+  padding-top: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-card:hover {
+    transform: none;
+  }
+
+  .cs-card:hover .cs-card-media .media-el {
+    transform: none;
+  }
 }

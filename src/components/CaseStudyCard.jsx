@@ -2,14 +2,9 @@ import { Link } from "react-router-dom";
 import { MediaFrame } from "./Media.jsx";
 import "./CaseStudyCard.css";
 
-export default function CaseStudyCard({ item, index = 0 }) {
+export default function CaseStudyCard({ item }) {
   return (
-    <Link
-      to={`/case-studies/${item.slug}`}
-      className="cs-card"
-      // Alternating tilt keeps the grid feeling hand-placed rather than rigid
-      data-tilt={index % 2 === 0 ? "left" : "right"}
-    >
+    <Link to={`/case-studies/${item.slug}`} className="cs-card">
       <div className="cs-card-media">
         <MediaFrame
           item={{ src: item.media?.cardImage, alt: item.media?.cardImageAlt, type: "image" }}
@@ -20,7 +15,7 @@ export default function CaseStudyCard({ item, index = 0 }) {
 
       <div className="cs-card-body">
         <div className="cs-card-headline">
-          <h3 className="display cs-card-title">{item.title}</h3>
+          <h3 className="cs-card-title">{item.title}</h3>
           <span className="cs-card-arrow" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
               <path
