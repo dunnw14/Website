@@ -1,60 +1,39 @@
-.service-blueprint {
+.service-blueprint-bg {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  min-height: 200px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
 }
 
-/* Faint swimlane lines */
+/* Very subtle swimlane lines */
 .blueprint-lane {
-  stroke: var(--line-soft);
-  stroke-width: 1;
+  stroke: var(--accent);
+  stroke-width: 0.8;
   stroke-linecap: round;
 }
 
-/* Vertical timeline markers */
+/* Vertical timeline markers - barely visible */
 .blueprint-timeline {
-  stroke: var(--line-soft);
-  stroke-width: 1;
+  stroke: var(--accent);
+  stroke-width: 0.6;
   stroke-linecap: round;
-  opacity: 0.6;
 }
 
-/* Main touchpoint markers (accent color) */
-.blueprint-touchpoint {
+/* Main accent dots - very faint */
+.blueprint-dot {
   fill: var(--accent);
-  opacity: 0.8;
-  animation: pulse 3s ease-in-out infinite;
 }
 
-.blueprint-touchpoint:nth-child(n + 10) {
-  animation-delay: 0.3s;
-}
-
-/* Secondary touchpoints (muted) */
-.blueprint-touchpoint-secondary {
-  fill: var(--line);
-  opacity: 0.5;
-  animation: pulse 3s ease-in-out infinite;
-}
-
-.blueprint-touchpoint-secondary:nth-child(n + 10) {
-  animation-delay: 0.6s;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.9;
-  }
+/* Small secondary dots */
+.blueprint-dot-small {
+  fill: var(--accent);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .blueprint-touchpoint,
-  .blueprint-touchpoint-secondary {
-    animation: none;
-    opacity: 0.7;
+  .service-blueprint-bg {
+    opacity: 0.1;
   }
 }

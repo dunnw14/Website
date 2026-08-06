@@ -3,7 +3,14 @@
    ============================================================ */
 
 .hero {
+  position: relative;
   padding-top: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 /* ---- Greeting ------------------------------------------------ */
@@ -58,13 +65,6 @@
   color: var(--ink-2);
   margin: 0;
   text-wrap: pretty;
-}
-
-/* ---- Blueprint visualization --------------------------------- */
-
-.hero-blueprint {
-  margin-bottom: clamp(3rem, 2rem + 5vw, 5rem);
-  animation: fadeIn 0.8s var(--ease) 0.3s both;
 }
 
 /* ---- Navigation links ----------------------------------------- */

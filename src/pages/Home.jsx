@@ -13,33 +13,33 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <div className="hero-greeting shell-narrow">
-          <p className="hero-greeting-text">{hero.greeting}</p>
-        </div>
+        <ServiceBlueprint />
 
-        <div className="hero-tagline-section shell-narrow">
-          <p className="hero-tagline">{hero.tagline}</p>
-        </div>
-
-        <div className="hero-copy-section shell-narrow">
-          <div className="hero-copy">
-            {hero.body.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
+        <div className="hero-content">
+          <div className="hero-greeting shell-narrow">
+            <p className="hero-greeting-text">{hero.greeting}</p>
           </div>
-        </div>
 
-        <div className="hero-blueprint shell-narrow">
-          <ServiceBlueprint />
-        </div>
+          <div className="hero-tagline-section shell-narrow">
+            <p className="hero-tagline">{hero.tagline}</p>
+          </div>
 
-        <div className="hero-links shell-narrow">
-          <Link to="/case-studies" className="dot-link">
-            Projects
-          </Link>
-          <Link to="/cv" className="dot-link is-reversed">
-            Say hello
-          </Link>
+          <div className="hero-copy-section shell-narrow">
+            <div className="hero-copy">
+              {hero.body.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+
+          <div className="hero-links shell-narrow">
+            <Link to="/case-studies" className="dot-link">
+              Projects
+            </Link>
+            <Link to="/cv" className="dot-link is-reversed">
+              Say hello
+            </Link>
+          </div>
         </div>
       </section>
 
