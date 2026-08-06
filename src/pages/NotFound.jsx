@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 export default function NotFound() {
   return (
     <div className="page">
-      <div className="shell-narrow" style={{ textAlign: "center", paddingBlock: "4rem" }}>
+      <div
+        className="shell-narrow is-centered"
+        style={{ textAlign: "center", paddingBlock: "4rem" }}
+      >
         <p className="label">404</p>
         <h1 style={{ fontSize: "var(--t-h2)", marginTop: "1rem" }}>Page not found</h1>
         <p className="lead" style={{ marginTop: "1.25rem" }}>

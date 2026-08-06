@@ -86,11 +86,28 @@ button {
   padding-inline: var(--gutter);
 }
 
+/* Same outer container as .shell, so long-form pages share the site's left
+   edge with the nav and footer instead of floating inset from them. The
+   reading column is capped instead, and left-aligns within it.
+
+   The cap reproduces exactly the width this column had back when the
+   container itself was --shell-narrow, so nothing inside changes size —
+   only where it sits. */
 .shell-narrow {
   width: 100%;
-  max-width: var(--shell-narrow);
+  max-width: var(--shell);
   margin-inline: auto;
   padding-inline: var(--gutter);
+}
+
+.shell-narrow > * {
+  max-width: calc(var(--shell-narrow) - var(--gutter) * 2);
+}
+
+/* Centred layouts have no left edge to break, so they keep the old
+   behaviour and stay centred in the full container */
+.shell-narrow.is-centered > * {
+  margin-inline: auto;
 }
 
 .page {
