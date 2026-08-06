@@ -24,6 +24,9 @@ export default function Home() {
 
             <div className="hero-tagline-section shell-narrow">
               <p className="hero-tagline">{hero.tagline}</p>
+              <div className="hero-tagline-mark">
+                <HeroIllustration />
+              </div>
             </div>
 
             <div className="hero-copy-section shell-narrow">
@@ -44,9 +47,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-visual">
-            <HeroIllustration />
-          </div>
         </div>
       </section>
 

@@ -9,7 +9,7 @@
       name="description"
       content="Senior Service Designer & CX Strategist shaping the future of customer experience, service design, and product innovation across banking, superannuation, retail, and government."
     />
-    <meta name="theme-color" content="#3a1a11" />
+    <meta name="theme-color" content="#faf7f3" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="William Dunn — Senior Service Designer & CX Strategist" />
@@ -20,14 +20,14 @@
 
     <script>
       // Applied before first paint so the page never flashes the wrong theme.
-      // The espresso palette is the brand's primary look, so it is the
-      // default for everyone; the nav toggle switches to the inverted one.
+      // The warm cream palette is the brand's primary look, so it is the
+      // default for everyone; the nav toggle switches to the dark one.
       (function () {
         try {
           document.documentElement.dataset.theme =
-            localStorage.getItem("wd-theme") || "dark";
+            localStorage.getItem("wd-theme") || "light";
         } catch (e) {
-          document.documentElement.dataset.theme = "dark";
+          document.documentElement.dataset.theme = "light";
         }
       })();
     </script>

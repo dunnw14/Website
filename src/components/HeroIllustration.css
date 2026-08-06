@@ -1,64 +1,35 @@
 .hero-illustration {
   width: 100%;
   height: auto;
+  overflow: visible;
 }
 
-/* Nested circles - representing layers and complexity */
-.circles-group {
-  opacity: 0.95;
-}
-
-.circle {
+.mark-line,
+.mark-ring {
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-/* Outer circle - faint, largest scope */
-.circle-1 {
+.mark-line {
   stroke: var(--accent);
-  stroke-width: 1.2;
-  opacity: 0.35;
+  stroke-width: 2.4;
 }
 
-/* Mid circle - more visible */
-.circle-2 {
-  stroke: var(--accent);
-  stroke-width: 1.4;
-  opacity: 0.55;
+/* Sits a hair below and left of the main stroke so the two read as one
+   slightly shaky line rather than two lines */
+.mark-ghost {
+  transform: translate(-1.2px, 1.6px);
+  opacity: 0.45;
+  stroke-width: 1.8;
 }
 
-/* Inner circle - more prominent */
-.circle-3 {
-  stroke: var(--accent);
+.mark-ring {
+  stroke: var(--ink);
   stroke-width: 1.6;
-  opacity: 0.7;
+  opacity: 0.32;
 }
 
-/* Center filled circle - focus point */
-.circle-center {
+.mark-dot {
   fill: var(--accent);
-  stroke: none;
-  opacity: 0.8;
-}
-
-/* Connector lines - showing relationships/flow */
-.connector-line {
-  stroke: var(--taupe);
-  stroke-width: 1.2;
-  fill: none;
-  opacity: 0.4;
-  stroke-linecap: round;
-}
-
-/* Accent dots at connection points */
-.accent-dot {
-  fill: var(--accent);
-  opacity: 0.6;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-illustration {
-    opacity: 0.95;
-  }
 }

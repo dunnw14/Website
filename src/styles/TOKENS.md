@@ -9,7 +9,13 @@ A warm, minimal design system for a service design portfolio. Single accent colo
 - **`--sand`** `#ede8e1` – Warm sand for surface elements
 - **`--taupe`** `#2a2520` – Warm dark, primary text
 - **`--taupe-light`** `#6b6359` – Warm medium-gray for secondary text
-- **`--accent`** `#d4a574` – Warm apricot; the single accent color used sparingly
+- **`--apricot`** `#d4a574` – Warm apricot; the single accent hue
+
+Raw hues are never used directly in components. Each theme maps `--apricot`
+onto the semantic `--accent`, which is what everything else references. Keep
+that indirection: naming the raw token `--accent` creates a
+`--accent: var(--accent)` cycle, which CSS treats as invalid at
+computed-value time and silently drops the colour sitewide.
 
 ### Semantic Color Tokens
 

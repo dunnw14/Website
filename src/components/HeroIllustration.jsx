@@ -1,74 +1,27 @@
 import "./HeroIllustration.css";
 
+/* A hand-drawn line that starts tangled and settles into a straight
+   run, ending in a circled point — the tagline drawn rather than said. */
+const LINE =
+  "M 8 60 Q 14 22 20 60 Q 26 98 32 60 Q 38 24 44 60 Q 50 96 56 60 " +
+  "Q 62 28 68 60 Q 74 92 80 60 Q 87 34 94 60 Q 101 86 108 60 " +
+  "Q 116 40 124 60 Q 132 80 140 60 Q 149 47 158 60 Q 167 73 176 60 " +
+  "Q 186 54 196 60 Q 206 66 216 60 L 227 60";
+
+/* Deliberately not a circle — the last curve overshoots where it started,
+   the way a pen does when you ring something on a wall of stickies. */
+const RING =
+  "M 228 46 C 236 46 243 52 242 60 C 241 68 235 74 228 74 " +
+  "C 220 74 214 68 214 60 C 214 52 220 46 230 45";
+
 export default function HeroIllustration() {
   return (
-    <svg
-      viewBox="0 0 280 320"
-      className="hero-illustration"
-      aria-hidden="true"
-    >
-      {/* Nested organic circles - representing layers/complexity */}
-      <g className="circles-group">
-        {/* Outer circle - largest */}
-        <circle
-          cx="140"
-          cy="140"
-          r="110"
-          className="circle circle-1"
-        />
-
-        {/* Mid circle */}
-        <circle
-          cx="140"
-          cy="140"
-          r="75"
-          className="circle circle-2"
-        />
-
-        {/* Inner circle */}
-        <circle
-          cx="140"
-          cy="140"
-          r="45"
-          className="circle circle-3"
-        />
-
-        {/* Center accent circle */}
-        <circle
-          cx="140"
-          cy="140"
-          r="15"
-          className="circle circle-center"
-        />
-      </g>
-
-      {/* Flowing connector lines - representing connections/flow */}
-      <g className="connectors">
-        <path
-          d="M 140 30 Q 180 70 180 140"
-          className="connector-line"
-        />
-        <path
-          d="M 250 140 Q 210 100 180 70"
-          className="connector-line"
-        />
-        <path
-          d="M 140 250 Q 100 200 70 170"
-          className="connector-line"
-        />
-        <path
-          d="M 30 140 Q 80 170 110 200"
-          className="connector-line"
-        />
-      </g>
-
-      {/* Small accent elements */}
-      <g className="accents">
-        <circle cx="180" cy="70" r="3" className="accent-dot" />
-        <circle cx="250" cy="140" r="3" className="accent-dot" />
-        <circle cx="140" cy="250" r="3" className="accent-dot" />
-        <circle cx="30" cy="140" r="3" className="accent-dot" />
-      </g>
+    <svg viewBox="0 0 258 120" className="hero-illustration" aria-hidden="true">
+      {/* Offset ghost stroke — reads as a pencil gone over twice */}
+      <path d={LINE} className="mark-line mark-ghost" />
+      <path d={LINE} className="mark-line" />
+      <path d={RING} className="mark-ring" />
+      <circle cx="228" cy="60" r="3.5" className="mark-dot" />
     </svg>
   );
 }
