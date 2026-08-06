@@ -17,8 +17,13 @@ export default function Home() {
           <p className="hero-greeting-text">{hero.greeting}</p>
         </div>
 
-        <div className="hero-tagline-section shell-narrow">
-          <p className="hero-tagline">{hero.tagline}</p>
+        <div className="hero-tagline-section shell">
+          <div className="hero-tagline-text">
+            <p className="hero-tagline">{hero.tagline}</p>
+          </div>
+          <div className="hero-tagline-image">
+            <MediaFrame item={heroMedia} ratio="4 / 5" label="Hero image" />
+          </div>
         </div>
 
         <div className="hero-copy-section shell-narrow">
@@ -27,10 +32,6 @@ export default function Home() {
               <p key={i}>{paragraph}</p>
             ))}
           </div>
-        </div>
-
-        <div className="hero-media-section shell">
-          <MediaFrame item={heroMedia} ratio="16 / 9" label="Hero image" />
         </div>
 
         <div className="hero-links shell-narrow">

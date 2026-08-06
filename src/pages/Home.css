@@ -22,11 +22,20 @@
   text-wrap: balance;
 }
 
-/* ---- Main tagline/insight ------------------------------------ */
+/* ---- Main tagline/insight with image ----------------------- */
 
 .hero-tagline-section {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem, 1.5rem + 3vw, 4rem);
+  align-items: start;
   margin-bottom: clamp(2rem, 1.5rem + 3vw, 3.5rem);
   animation: fadeIn 0.7s var(--ease) 0.2s both;
+}
+
+.hero-tagline-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-tagline {
@@ -37,6 +46,14 @@
   color: var(--ink);
   margin: 0;
   text-wrap: balance;
+}
+
+.hero-tagline-image {
+  width: 100%;
+}
+
+.hero-tagline-image .media-frame {
+  border-radius: var(--radius-lg);
 }
 
 /* ---- Body copy ------------------------------------------------ */
@@ -60,17 +77,6 @@
   text-wrap: pretty;
 }
 
-/* ---- Media container ------------------------------------------ */
-
-.hero-media-section {
-  margin-bottom: clamp(3rem, 2rem + 5vw, 5rem);
-  animation: fadeIn 0.8s var(--ease) 0.3s both;
-}
-
-.hero-media-section .media-frame {
-  border-radius: var(--radius-lg);
-}
-
 /* ---- Navigation links ----------------------------------------- */
 
 .hero-links {
@@ -78,7 +84,7 @@
   gap: clamp(1.5rem, 1rem + 2vw, 2.5rem);
   align-items: center;
   margin-bottom: clamp(4rem, 2rem + 6vw, 7rem);
-  animation: fadeIn 0.7s var(--ease) 0.35s both;
+  animation: fadeIn 0.7s var(--ease) 0.3s both;
 }
 
 /* ============================================================
@@ -137,6 +143,17 @@
 /* ============================================================
    Responsive
    ============================================================ */
+
+@media (max-width: 1000px) {
+  .hero-tagline-section {
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 1rem + 2vw, 2rem);
+  }
+
+  .hero-tagline-image {
+    max-width: 350px;
+  }
+}
 
 @media (max-width: 900px) {
   .hero-links {
