@@ -11,6 +11,28 @@
 .hero-content {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  gap: clamp(2rem, 1.5rem + 3vw, 5rem);
+  align-items: start;
+}
+
+.hero-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-visual {
+  display: none;
+  min-height: 350px;
+  padding-top: clamp(1rem, 0.5rem + 1vw, 2rem);
+}
+
+@media (min-width: 1200px) {
+  .hero-visual {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
 /* ---- Greeting ------------------------------------------------ */
