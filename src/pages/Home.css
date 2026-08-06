@@ -37,30 +37,9 @@
 
 /* ---- Main tagline/insight ------------------------------------ */
 
-/* Text and mark share a row; the mark drops to the baseline of the last
-   line so it sits in the gap the ragged edge leaves behind */
 .hero-tagline-section {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(1.5rem, 1rem + 2vw, 3rem);
-  align-items: end;
   margin-bottom: clamp(2rem, 1.5rem + 3vw, 3.5rem);
   animation: fadeIn 0.7s var(--ease) 0.2s both;
-}
-
-.hero-tagline-mark {
-  width: clamp(150px, 15vw, 230px);
-  padding-bottom: 0.5rem;
-}
-
-@media (max-width: 900px) {
-  .hero-tagline-section {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-tagline-mark {
-    display: none;
-  }
 }
 
 .hero-tagline {

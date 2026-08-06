@@ -4,7 +4,6 @@ import Marquee from "../components/Marquee.jsx";
 import Reveal from "../components/Reveal.jsx";
 import CaseStudyCard from "../components/CaseStudyCard.jsx";
 import ServiceBlueprint from "../components/ServiceBlueprint.jsx";
-import HeroIllustration from "../components/HeroIllustration.jsx";
 import "./Home.css";
 
 export default function Home() {
@@ -24,9 +23,6 @@ export default function Home() {
 
             <div className="hero-tagline-section shell-narrow">
               <p className="hero-tagline">{hero.tagline}</p>
-              <div className="hero-tagline-mark">
-                <HeroIllustration />
-              </div>
             </div>
 
             <div className="hero-copy-section shell-narrow">
