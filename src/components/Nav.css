@@ -16,8 +16,8 @@
 }
 
 .nav-logo {
-  font-size: 0.86rem;
-  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  letter-spacing: -0.005em;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -35,10 +35,9 @@
 .nav-link {
   position: relative;
   font-family: var(--font-display);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
   color: var(--ink-2);
   padding-block: 0.3rem;
   transition: color 0.3s var(--ease);

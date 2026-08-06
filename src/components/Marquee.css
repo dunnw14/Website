@@ -1,9 +1,12 @@
+/* Hairline rules instead of a solid accent slab — the band still separates
+   the sections without turning into the loudest thing on the page */
 .marquee {
   overflow: hidden;
-  padding-block: clamp(0.85rem, 0.6rem + 0.8vw, 1.35rem);
-  background: var(--accent);
-  color: var(--on-accent);
-  transition: background-color 0.45s var(--ease), color 0.45s var(--ease);
+  padding-block: clamp(1.1rem, 0.8rem + 1vw, 1.7rem);
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--ink-3);
+  transition: color 0.45s var(--ease), border-color 0.45s var(--ease);
 }
 
 .marquee-inner {
@@ -28,20 +31,20 @@
   gap: clamp(1.2rem, 0.8rem + 1.4vw, 2.4rem);
   padding-right: clamp(1.2rem, 0.8rem + 1.4vw, 2.4rem);
   font-family: var(--font-display);
-  font-size: clamp(0.95rem, 0.7rem + 0.9vw, 1.5rem);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
+/* Small enough to be punctuation rather than a bullet */
 .marquee-dot {
-  width: 0.42em;
-  height: 0.42em;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
-  background: currentColor;
+  background: var(--accent);
   flex-shrink: 0;
-  opacity: 0.55;
 }
 
 @keyframes marquee-scroll {

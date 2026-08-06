@@ -34,10 +34,10 @@ export default function Home() {
             </div>
 
             <div className="hero-links shell-narrow">
-              <Link to="/case-studies" className="dot-link">
-                Projects
+              <Link to="/case-studies" className="btn">
+                View work
               </Link>
-              <Link to="/cv" className="dot-link is-reversed">
+              <Link to="/cv" className="link-quiet">
                 Say hello
               </Link>
             </div>

@@ -26,13 +26,14 @@
   animation: fadeIn 0.7s var(--ease) 0.1s both;
 }
 
+/* Reads as a lead-in to the headline, not as a competing line of body copy */
 .hero-greeting-text {
-  font-size: var(--t-lead);
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--ink-3);
   margin: 0;
-  text-wrap: balance;
 }
 
 /* ---- Main tagline/insight ------------------------------------ */
@@ -42,42 +43,55 @@
   animation: fadeIn 0.7s var(--ease) 0.2s both;
 }
 
+/* Tracking tightens as size grows — at display sizes the default spacing
+   reads loose, which is most of what makes big type look cheap */
 .hero-tagline {
   font-size: var(--t-h2);
   font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
   color: var(--ink);
   margin: 0;
+  max-width: 20ch;
   text-wrap: balance;
 }
 
 /* ---- Body copy ------------------------------------------------ */
 
 .hero-copy-section {
-  margin-bottom: clamp(3rem, 2rem + 5vw, 5rem);
+  margin-bottom: clamp(2rem, 1.4rem + 2.2vw, 3rem);
   animation: fadeIn 0.7s var(--ease) 0.25s both;
 }
 
 .hero-copy {
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  gap: 1.15rem;
+  /* Long-form measure. Past ~70 characters the eye loses the line return
+     and the whole block starts reading as a wall */
+  max-width: 62ch;
 }
 
 .hero-copy p {
-  font-size: var(--t-lead);
-  line-height: 1.65;
+  font-size: 1.0625rem;
+  line-height: 1.7;
   color: var(--ink-2);
   margin: 0;
   text-wrap: pretty;
 }
 
-/* ---- Navigation links ----------------------------------------- */
+/* First paragraph carries the weight; the rest support it */
+.hero-copy p:first-child {
+  font-size: var(--t-lead);
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+/* ---- Calls to action ------------------------------------------- */
 
 .hero-links {
   display: flex;
-  gap: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  gap: 1.75rem;
   align-items: center;
   margin-bottom: clamp(4rem, 2rem + 6vw, 7rem);
   animation: fadeIn 0.7s var(--ease) 0.35s both;
@@ -148,13 +162,7 @@
 
 @media (max-width: 640px) {
   .hero-links {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .dot-link.is-reversed {
-    flex-direction: row;
+    gap: 1.25rem;
   }
 
   .home-work-grid {

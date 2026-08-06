@@ -5,29 +5,30 @@
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.14;
 }
 
-/* Swimlanes carry the structure, so they sit a step above the timeline */
+/* Hairlines in ink, not accent. Accent at this scale tints the whole page
+   and reads as a texture; ink reads as structure. */
 .blueprint-lane {
-  stroke: var(--accent);
-  stroke-width: 1;
-  stroke-linecap: round;
+  stroke: var(--ink);
+  stroke-width: 0.75;
+  stroke-opacity: 0.1;
 }
 
-/* Vertical timeline markers - lighter, so the grid reads as lanes first */
 .blueprint-timeline {
-  stroke: var(--accent);
-  stroke-width: 0.7;
-  stroke-linecap: round;
+  stroke: var(--ink);
+  stroke-width: 0.75;
+  stroke-opacity: 0.055;
 }
 
-/* Main accent dots - very faint */
+/* One accent node per lane crossing, small enough to be a registration
+   mark rather than a bullet */
 .blueprint-dot {
   fill: var(--accent);
+  fill-opacity: 0.5;
 }
 
-/* Small secondary dots */
 .blueprint-dot-small {
-  fill: var(--accent);
+  fill: var(--ink);
+  fill-opacity: 0.12;
 }
