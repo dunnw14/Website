@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { home, caseStudies } from "../data/content.js";
-import { MediaFrame } from "../components/Media.jsx";
 import Marquee from "../components/Marquee.jsx";
 import Reveal from "../components/Reveal.jsx";
 import CaseStudyCard from "../components/CaseStudyCard.jsx";
+import ServiceBlueprint from "../components/ServiceBlueprint.jsx";
 import "./Home.css";
 
 export default function Home() {
-  const { hero, tagTicker, heroMedia } = home;
+  const { hero, tagTicker } = home;
   const featured = caseStudies.slice(0, 4);
 
   return (
@@ -29,8 +29,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-media-section shell">
-          <MediaFrame item={heroMedia} ratio="16 / 9" label="Hero image" />
+        <div className="hero-blueprint shell-narrow">
+          <ServiceBlueprint />
         </div>
 
         <div className="hero-links shell-narrow">

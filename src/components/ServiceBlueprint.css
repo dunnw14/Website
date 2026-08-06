@@ -1,0 +1,60 @@
+.service-blueprint {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+}
+
+/* Faint swimlane lines */
+.blueprint-lane {
+  stroke: var(--line-soft);
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+
+/* Vertical timeline markers */
+.blueprint-timeline {
+  stroke: var(--line-soft);
+  stroke-width: 1;
+  stroke-linecap: round;
+  opacity: 0.6;
+}
+
+/* Main touchpoint markers (accent color) */
+.blueprint-touchpoint {
+  fill: var(--accent);
+  opacity: 0.8;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.blueprint-touchpoint:nth-child(n + 10) {
+  animation-delay: 0.3s;
+}
+
+/* Secondary touchpoints (muted) */
+.blueprint-touchpoint-secondary {
+  fill: var(--line);
+  opacity: 0.5;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.blueprint-touchpoint-secondary:nth-child(n + 10) {
+  animation-delay: 0.6s;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blueprint-touchpoint,
+  .blueprint-touchpoint-secondary {
+    animation: none;
+    opacity: 0.7;
+  }
+}

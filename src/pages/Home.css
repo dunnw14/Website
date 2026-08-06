@@ -60,15 +60,11 @@
   text-wrap: pretty;
 }
 
-/* ---- Media container ------------------------------------------ */
+/* ---- Blueprint visualization --------------------------------- */
 
-.hero-media-section {
+.hero-blueprint {
   margin-bottom: clamp(3rem, 2rem + 5vw, 5rem);
   animation: fadeIn 0.8s var(--ease) 0.3s both;
-}
-
-.hero-media-section .media-frame {
-  border-radius: var(--radius-lg);
 }
 
 /* ---- Navigation links ----------------------------------------- */
