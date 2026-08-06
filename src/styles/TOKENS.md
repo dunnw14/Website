@@ -64,8 +64,11 @@ Single font family for minimalist consistency. Inter bundled into the project.
 
 ### Type Scale (Responsive)
 - **`--t-mega`** – Extra-large display (3.4rem → 12rem)
-- **`--t-h1`** – Large heading (2.6rem → 6rem)
-- **`--t-h2`** – Medium heading (1.9rem → 3.4rem)
+- **`--t-h2`** – Largest type on the site (1.9rem → 3.4rem). Hero statement
+  and page titles. There is deliberately no larger step: a 96px `--t-h1`
+  used to exist and every page title reached for it, so each page's title
+  outgrew the content it was introducing.
+- **`--t-section`** – Section heading within a page (1.7rem → 2.3rem)
 - **`--t-h3`** – Small heading (1.2rem → 1.75rem)
 - **`--t-lead`** – Intro paragraph (1.05rem → 1.32rem)
 - **`--t-body`** – Body text (1rem)

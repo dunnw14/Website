@@ -117,9 +117,9 @@
 }
 
 /* Sits between the hero statement and the card titles: 54 / 37 / 28.
-   At --t-h1 it was 96px and outranked the page's own headline. */
+   It was 96px and outranked the page's own headline. */
 .home-work-title {
-  font-size: clamp(1.7rem, 1.2rem + 1.5vw, 2.3rem);
+  font-size: var(--t-section);
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.03em;
