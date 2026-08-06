@@ -53,6 +53,31 @@ Settled deliberately; don't re-litigate without being asked.
 exists. Keep it current — several of the notes there exist to stop a specific
 bug being reintroduced.
 
+## Where things stand
+
+Done and live: the design tokens, hero, case study cards, page titles and
+footer, site-wide left-edge alignment, and the mobile overflow fix.
+
+Open, in rough priority order:
+
+- **CV page detail.** Left-weighted since the alignment change, with a wide
+  empty band down the right — a known trade of that fix, not a regression.
+  Still carries old language: apricot uppercase employer names (AKQA, ATO)
+  and the old panel styling on "Core capabilities".
+- **Skills page.** Renders and aligns correctly but has never been audited
+  for leftovers of the old visual language.
+- **Real-device check.** Mobile was verified in Chromium with touch
+  emulation, which will not catch Safari's behaviour around `100vh` and
+  sticky headers. Worth opening the live site on a phone.
+- **Not yet looked at:** landscape phone orientation; the nav drawer's
+  keyboard and screen-reader behaviour beyond confirming it opens and closes.
+- **Case study detail** small labels are still apricot micro-caps. That is
+  consistent with the accent rule, so probably fine — but it was never a
+  deliberate decision, so make one.
+
+Media is still placeholders throughout. `README.md` explains how to drop real
+images and the CV PDF in.
+
 ## Workflow
 
 Component work happens on a branch and is shown before it merges. Approved
