@@ -20,15 +20,3 @@
   stroke-width: 0.75;
   stroke-opacity: 0.055;
 }
-
-/* One accent node per lane crossing, small enough to be a registration
-   mark rather than a bullet */
-.blueprint-dot {
-  fill: var(--accent);
-  fill-opacity: 0.5;
-}
-
-.blueprint-dot-small {
-  fill: var(--ink);
-  fill-opacity: 0.12;
-}

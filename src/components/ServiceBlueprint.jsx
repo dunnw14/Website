@@ -20,16 +20,6 @@ export default function ServiceBlueprint() {
       <line x1="480" y1="0" x2="480" y2="600" className="blueprint-timeline" />
       <line x1="660" y1="0" x2="660" y2="600" className="blueprint-timeline" />
       <line x1="840" y1="0" x2="840" y2="600" className="blueprint-timeline" />
-
-      {/* Minimal accent dots */}
-      <circle cx="120" cy="80" r="2.5" className="blueprint-dot" />
-      <circle cx="300" cy="200" r="2.5" className="blueprint-dot" />
-      <circle cx="480" cy="320" r="2.5" className="blueprint-dot" />
-      <circle cx="660" cy="440" r="2.5" className="blueprint-dot" />
-      <circle cx="840" cy="200" r="2.5" className="blueprint-dot" />
-      <circle cx="200" cy="320" r="2" className="blueprint-dot-small" />
-      <circle cx="500" cy="80" r="2" className="blueprint-dot-small" />
-      <circle cx="750" cy="440" r="2" className="blueprint-dot-small" />
     </svg>
   );
 }
