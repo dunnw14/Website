@@ -29,7 +29,7 @@ h4 {
   font-family: var(--font-display);
   margin: 0;
   line-height: 0.92;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   font-weight: 700;
 }
 
@@ -102,20 +102,19 @@ button {
 /* Type helpers                                                         */
 /* ------------------------------------------------------------------ */
 
-/* Oversized all-caps display, the signature of the identity */
+/* Clean, oversized display heading */
 .display {
   font-family: var(--font-display);
   font-weight: 700;
-  text-transform: uppercase;
-  line-height: 0.86;
-  letter-spacing: -0.04em;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
 }
 
 .label {
   font-family: var(--font-body);
   font-size: var(--t-label);
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-3);
   margin: 0;
@@ -123,10 +122,10 @@ button {
 
 /* Heads each block on the case study and CV pages */
 .section-label {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--t-label);
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-3);
   margin: 0 0 1.5rem;
@@ -146,21 +145,21 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.85rem 1.6rem;
+  padding: 0.75rem 1.5rem;
   border-radius: var(--pill);
   background: var(--accent);
   color: var(--on-accent);
   font-family: var(--font-display);
   font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  transition: transform 0.4s var(--ease-back), filter 0.3s var(--ease);
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
 }
 
 .btn:hover {
-  transform: translateY(-2px) scale(1.02);
-  filter: brightness(1.06);
+  transform: translateY(-1px);
+  opacity: 0.9;
 }
 
 .btn:disabled {
@@ -174,25 +173,25 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem 1.4rem;
   border: 1px solid var(--line);
   border-radius: var(--pill);
   font-family: var(--font-display);
   font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  transition: border-color 0.35s var(--ease), background-color 0.35s var(--ease),
-    transform 0.4s var(--ease-back);
+  transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease),
+    transform 0.3s var(--ease);
 }
 
 .btn-outline:hover {
   border-color: var(--accent);
   background: var(--line-soft);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
-/* Big link with a filled dot, straight from the reference layout */
+/* Big link with a filled dot accent */
 .dot-link {
   display: inline-flex;
   align-items: center;
@@ -200,22 +199,22 @@ button {
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 0.8rem + 3.4vw, 3.4rem);
   font-weight: 500;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 
 .dot-link::before {
   content: "";
-  width: clamp(0.85em, 0.8em, 1em);
+  width: clamp(0.75em, 0.7em, 0.95em);
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--accent);
   flex-shrink: 0;
-  transition: transform 0.5s var(--ease-back);
+  transition: transform 0.3s var(--ease);
 }
 
 .dot-link:hover::before {
-  transform: scale(1.22);
+  transform: scale(1.1);
 }
 
 .dot-link.is-reversed {

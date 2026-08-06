@@ -1,26 +1,23 @@
 /* ------------------------------------------------------------------
-   Design tokens.
+   Design tokens: Warm, minimal system.
 
-   The identity is two colours: a deep espresso brown and a pale ice
-   blue. The page sits inside a rounded "card" that floats on the
-   opposite colour, so the two swap roles between themes.
+   Single accent colour (warm apricot) on a neutral warm palette.
+   Inspired by editorial, minimal design—lets the work speak.
    ------------------------------------------------------------------ */
 
 :root {
   /* Raw brand colours */
-  --espresso: #3a1a11;
-  --espresso-deep: #2a1109;
-  --espresso-soft: #4b2619;
-  --ice: #bde9f1;
-  --ice-deep: #97d5e2;
-  --ice-wash: #dff2f7;
-  --cream: #f4efe9;
+  --cream: #faf7f3;
+  --sand: #ede8e1;
+  --taupe: #2a2520;
+  --taupe-light: #6b6359;
+  --accent: #d4a574;
 
-  /* Type */
-  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  /* Type: Single modern sans-serif for minimalism */
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  /* Display scale — deliberately oversized */
+  /* Display scale — generous and clear */
   --t-mega: clamp(3.4rem, 0.2rem + 13.4vw, 12rem);
   --t-h1: clamp(2.6rem, 1rem + 6.4vw, 6rem);
   --t-h2: clamp(1.9rem, 1.1rem + 3.2vw, 3.4rem);
@@ -30,74 +27,71 @@
   --t-small: 0.875rem;
   --t-label: 0.72rem;
 
-  /* Rhythm */
+  /* Rhythm: Same responsive scales */
   --shell: 1400px;
   --shell-narrow: 940px;
   --gutter: clamp(1.1rem, 0.4rem + 2.8vw, 3.5rem);
   --section-y: clamp(4rem, 2rem + 7vw, 9rem);
 
-  /* Shape — soft, pill-heavy language */
-  --frame-radius: clamp(18px, 1.4vw, 30px);
-  --radius: 14px;
-  --radius-lg: 24px;
+  /* Shape: More minimal, less ornamental */
+  --frame-radius: clamp(12px, 1vw, 20px);
+  --radius: 8px;
+  --radius-lg: 12px;
   --pill: 999px;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-back: cubic-bezier(0.34, 1.4, 0.5, 1);
 }
 
-/* ---- Default: espresso card floating on cream --------------------- */
+/* ---- Light theme (default): Warm cream background ---------------------- */
 
 :root,
-[data-theme="dark"] {
+[data-theme="light"] {
   --page: var(--cream);
-  --surface: var(--espresso);
-  --surface-2: var(--espresso-soft);
-  --surface-3: var(--espresso-deep);
+  --surface: var(--sand);
+  --surface-2: #e0d9d0;
+  --surface-3: #f5f2ed;
 
-  --ink: var(--ice);
-  --ink-2: rgba(189, 233, 241, 0.74);
-  --ink-3: rgba(189, 233, 241, 0.52);
+  --ink: var(--taupe);
+  --ink-2: rgba(42, 37, 32, 0.74);
+  --ink-3: rgba(42, 37, 32, 0.52);
 
-  --accent: var(--ice);
-  --on-accent: var(--espresso);
+  --accent: var(--accent);
+  --on-accent: var(--cream);
 
-  --line: rgba(189, 233, 241, 0.26);
-  --line-soft: rgba(189, 233, 241, 0.14);
+  --line: rgba(42, 37, 32, 0.16);
+  --line-soft: rgba(42, 37, 32, 0.08);
 
-  --art-fill: var(--espresso-deep);
-  --art-stroke: var(--ice);
+  --art-fill: #f5f2ed;
+  --art-stroke: var(--accent);
 
-  /* Empty media slots sit lighter than the page so they stay legible */
-  --placeholder-bg: #55301f;
-  --placeholder-hatch: rgba(189, 233, 241, 0.13);
-  --placeholder-ink: rgba(189, 233, 241, 0.66);
+  --placeholder-bg: #e0d9d0;
+  --placeholder-hatch: rgba(42, 37, 32, 0.08);
+  --placeholder-ink: rgba(42, 37, 32, 0.52);
 }
 
-/* ---- Inverted: ice card floating on espresso ---------------------- */
+/* ---- Dark theme: Warm dark background ---------------------- */
 
-[data-theme="light"] {
-  --page: var(--espresso);
-  --surface: var(--ice-wash);
-  --surface-2: #cbe8ef;
-  --surface-3: #eef8fa;
+[data-theme="dark"] {
+  --page: var(--taupe);
+  --surface: #3d372f;
+  --surface-2: #4a4238;
+  --surface-3: #1f1a15;
 
-  --ink: var(--espresso);
-  --ink-2: rgba(58, 26, 17, 0.76);
-  --ink-3: rgba(58, 26, 17, 0.55);
+  --ink: var(--cream);
+  --ink-2: rgba(250, 247, 243, 0.74);
+  --ink-3: rgba(250, 247, 243, 0.52);
 
-  --accent: var(--espresso);
-  --on-accent: var(--ice-wash);
+  --accent: var(--accent);
+  --on-accent: var(--taupe);
 
-  --line: rgba(58, 26, 17, 0.24);
-  --line-soft: rgba(58, 26, 17, 0.12);
+  --line: rgba(250, 247, 243, 0.16);
+  --line-soft: rgba(250, 247, 243, 0.08);
 
-  /* --art-fill is the halo, --art-stroke the core: the core must always be
-     the colour that contrasts with --surface, so these invert per theme. */
-  --art-fill: var(--surface-3);
-  --art-stroke: var(--espresso);
+  --art-fill: #1f1a15;
+  --art-stroke: var(--accent);
 
-  --placeholder-bg: #c2e2ea;
-  --placeholder-hatch: rgba(58, 26, 17, 0.14);
-  --placeholder-ink: rgba(58, 26, 17, 0.66);
+  --placeholder-bg: #4a4238;
+  --placeholder-hatch: rgba(250, 247, 243, 0.08);
+  --placeholder-ink: rgba(250, 247, 243, 0.52);
 }
