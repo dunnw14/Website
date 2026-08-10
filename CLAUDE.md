@@ -60,6 +60,11 @@ footer, site-wide left-edge alignment, and the mobile overflow fix.
 
 Open, in rough priority order:
 
+- **Accent-coloured text fails contrast in the light theme** (1.83:1). It is
+  fine as a fill, border or small mark, but not as text. Known users:
+  `.cv-job-company`, `.csd-subhead`, `.csd-phase-name`, `.skills-card-label`,
+  and the `.footer-link` / `.csd-pager-title` hovers. Fix these when working
+  the page they sit on; see the contrast table in `TOKENS.md`.
 - **CV page detail.** Left-weighted since the alignment change, with a wide
   empty band down the right — a known trade of that fix, not a regression.
   Still carries old language: apricot uppercase employer names (AKQA, ATO)

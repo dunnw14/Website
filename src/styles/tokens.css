@@ -18,7 +18,6 @@
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* Display scale — generous and clear */
-  --t-mega: clamp(3.4rem, 0.2rem + 13.4vw, 12rem);
   /* --t-h2 is the largest type on the site: hero statement and page titles.
      A 96px step above it existed and every page title reached for it, which
      is why they all outgrew the thing they were introducing. */
@@ -60,7 +59,10 @@
   --ink-3: rgba(42, 37, 32, 0.52);
 
   --accent: var(--apricot);
-  --on-accent: var(--cream);
+  /* Apricot is the same mid-light hue in both themes, so what sits on it
+     must be dark in both. Cream here measured 2.08:1 — a WCAG failure on
+     every accent-filled surface in the primary theme. */
+  --on-accent: var(--taupe);
 
   /* A surface that sits *above* the page. Unlike --surface-N it means the
      same thing in both themes, so cards read as raised in each. */

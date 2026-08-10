@@ -61,7 +61,7 @@ Until you do, the "Download Full CV" button stays greyed out.
 
 | What you want to change | File to edit |
 | --- | --- |
-| Hero headline, intro paragraphs, scrolling tags | `content/home.json` |
+| Hero greeting, headline, intro paragraphs, scrolling tags | `content/home.json` |
 | Case study copy (all 7) | `content/case-studies.json` |
 | Skills page | `content/skills.json` |
 | CV: profile, roles, capabilities | `content/cv.json` |
@@ -135,11 +135,13 @@ src/
 
 Some details worth knowing:
 
-- **Light and dark themes** are both supported. The toggle sits in the nav, and
-  the site follows the visitor's system preference by default. Colours are all
-  defined once in `src/styles/tokens.css`.
-- **Fonts** (Fraunces and Inter) are bundled into the site rather than loaded
-  from Google, so there are no third-party requests and nothing to break.
+- **Light and dark themes** are both supported. The toggle sits in the nav.
+  The light (cream) theme is the default for a first-time visitor; after that
+  the site remembers the last choice. It does not follow the operating
+  system's dark-mode setting. Colours are all defined once in
+  `src/styles/tokens.css`.
+- **The font** (Inter) is bundled into the site rather than loaded from
+  Google, so there are no third-party requests and nothing to break.
 - **Deep links work** — `404.html` is generated at build time so that refreshing
   on a page like `/Website/cv` still loads correctly on GitHub Pages.
 - **Motion is reduced automatically** for visitors who have "reduce motion"
