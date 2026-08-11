@@ -1,0 +1,19 @@
+.bp-sketch {
+  width: 100%;
+}
+
+.bp-sketch svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.bp-sketch .lbl {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+
+.bp-sketch .ann {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
