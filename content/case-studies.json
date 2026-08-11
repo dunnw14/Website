@@ -97,6 +97,18 @@
         "workSamples": [
           {
             "type": "image",
+            "src": "media/bank-work-billio-flow-1.png",
+            "alt": "Billio prototype (1 of 2): setting up Billio, connecting the bank accounts used to pay bills, and analysing connected accounts to categorise and tally spend",
+            "caption": "The Billio prototype — setup, account connection, and spend analysis"
+          },
+          {
+            "type": "image",
+            "src": "media/bank-work-billio-flow-2.png",
+            "alt": "Billio prototype (2 of 2): bills combined into one fixed monthly payment, funds held in advance for upcoming bills, and interest saved by offsetting the home loan",
+            "caption": "The Billio prototype — one fixed payment, funds held in advance, and home loan interest saved"
+          },
+          {
+            "type": "image",
             "src": "media/bank-work-sprint-board.png",
             "alt": "Design sprint board spanning Frame, Explore, Decide, Prototype and Validate & Document, with workshop photos, sketches and testing artefacts",
             "caption": "The sprint board — framing through to validation and testing"
@@ -118,12 +130,6 @@
             "src": "media/bank-work-concept-pulse-check.png",
             "alt": "Concept design: 'Pulse Check' — tagging family spend by feeling and reviewing it together each month",
             "caption": "Concept: Pulse Check — tagging spend by feeling, reviewed together monthly"
-          },
-          {
-            "type": "image",
-            "src": "media/bank-work-billio-flow.png",
-            "alt": "Billio prototype: bills combined into one fixed monthly payment, funds held in advance for upcoming bills, and interest saved by offsetting the home loan",
-            "caption": "The Billio prototype — one fixed payment, funds held in advance, and home loan interest saved"
           }
         ]
       }
