@@ -64,8 +64,20 @@ bug being reintroduced.
 
 ## Where things stand
 
-Done and live: the design tokens, hero, case study cards, page titles and
-footer, site-wide left-edge alignment, and the mobile overflow fix.
+Done and live: the design tokens, case study cards, page titles and footer,
+site-wide left-edge alignment, and the mobile overflow fix.
+
+The Home hero visual is an animated hand-drawn "Service Blueprint" sketch
+(`src/components/ServiceBlueprintSketch.jsx`), not the earlier image collage.
+It's a faithful port of a supplied standalone SVG + Web Animations API asset:
+deterministic seeded wobble, staged draw-in over a 25s loop,
+`prefers-reduced-motion` fallback. It draws directly onto the hero's own
+background — no paper card, no border. Its ink strokes use `var(--ink)` /
+`var(--ink-2)` / `var(--ink-3)` rather than the asset's original hardcoded
+hex, specifically because those hardcoded darks were close to illegible once
+drawn straight onto the dark theme's background — the same "invisible until
+rendered" failure mode as the other bugs logged below. Check both themes
+again if this component is touched.
 
 Open, in rough priority order:
 
