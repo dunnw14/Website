@@ -94,14 +94,14 @@
       "media": {
         "cardImage": null,
         "cardImageAlt": "Major Australian Bank — Service/Product Design",
+        "hero": {
+          "type": "image",
+          "src": "media/bank-work-billio-flow.png",
+          "ratio": "3030 / 862",
+          "alt": "Billio prototype flow across all six screens: setup, connecting bank accounts, spend analysis, the combined fixed monthly payment, funds held in advance, and the home loan offset",
+          "caption": "The Billio prototype, end to end — setup through to the home loan offset"
+        },
         "workSamples": [
-          {
-            "type": "image",
-            "src": "media/bank-work-billio-flow.png",
-            "ratio": "3030 / 862",
-            "alt": "Billio prototype flow across all six screens: setup, connecting bank accounts, spend analysis, the combined fixed monthly payment, funds held in advance, and the home loan offset",
-            "caption": "The Billio prototype, end to end — setup through to the home loan offset"
-          },
           {
             "type": "image",
             "src": "media/bank-work-sprint-board.png",

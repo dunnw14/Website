@@ -42,9 +42,11 @@ export default function CaseStudyDetail() {
           <p className="csd-subtitle">{item.subtitle}</p>
         </header>
 
-        <Section label="Work Samples">
-          <Gallery items={item.media?.workSamples ?? []} label={`${item.title} work samples`} />
-        </Section>
+        {item.media?.hero ? (
+          <Section label="Work Samples">
+            <Gallery items={[item.media.hero]} label={`${item.title} hero work sample`} />
+          </Section>
+        ) : null}
 
         <Section label="Project Overview">
           <p className="csd-prose">{item.overview}</p>
@@ -93,6 +95,10 @@ export default function CaseStudyDetail() {
               </li>
             ))}
           </ol>
+        </Section>
+
+        <Section label="Work Samples">
+          <Gallery items={item.media?.workSamples ?? []} label={`${item.title} work samples`} />
         </Section>
 
         <Section label="Key Deliverables">
