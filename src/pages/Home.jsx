@@ -4,7 +4,7 @@ import Marquee from "../components/Marquee.jsx";
 import Reveal from "../components/Reveal.jsx";
 import WorkCard from "../components/WorkCard.jsx";
 import GrainField from "../components/GrainField.jsx";
-import JourneyDevice from "../components/JourneyDevice.jsx";
+import WorkCollage from "../components/WorkCollage.jsx";
 import "./Home.css";
 
 export default function Home() {
@@ -47,7 +47,7 @@ export default function Home() {
           </div>
 
           <div className="hero-visual">
-            <JourneyDevice />
+            <WorkCollage />
           </div>
         </div>
 
