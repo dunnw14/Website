@@ -10,7 +10,7 @@ available; drive it with Playwright, screenshot the affected pages, and read
 the screenshot. Uninstall Playwright again afterwards so it stays out of
 `package.json`.
 
-Three real bugs in this repo shipped or nearly shipped because output was
+Four real bugs in this repo shipped or nearly shipped because output was
 asserted rather than checked:
 
 - `--accent: var(--accent)` in both theme blocks — a custom-property cycle,
@@ -21,6 +21,15 @@ asserted rather than checked:
   theme. Only visible by loading the site with cleared storage.
 - A page title stayed apricot for four commits because a multi-file
   find-and-replace matched `.csd-back:hover` instead of `.csd-title`.
+- Case study media frames (`MediaFrame`/`Gallery` in `src/components/Media.jsx`)
+  enforce a fixed `aspect-ratio` plus `object-fit: cover`. Dropping a raw
+  screenshot in without checking its native ratio against the frame's crops
+  silently: a card thumbnail sliced clean through a slide's title mid-word,
+  and a 6-screen product flow rendered as barely two screens. Both were
+  invisible in the JSON diff, obvious only once rendered. `Gallery` items
+  accept an optional `ratio` (e.g. `"3030 / 862"`, the image's own pixel
+  width/height) so one slide can use its native ratio instead of a forced
+  crop — used for the Major Australian Bank case study's Billio flow.
 
 **On any change touching several files at once, read the resulting diff per
 file.** Do not report a multi-file edit as done on the strength of the command
@@ -80,8 +89,14 @@ Open, in rough priority order:
   consistent with the accent rule, so probably fine — but it was never a
   deliberate decision, so make one.
 
-Media is still placeholders throughout. `README.md` explains how to drop real
-images and the CV PDF in.
+The Major Australian Bank case study carries real imagery: an optional
+`media.hero` lead image (the Billio prototype, all six screens, rendered
+right under the page title with no carousel chrome since it's one item) plus
+a 4-item Work Samples carousel in its original spot (sprint board, then three
+concept explorations — Time Capsule, One Pay, Pulse Check). The other six
+case studies are still placeholders. `README.md` explains how to drop real
+images and the CV PDF in, including the optional `hero` slot and per-item
+`ratio` override.
 
 ## Workflow
 
