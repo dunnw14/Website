@@ -1,186 +1,265 @@
 /* ============================================================
-   Hero Section: Clean, linear flow
+   Hero — full-bleed, image-led, oversized type
    ============================================================ */
 
 .hero {
   position: relative;
-  padding-top: clamp(2.5rem, 1.5rem + 4vw, 5rem);
   overflow: hidden;
+  padding-block: clamp(3.5rem, 2rem + 6vw, 7rem);
 }
 
-.hero-content {
+.hero-inner {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+  align-items: center;
 }
 
-.hero-main {
-  display: flex;
-  flex-direction: column;
-}
-
-
-/* ---- Greeting ------------------------------------------------ */
-
-.hero-greeting {
-  margin-bottom: clamp(1.5rem, 1rem + 2vw, 2.5rem);
-  animation: fadeIn 0.7s var(--ease) 0.1s both;
-}
-
-/* Reads as a lead-in to the headline, not as a competing line of body copy */
-.hero-greeting-text {
-  font-size: 0.95rem;
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
   font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
   color: var(--ink-3);
-  margin: 0;
+  margin: 0 0 1.25rem;
 }
 
-/* ---- Main tagline/insight ------------------------------------ */
-
-.hero-tagline-section {
-  margin-bottom: clamp(2rem, 1.5rem + 3vw, 3.5rem);
-  animation: fadeIn 0.7s var(--ease) 0.2s both;
-}
-
-/* Tracking tightens as size grows — at display sizes the default spacing
-   reads loose, which is most of what makes big type look cheap */
-.hero-tagline {
-  font-size: var(--t-h2);
-  font-weight: 600;
-  line-height: 1.04;
-  letter-spacing: -0.035em;
+.hero-headline {
+  font-size: clamp(2.4rem, 1.5rem + 4.2vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
   color: var(--ink);
-  margin: 0;
-  max-width: 20ch;
+  margin: 0 0 1.5rem;
+  max-width: 13ch;
   text-wrap: balance;
 }
 
-/* ---- Body copy ------------------------------------------------ */
-
-.hero-copy-section {
-  margin-bottom: clamp(2rem, 1.4rem + 2.2vw, 3rem);
-  animation: fadeIn 0.7s var(--ease) 0.25s both;
-}
-
-.hero-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 1.15rem;
-  /* Long-form measure. Past ~70 characters the eye loses the line return
-     and the whole block starts reading as a wall */
-  max-width: 62ch;
-}
-
-.hero-copy p {
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  color: var(--ink-2);
-  margin: 0;
-  text-wrap: pretty;
-}
-
-/* First paragraph carries the weight; the rest support it */
-.hero-copy p:first-child {
+.hero-lede {
   font-size: var(--t-lead);
   line-height: 1.55;
-  color: var(--ink);
+  color: var(--ink-2);
+  max-width: 42ch;
+  margin: 0 0 2.25rem;
 }
 
-/* ---- Calls to action ------------------------------------------- */
-
-.hero-links {
+.hero-ctas {
   display: flex;
-  gap: 1.75rem;
   align-items: center;
-  margin-bottom: clamp(4rem, 2rem + 6vw, 7rem);
-  animation: fadeIn 0.7s var(--ease) 0.35s both;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.6rem;
+  border-radius: var(--pill);
+  background: var(--ink);
+  color: var(--page);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.4s var(--ease-back), background-color 0.35s var(--ease);
+}
+
+.hero-btn:hover {
+  transform: scale(1.045);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.hero-btn svg {
+  transition: transform 0.35s var(--ease);
+}
+
+.hero-btn:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.hero-link {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.15rem;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.hero-link:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* ---- Floating image collage --------------------------------------- */
+
+.hero-collage {
+  position: relative;
+  height: clamp(320px, 34vw, 480px);
+  display: none;
+}
+
+.hero-collage-item {
+  position: absolute;
+  width: 58%;
+  aspect-ratio: 3 / 4;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(20, 15, 10, 0.35);
+  border: 1px solid var(--line-soft);
+  transition: transform 0.5s var(--ease);
+}
+
+.hero-collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-collage-item-1 {
+  top: 0;
+  left: 8%;
+  z-index: 3;
+  transform: rotate(-4deg) translate(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -14px));
+}
+
+.hero-collage-item-2 {
+  top: 14%;
+  left: 34%;
+  z-index: 2;
+  transform: rotate(3deg) translate(calc(var(--px, 0) * 10px), calc(var(--py, 0) * 10px));
+}
+
+.hero-collage-item-3 {
+  top: 32%;
+  left: 4%;
+  z-index: 1;
+  transform: rotate(6deg) translate(calc(var(--px, 0) * -8px), calc(var(--py, 0) * 18px));
+  opacity: 0.85;
+}
+
+/* ---- Scroll cue ------------------------------------------------ */
+
+.hero-scroll-cue {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: clamp(1.5rem, 1rem + 2vw, 3rem) auto 0;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.hero-scroll-cue span {
+  width: 1px;
+  height: 28px;
+  background: var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-scroll-cue span::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  animation: scroll-cue 2.2s ease-in-out infinite;
+}
+
+@keyframes scroll-cue {
+  0% { top: -100%; }
+  50% { top: 0; }
+  100% { top: 100%; }
 }
 
 /* ============================================================
-   Selected Work Section
+   Selected Work
    ============================================================ */
 
 .home-work {
   position: relative;
   padding-block: var(--section-y);
-  overflow: hidden;
 }
 
 .home-work-head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
   margin-bottom: clamp(2rem, 1.4rem + 2vw, 3.5rem);
 }
 
-/* Sits between the hero statement and the card titles: 54 / 37 / 28.
-   It was 96px and outranked the page's own headline. */
+.home-work-eyebrow {
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
 .home-work-title {
-  font-size: var(--t-section);
-  font-weight: 600;
-  line-height: 1.1;
+  font-size: clamp(2rem, 1.3rem + 3vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.04;
   letter-spacing: -0.03em;
   color: var(--ink);
+  margin: 0 0 1.5rem;
+  max-width: 18ch;
 }
 
 .home-work-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1rem, 0.6rem + 1.6vw, 2.25rem);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 0.6rem + 1.2vw, 1.75rem);
 }
 
-.home-work-grid > .reveal {
+.home-work-item {
   display: flex;
 }
 
-.home-work-grid > .reveal > * {
+.home-work-item > * {
   width: 100%;
-}
-
-/* ============================================================
-   Animations
-   ============================================================ */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 /* ============================================================
    Responsive
    ============================================================ */
 
-@media (max-width: 900px) {
-  .hero-links {
-    flex-wrap: wrap;
+@media (min-width: 860px) {
+  .hero-collage {
+    display: block;
+  }
+}
+
+@media (max-width: 859px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 640px) {
-  .hero-links {
-    gap: 1.25rem;
-  }
-
   .home-work-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-greeting,
-  .hero-tagline-section,
-  .hero-copy-section,
-  .hero-media-section,
-  .hero-links {
+  .hero-btn,
+  .hero-btn svg,
+  .hero-collage-item,
+  .hero-scroll-cue span::after {
+    transition: none;
     animation: none;
   }
 }

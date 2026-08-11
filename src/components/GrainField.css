@@ -1,0 +1,60 @@
+.grain-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.grain-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(min(12vw, 140px));
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.grain-blob-a {
+  top: -18%;
+  right: -10%;
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  animation: drift-a 26s ease-in-out infinite;
+}
+
+.grain-blob-b {
+  bottom: -22%;
+  left: -12%;
+  width: 46vw;
+  height: 46vw;
+  background: radial-gradient(circle, var(--ink) 0%, transparent 72%);
+  opacity: 0.18;
+  animation: drift-b 32s ease-in-out infinite;
+}
+
+@keyframes drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-4%, 5%) scale(1.08); }
+}
+
+@keyframes drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5%, -4%) scale(1.05); }
+}
+
+.grain-noise {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain-blob-a,
+  .grain-blob-b {
+    animation: none;
+  }
+}
