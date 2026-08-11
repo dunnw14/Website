@@ -97,27 +97,33 @@
         "workSamples": [
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Australian Bank work sample 1",
-            "caption": null
+            "src": "media/bank-work-sprint-board.png",
+            "alt": "Design sprint board spanning Frame, Explore, Decide, Prototype and Validate & Document, with workshop photos, sketches and testing artefacts",
+            "caption": "The sprint board — framing through to validation and testing"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Australian Bank work sample 2",
-            "caption": null
+            "src": "media/bank-work-concept-time-capsule.png",
+            "alt": "Concept design: 'Time Capsule' — a locked family savings goal that grows through contributions and surprise rewards",
+            "caption": "Concept: Time Capsule — a locked family savings goal with surprise rewards"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Australian Bank work sample 3",
-            "caption": null
+            "src": "media/bank-work-concept-one-pay.png",
+            "alt": "Concept design: 'One Pay' — consolidating annual bills into one smoothed monthly payment",
+            "caption": "Concept: One Pay — bills consolidated into a single smoothed monthly payment"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Australian Bank work sample 4",
-            "caption": null
+            "src": "media/bank-work-concept-pulse-check.png",
+            "alt": "Concept design: 'Pulse Check' — tagging family spend by feeling and reviewing it together each month",
+            "caption": "Concept: Pulse Check — tagging spend by feeling, reviewed together monthly"
+          },
+          {
+            "type": "image",
+            "src": "media/bank-work-billio-flow.png",
+            "alt": "Billio prototype: bills combined into one fixed monthly payment, funds held in advance for upcoming bills, and interest saved by offsetting the home loan",
+            "caption": "The Billio prototype — one fixed payment, funds held in advance, and home loan interest saved"
           }
         ]
       }
