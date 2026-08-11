@@ -22,6 +22,13 @@ says "placeholder"). To fill one in:
 ```jsonc
 "media": {
   "cardImage": "media/bank-card.jpg",        // thumbnail on the Case Studies grid
+  "hero": {                                  // optional — a lead image/video right under the page title
+    "type": "image",
+    "src": "media/bank-hero.jpg",
+    "alt": "The finished prototype, full flow",
+    "caption": "The finished prototype, end to end",
+    "ratio": "3030 / 862"                    // optional — see below
+  },
   "workSamples": [
     {
       "type": "image",
@@ -44,6 +51,17 @@ Notes:
   still image shown before playback.
 - You can add or remove items from a `workSamples` list freely — the carousel
   counter adjusts automatically.
+- `hero` is optional and separate from `workSamples`. When set, it renders as
+  a single lead image right under the page title, above "Project Overview" —
+  no carousel controls, since it's just the one item. Leave the key out
+  entirely and the page reads exactly as it does without it, with Work
+  Samples in its usual spot further down.
+- Any media item — `hero` or a `workSamples` entry — can set an optional
+  `ratio` (e.g. `"3030 / 862"`, the image's own pixel width and height) to
+  override the default 16:10 frame. Every image and video frame on the site
+  is a fixed aspect ratio with the image cropped to fill it, so a photo or
+  screenshot much wider or taller than usual will get cropped unless you set
+  `ratio` to match it.
 
 ### Adding your CV PDF
 
