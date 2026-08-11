@@ -1,39 +1,19 @@
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { home, caseStudies } from "../data/content.js";
-import { assetUrl } from "../components/Media.jsx";
 import Marquee from "../components/Marquee.jsx";
 import Reveal from "../components/Reveal.jsx";
 import WorkCard from "../components/WorkCard.jsx";
 import GrainField from "../components/GrainField.jsx";
+import JourneyDevice from "../components/JourneyDevice.jsx";
 import "./Home.css";
-
-const COLLAGE = [
-  { src: "media/bank-work-concept-one-pay.png", alt: "" },
-  { src: "media/bank-work-concept-time-capsule.png", alt: "" },
-  { src: "media/bank-work-concept-pulse-check.png", alt: "" },
-];
 
 export default function Home() {
   const { hero, tagTicker } = home;
   const featured = caseStudies.slice(0, 4);
-  const heroRef = useRef(null);
-
-  // Subtle pointer-driven parallax on the floating image stack. Purely
-  // decorative, so a missing/failed pointer event just leaves it static.
-  const handlePointerMove = (e) => {
-    const node = heroRef.current;
-    if (!node) return;
-    const rect = node.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    node.style.setProperty("--px", x.toFixed(3));
-    node.style.setProperty("--py", y.toFixed(3));
-  };
 
   return (
     <>
-      <section className="hero" ref={heroRef} onPointerMove={handlePointerMove}>
+      <section className="hero">
         <GrainField />
 
         <div className="hero-inner shell">
@@ -66,12 +46,8 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="hero-collage" aria-hidden="true">
-            {COLLAGE.map((item, i) => (
-              <div className={`hero-collage-item hero-collage-item-${i + 1}`} key={item.src}>
-                <img src={assetUrl(item.src)} alt="" loading="eager" />
-              </div>
-            ))}
+          <div className="hero-visual">
+            <JourneyDevice />
           </div>
         </div>
 

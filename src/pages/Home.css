@@ -94,52 +94,12 @@
   border-color: var(--ink);
 }
 
-/* ---- Floating image collage --------------------------------------- */
+/* ---- Hero visual (JourneyDevice) ----------------------------------- */
 
-.hero-collage {
+.hero-visual {
   position: relative;
-  height: clamp(320px, 34vw, 480px);
+  height: clamp(340px, 34vw, 480px);
   display: none;
-}
-
-.hero-collage-item {
-  position: absolute;
-  width: 58%;
-  aspect-ratio: 3 / 4;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 30px 60px -20px rgba(20, 15, 10, 0.35);
-  border: 1px solid var(--line-soft);
-  transition: transform 0.5s var(--ease);
-}
-
-.hero-collage-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.hero-collage-item-1 {
-  top: 0;
-  left: 8%;
-  z-index: 3;
-  transform: rotate(-4deg) translate(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -14px));
-}
-
-.hero-collage-item-2 {
-  top: 14%;
-  left: 34%;
-  z-index: 2;
-  transform: rotate(3deg) translate(calc(var(--px, 0) * 10px), calc(var(--py, 0) * 10px));
-}
-
-.hero-collage-item-3 {
-  top: 32%;
-  left: 4%;
-  z-index: 1;
-  transform: rotate(6deg) translate(calc(var(--px, 0) * -8px), calc(var(--py, 0) * 18px));
-  opacity: 0.85;
 }
 
 /* ---- Scroll cue ------------------------------------------------ */
@@ -231,7 +191,7 @@
    ============================================================ */
 
 @media (min-width: 860px) {
-  .hero-collage {
+  .hero-visual {
     display: block;
   }
 }
@@ -257,7 +217,6 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-btn,
   .hero-btn svg,
-  .hero-collage-item,
   .hero-scroll-cue span::after {
     transition: none;
     animation: none;
