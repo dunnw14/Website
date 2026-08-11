@@ -115,7 +115,7 @@ export function Gallery({ items = [], label = "Work samples" }) {
               // Keeps hidden slides out of the tab order.
               inert={i !== index ? "" : undefined}
             >
-              <MediaFrame item={item} label={`Work sample ${i + 1}`} />
+              <MediaFrame item={item} ratio={item.ratio} label={`Work sample ${i + 1}`} />
             </div>
           ))}
         </div>
