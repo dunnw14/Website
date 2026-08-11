@@ -3,30 +3,24 @@ import { assetUrl } from "./Media.jsx";
 import "./WorkCollage.css";
 
 /**
- * Real project imagery in the hero, arranged as an overlapping collage
- * rather than a tidy row — inspired by portfolio sites that let the work
- * itself carry the hero. Cycles through crops from every case study project
- * (not just one) so a visitor who lingers, or reloads, sees a different
- * pairing. Every crop was picked for sharpness/composition over anything
- * else available in that project's source material — several projects had
- * options that didn't make the cut (too low-res, or cut off content).
+ * Real project imagery in the hero: two clean, axis-aligned landscape
+ * frames — one larger, one smaller overlapping its corner — cycling
+ * through crops from every case study project. Every crop here is
+ * naturally landscape (or cropped to read as one); narrow portrait phone
+ * screens live in the case study pages, not here, since forcing them into
+ * a landscape frame just cropped away the content that made them legible.
  */
 const POOL = [
-  { src: "media/hero/time-capsule.png", caption: "Banking · Product design" },
-  { src: "media/hero/kfc-presenting.jpg", caption: "QSR · CX strategy" },
   { src: "media/hero/oroton-campaign.jpg", caption: "Fashion retail · Digital product" },
-  { src: "media/hero/esssuper-cliff.jpg", caption: "Superannuation · Experience design" },
-  { src: "media/hero/fg-tax-ui.png", caption: "Government · Service design" },
-  { src: "media/hero/billio-offset.png", caption: "Banking · Product design" },
-  { src: "media/hero/kfc-review.jpg", caption: "QSR · CX strategy" },
-  { src: "media/hero/oroton-qr.jpg", caption: "Fashion retail · Digital product" },
+  { src: "media/hero/kfc-presenting.jpg", caption: "QSR · CX strategy" },
   { src: "media/hero/aussuper-family.jpg", caption: "Superannuation · Experience design" },
-  { src: "media/hero/officeworks-interior.jpg", caption: "Retail · Experience design" },
-  { src: "media/hero/one-pay.png", caption: "Banking · Product design" },
-  { src: "media/hero/kfc-drivethru.jpg", caption: "QSR · CX strategy" },
+  { src: "media/hero/fg-tax-ui.png", caption: "Government · Service design" },
   { src: "media/hero/eco-architecture.jpg", caption: "Retail · Customer strategy" },
-  { src: "media/hero/pulse-check.png", caption: "Banking · Product design" },
-  { src: "media/hero/billio-payment.png", caption: "Banking · Product design" },
+  { src: "media/hero/oroton-qr.jpg", caption: "Fashion retail · Digital product" },
+  { src: "media/hero/kfc-review.jpg", caption: "QSR · CX strategy" },
+  { src: "media/hero/esssuper-cliff.jpg", caption: "Superannuation · Experience design" },
+  { src: "media/hero/billio-landscape.png", caption: "Banking · Product design" },
+  { src: "media/hero/officeworks-interior.jpg", caption: "Retail · Experience design" },
 ];
 
 const INTERVAL_MS = 4200;
@@ -47,8 +41,6 @@ export default function WorkCollage() {
 
   return (
     <div className="work-collage" aria-hidden="true">
-      <span className="work-collage-index">01</span>
-
       <div className="work-collage-tile work-collage-tile-a">
         <img key={a.src} src={assetUrl(a.src)} alt="" loading="eager" />
       </div>
