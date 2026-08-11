@@ -32,6 +32,16 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: wc-fade-in 0.8s var(--ease) both;
+}
+
+@keyframes wc-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .work-collage-tile-a {
@@ -61,4 +71,12 @@
   font-style: italic;
   font-size: 0.85rem;
   color: var(--ink-2);
+  animation: wc-fade-in 0.5s var(--ease) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-collage-tile img,
+  .work-collage-caption {
+    animation: none;
+  }
 }
