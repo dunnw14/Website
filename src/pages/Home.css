@@ -5,7 +5,8 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(3.5rem, 2rem + 6vw, 7rem);
+  padding-top: clamp(3.5rem, 2rem + 6vw, 7rem);
+  padding-bottom: clamp(2rem, 1.2rem + 4vw, 4.5rem);
 }
 
 .hero-inner {
@@ -100,48 +101,6 @@
   display: none;
 }
 
-/* ---- Scroll cue ------------------------------------------------ */
-
-.hero-scroll-cue {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin: clamp(1.5rem, 1rem + 2vw, 3rem) auto 0;
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-
-.hero-scroll-cue span {
-  width: 1px;
-  height: 28px;
-  background: var(--line);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-scroll-cue span::after {
-  content: "";
-  position: absolute;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--accent);
-  animation: scroll-cue 2.2s ease-in-out infinite;
-}
-
-@keyframes scroll-cue {
-  0% { top: -100%; }
-  50% { top: 0; }
-  100% { top: 100%; }
-}
-
 /* ============================================================
    Selected Work
    ============================================================ */
@@ -214,8 +173,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-btn,
-  .hero-btn svg,
-  .hero-scroll-cue span::after {
+  .hero-btn svg {
     transition: none;
     animation: none;
   }
