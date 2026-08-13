@@ -220,24 +220,55 @@
         "cardImage": null,
         "cardImageAlt": "Global Fast Food Chain — CX Digital Transformation",
         "cardIllustration": "media/illustration-qsr.svg",
+        "hero": {
+          "type": "image",
+          "src": "media/qsr-hero-all-journeys.png",
+          "ratio": "2400 / 1474",
+          "alt": "The 'All Journeys' service blueprint board, spanning Pre-Order, Order, Enjoy and Post Order across frontstage, backstage and programs of work",
+          "caption": "The service blueprint I created — the single source of truth behind the CX strategy transformation"
+        },
         "workSamples": [
           {
             "type": "image",
-            "src": null,
-            "alt": "Global Fast Food Chain work sample 1",
-            "caption": null
+            "src": "media/qsr-work-current-state-map.png",
+            "ratio": "2629 / 2017",
+            "alt": "Current state map of the KFC omnichannel experience, showing friction points and customer and team member journeys across Pre-Order, Order, Enjoy and Post Order",
+            "caption": "The current state map — friction points across the omnichannel journey"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Global Fast Food Chain work sample 2",
-            "caption": null
+            "src": "media/qsr-work-roadmap.png",
+            "ratio": "2200 / 1237",
+            "alt": "3-year CX strategy roadmap showing Step-by-Step, Delivery 2.0, Applied Learning, Pocket Order, Drive-Thru 2.0 and Valued Customer initiatives sequenced across 2022 to 2024",
+            "caption": "The 3-year roadmap — initiatives sequenced across every workstream"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Global Fast Food Chain work sample 3",
-            "caption": null
+            "src": "media/qsr-work-applied-learning.png",
+            "ratio": "2200 / 1237",
+            "alt": "Applied Learning concept: real-world training scenarios for team members, shown as an illustrated kitchen with staff learning pathways on a phone and a performance dashboard on a tablet",
+            "caption": "Concept: Applied Learning — real-world training scenarios for team members"
+          },
+          {
+            "type": "image",
+            "src": "media/qsr-work-step-by-step.png",
+            "ratio": "2200 / 1237",
+            "alt": "Step-by-Step concept: a staged packing station with order tracking and packaging label screens",
+            "caption": "Concept: Step-by-Step — staged packing with order tracking and packaging labels"
+          },
+          {
+            "type": "image",
+            "src": "media/qsr-work-delivery-2-0.png",
+            "ratio": "2200 / 1237",
+            "alt": "Delivery 2.0 concept: a dedicated driver zone showing order-ready notifications and a delivery driver picking up an order",
+            "caption": "Concept: Delivery 2.0 — a dedicated driver zone for accurate, trusted handoffs"
+          },
+          {
+            "type": "image",
+            "src": "media/qsr-work-pocket-order.png",
+            "ratio": "2200 / 1237",
+            "alt": "Pocket Order concept: a customer scanning a QR code to order and track their meal on their own phone, with an accuracy check prompt",
+            "caption": "Concept: Pocket Order — in-store QR ordering and tracking on a customer's own phone"
           }
         ]
       }
