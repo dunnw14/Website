@@ -22,8 +22,8 @@ says "placeholder"). To fill one in:
 ```jsonc
 "media": {
   "cardImage": "media/bank-card.jpg",        // thumbnail on the Case Studies grid
-  "cardIllustration": "media/bank-mark.png", // shown instead of cardImage when that's still null —
-                                              // a spot illustration on the card's curated gradient
+  "cardIllustration": "media/bank-mark.svg",  // shown instead of cardImage when that's still null —
+                                              // a full-card line illustration over the curated gradient
   "hero": {                                  // optional — a lead image/video right under the page title
     "type": "image",
     "src": "media/bank-hero.jpg",
@@ -48,9 +48,10 @@ Notes:
   at a time.
 - `cardIllustration` only renders when `cardImage` is still `null` — once you
   add a real photo as `cardImage`, that takes over the card and the
-  illustration stops showing. Use a transparent PNG in light-on-dark line art;
-  the card is always styled dark (dark scrim, light text) regardless of the
-  site's theme toggle, so a dark-line illustration would disappear into it.
+  illustration stops showing. Use an SVG drawn to roughly a 4:5 ratio (the
+  card's own ratio) in light-on-dark line art; the card is always styled dark
+  (dark scrim, light text) regardless of the site's theme toggle, so a
+  dark-line illustration would disappear into it.
 - `alt` is the description read aloud by screen readers. Worth filling in.
 - `caption` is optional text shown under the image; leave as `null` for none.
 - For video, set `"type": "video"` and point `src` at either an `.mp4` in
