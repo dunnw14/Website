@@ -94,7 +94,7 @@
       "media": {
         "cardImage": null,
         "cardImageAlt": "Major Australian Bank — Service/Product Design",
-        "cardIllustration": "media/illustration-bank.png",
+        "cardIllustration": "media/illustration-bank.svg",
         "hero": {
           "type": "image",
           "src": "media/bank-work-billio-flow.png",
@@ -219,7 +219,7 @@
       "media": {
         "cardImage": null,
         "cardImageAlt": "Global Fast Food Chain — CX Digital Transformation",
-        "cardIllustration": "media/illustration-qsr.png",
+        "cardIllustration": "media/illustration-qsr.svg",
         "workSamples": [
           {
             "type": "image",
@@ -325,7 +325,7 @@
       "media": {
         "cardImage": null,
         "cardImageAlt": "Major Australian Super Fund — Service Design",
-        "cardIllustration": "media/illustration-super-fund.png",
+        "cardIllustration": "media/illustration-super-fund.svg",
         "workSamples": [
           {
             "type": "image",
@@ -426,7 +426,7 @@
       "media": {
         "cardImage": null,
         "cardImageAlt": "Major Luxury Retailer — CX Strategy & E-comm Experience Design",
-        "cardIllustration": "media/illustration-luxury-retail.png",
+        "cardIllustration": "media/illustration-luxury-retail.svg",
         "workSamples": [
           {
             "type": "image",
@@ -546,7 +546,7 @@
       "media": {
         "cardImage": null,
         "cardImageAlt": "Federal Government Agency — CX Digital Transformation & Service Design",
-        "cardIllustration": "media/illustration-government-tax.png",
+        "cardIllustration": "media/illustration-government-tax.svg",
         "workSamples": [
           {
             "type": "image",
@@ -660,7 +660,7 @@
       "media": {
         "cardImage": null,
         "cardImageAlt": "Major Australian Retailer — Service Design",
-        "cardIllustration": "media/illustration-back-to-school.png",
+        "cardIllustration": "media/illustration-back-to-school.svg",
         "workSamples": [
           {
             "type": "image",
@@ -778,7 +778,7 @@
       "media": {
         "cardImage": null,
         "cardImageAlt": "Luxury Architecture Brand — CX Strategy & Service Design",
-        "cardIllustration": "media/illustration-architecture.png",
+        "cardIllustration": "media/illustration-architecture.svg",
         "workSamples": [
           {
             "type": "image",
