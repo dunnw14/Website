@@ -3,7 +3,21 @@
 Conventions for this repo, written down because sessions start cold and
 these were expensive to arrive at.
 
+## Default workflow
+
+- Default: push to the branch and give the Vercel preview URL. Don't wait
+  to be asked — after committing, push and report back the preview link
+  (see "Workflow" below for how the alias is derived).
+- Don't screenshot or read images unless explicitly asked. This overrides
+  the "Verify before claiming" section below by default — treat visual
+  verification as opt-in, not automatic.
+- If asked for screenshots, write them to `/screenshots/` and stop. Never
+  read them back into context.
+
 ## Verify before claiming
+
+Only do the following when the user has asked for visual verification —
+see "Default workflow" above; it is not the default anymore.
 
 Render the page and look at it before saying a change worked. Chromium is
 available; drive it with Playwright, screenshot the affected pages, and read
