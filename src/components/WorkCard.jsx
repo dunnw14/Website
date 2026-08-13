@@ -22,7 +22,9 @@ export default function WorkCard({ item, index = 0 }) {
         {src ? (
           <img className="wc-img" src={src} alt={item.media?.cardImageAlt ?? ""} loading="lazy" />
         ) : illustrationSrc ? (
-          <img className="wc-illustration" src={illustrationSrc} alt="" aria-hidden="true" loading="lazy" />
+          <div className="wc-illustration-frame">
+            <img className="wc-illustration" src={illustrationSrc} alt="" aria-hidden="true" loading="lazy" />
+          </div>
         ) : null}
         <div className="wc-scrim" aria-hidden="true" />
         <span className="wc-number" aria-hidden="true">
