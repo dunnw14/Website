@@ -49,10 +49,10 @@
    artwork within that. */
 .wc-illustration-frame {
   position: absolute;
-  top: 9%;
-  left: 8%;
-  right: 8%;
-  bottom: 48%;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 47%;
 }
 
 .wc-illustration {
