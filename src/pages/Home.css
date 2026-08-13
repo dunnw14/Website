@@ -107,7 +107,8 @@
 
 .home-work {
   position: relative;
-  padding-block: var(--section-y);
+  padding-top: clamp(2.5rem, 1rem + 4vw, 5.5rem);
+  padding-bottom: var(--section-y);
 }
 
 .home-work-head {
