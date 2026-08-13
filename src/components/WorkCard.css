@@ -36,11 +36,10 @@
   transform: scale(1.07);
 }
 
-/* Line illustration: the source SVGs are drawn to roughly the card's own 4:5
-   ratio, but their linework runs close to the bottom of that frame — at
-   narrower card widths the title wraps to two lines and would collide with
-   it, so the box is capped well short of the title/tags zone instead of
-   filling the card the way cardImage does. */
+/* Line illustration: roughly square source art, capped to the top ~62% of
+   the card so it stays clear of the title/tags zone at every breakpoint —
+   at full-bleed, narrower cards wrap the title to two lines and the
+   linework crosses straight through it (worst on Home's 4-column grid). */
 .wc-illustration {
   position: absolute;
   top: 0;
@@ -49,11 +48,12 @@
   height: 62%;
   object-fit: contain;
   object-position: center top;
+  opacity: 0.92;
   transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .wc:hover .wc-illustration {
-  transform: scale(1.07);
+  transform: scale(1.045);
 }
 
 .wc-scrim {
