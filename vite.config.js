@@ -4,11 +4,14 @@ import { copyFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 /**
- * GitHub Pages serves this project from https://<user>.github.io/Website/
- * so every asset URL needs the /Website/ prefix. If you later point a custom
- * domain at the site (or rename the repo), change `base` to match.
+ * GitHub Pages serves this project from https://<user>.github.io/Website/,
+ * so every asset URL needs the /Website/ prefix there. Vercel (production
+ * and preview deployments alike) serves from the domain root, and sets the
+ * VERCEL env var during its build, so we key off that instead of hardcoding
+ * one host. If you later point a custom domain at the GitHub Pages site,
+ * change the fallback below to match.
  */
-const BASE = "/Website/";
+const BASE = process.env.VERCEL ? "/" : "/Website/";
 
 /**
  * The site uses client-side routing, but GitHub Pages only knows about real
