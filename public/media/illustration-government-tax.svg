@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 668 835" fill="none">
+  <g stroke="#E8E3D5" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    
+    <rect x="184" y="166" width="300" height="365" rx="22"/>
+    <path d="M228 215 L440 215"/>
+    <path d="M228 245 L391 245"/>
+    <circle cx="239" cy="309" r="22"/>
+    <path d="M228 309 L236 317 L252 299"/>
+    <path d="M279 301 L432 301"/>
+    <path d="M279 328 L397 328"/>
+    <circle cx="239" cy="390" r="22"/>
+    <path d="M228 390 L236 398 L252 380"/>
+    <path d="M279 382 L432 382"/>
+    <path d="M279 409 L370 409"/>
+    <circle cx="239" cy="471" r="22"/>
+    <path d="M228 471 L236 479 L252 461"/>
+    <path d="M279 463 L418 463"/>
+    <path d="M124 260 C83 285 73 329 91 363 C109 397 147 406 180 393"/>
+    <path d="M91 363 C121 342 149 340 181 353"/>
+    <path d="M484 548 C526 526 550 490 547 452"/>
+    <path d="M547 452 L531 464 M547 452 L548 473"/>
+    <path d="M142 528 C190 558 238 570 289 564"/>
+    <path d="M355 584 C411 587 463 572 504 545"/>
+    <path d="M338 206 C351 191 369 185 386 190 C404 196 414 212 411 229"/>
+
+  </g>
+</svg>
