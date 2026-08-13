@@ -5,10 +5,11 @@ import { resolve } from "node:path";
 
 /**
  * GitHub Pages serves this project from https://<user>.github.io/Website/
- * so every asset URL needs the /Website/ prefix. If you later point a custom
- * domain at the site (or rename the repo), change `base` to match.
+ * so every asset URL needs the /Website/ prefix. Vercel (used for PR
+ * previews) serves from the domain root instead, so it sets its own `VERCEL`
+ * env var during the build — use that to pick the right base.
  */
-const BASE = "/Website/";
+const BASE = process.env.VERCEL ? "/" : "/Website/";
 
 /**
  * The site uses client-side routing, but GitHub Pages only knows about real

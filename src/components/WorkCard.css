@@ -22,6 +22,8 @@
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #2a2520;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 .wc-img {
@@ -34,6 +36,37 @@
 
 .wc:hover .wc-img {
   transform: scale(1.07);
+}
+
+/* Line illustration: .wc-media is a two-row grid (1fr for the picture,
+   auto for the text), so the frame gets whatever room the title/tags
+   *don't* need — a one-line title leaves a much bigger illustration than
+   a three-line one, rather than every card sharing one fixed-percentage
+   box sized for the tightest title. The frame centres its content with
+   flexbox instead of insets: giving a *replaced* element (the img) insets
+   on opposing edges with no explicit width/height makes most engines
+   shrink-to-fit it by intrinsic ratio and anchor it to one edge instead
+   of centring it, which is what flexbox is for. */
+.wc-illustration-frame {
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14% 8% 0;
+}
+
+.wc-illustration {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.92;
+  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wc:hover .wc-illustration {
+  transform: scale(1.045);
 }
 
 .wc-scrim {
@@ -90,10 +123,10 @@
 }
 
 .wc-copy {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  /* Positioned (with no offset) purely so it stacks above the absolutely
+     positioned scrim/number/arrow by DOM order — an in-flow (static) grid
+     item would otherwise paint below them regardless of DOM order. */
+  position: relative;
   padding: clamp(1.1rem, 0.8rem + 1vw, 1.75rem);
   transform: translateY(6px);
   transition: transform 0.5s var(--ease);
@@ -153,13 +186,15 @@
 
 @media (prefers-reduced-motion: reduce) {
   .wc-img,
+  .wc-illustration,
   .wc-scrim,
   .wc-arrow,
   .wc-copy {
     transition: none;
   }
 
-  .wc:hover .wc-img {
+  .wc:hover .wc-img,
+  .wc:hover .wc-illustration {
     transform: none;
   }
 }

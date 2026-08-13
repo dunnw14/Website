@@ -50,11 +50,6 @@ export default function Home() {
             <ServiceBlueprintSketch />
           </div>
         </div>
-
-        <div className="hero-scroll-cue" aria-hidden="true">
-          <span />
-          Scroll
-        </div>
       </section>
 
       <Marquee items={tagTicker} />

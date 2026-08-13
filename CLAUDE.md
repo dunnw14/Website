@@ -10,7 +10,7 @@ available; drive it with Playwright, screenshot the affected pages, and read
 the screenshot. Uninstall Playwright again afterwards so it stays out of
 `package.json`.
 
-Four real bugs in this repo shipped or nearly shipped because output was
+Five real bugs in this repo shipped or nearly shipped because output was
 asserted rather than checked:
 
 - `--accent: var(--accent)` in both theme blocks — a custom-property cycle,
@@ -30,6 +30,15 @@ asserted rather than checked:
   accept an optional `ratio` (e.g. `"3030 / 862"`, the image's own pixel
   width/height) so one slide can use its native ratio instead of a forced
   crop — used for the Major Australian Bank case study's Billio flow.
+- Centring an absolutely positioned `<img>` with `left:0; right:0` (no
+  explicit `width`) does not fill-and-centre it the way it would a `<div>`.
+  For a replaced element, browsers shrink-to-fit the width to the image's
+  own intrinsic ratio and anchor it to `left:0`, silently dropping `right:0`
+  — so the image sits flush left with unclaimed space on the right, not
+  centred. Looked plausible in the CSS, wrong the moment it rendered. Fix:
+  wrap it in a plain `<div>` sized by the insets (that isn't a replaced
+  element, so it fills correctly) and let the `img` fill that frame at
+  100%/100%. See `.wc-illustration-frame` in `src/components/WorkCard.css`.
 
 **On any change touching several files at once, read the resulting diff per
 file.** Do not report a multi-file edit as done on the strength of the command
@@ -106,9 +115,21 @@ The Major Australian Bank case study carries real imagery: an optional
 right under the page title with no carousel chrome since it's one item) plus
 a 4-item Work Samples carousel in its original spot (sprint board, then three
 concept explorations — Time Capsule, One Pay, Pulse Check). The other six
-case studies are still placeholders. `README.md` explains how to drop real
-images and the CV PDF in, including the optional `hero` slot and per-item
-`ratio` override.
+case studies' detail-page `hero`/`workSamples` slots are still placeholders.
+`README.md` explains how to drop real images and the CV PDF in, including the
+optional `hero` slot and per-item `ratio` override.
+
+All 7 work cards (Home's featured grid and the full Case Studies grid — both
+render through `WorkCard.jsx`) have a client-supplied line illustration via
+`media.cardIllustration`, one per case study, vector-traced from the
+client's own reference art (not the site's hand-drawn sketch style). Source
+SVGs ship as `fill="currentColor"`, which only resolves against page CSS for
+*inline* SVG — these load through a plain `<img>`, an isolated context where
+that falls back to black, so each file in `public/media/illustration-*.svg`
+has its fill baked in as a literal colour instead. `.wc-media` is a two-row
+CSS grid (`1fr` illustration, `auto` title/tags) so each card's illustration
+fills whatever room its own title doesn't need, rather than every card
+sharing one fixed-size box tuned for the longest title.
 
 ## Workflow
 
@@ -122,3 +143,13 @@ branch for bookmarks.
 
 Deploys run on push to `main` via `.github/workflows/deploy.yml`. Wait for the
 run to report `success` before telling the user something is live.
+
+PRs get a Vercel preview deployment (posted as a PR comment, aliased to
+`website-git-<branch>-will13-a645.vercel.app`). GitHub Pages serves the site
+from `/Website/`, but Vercel serves previews from the domain root — so
+`vite.config.js`'s `base` switches on Vercel's own `VERCEL` build env var
+(`process.env.VERCEL ? "/" : "/Website/"`). A hardcoded `/Website/` base
+renders a completely blank Vercel preview (every asset 404s), invisible in
+the diff and only obvious once the preview URL is actually opened.
+`vercel.json` adds the SPA rewrite Vercel needs for deep links, mirroring
+what the GitHub Pages `404.html` fallback does there.

@@ -12,6 +12,7 @@ const GRADIENT_COUNT = 6;
  */
 export default function WorkCard({ item, index = 0 }) {
   const src = item.media?.cardImage ? assetUrl(item.media.cardImage) : null;
+  const illustrationSrc = item.media?.cardIllustration ? assetUrl(item.media.cardIllustration) : null;
   const number = String(index + 1).padStart(2, "0");
   const gradientClass = `wc-gradient-${(index % GRADIENT_COUNT) + 1}`;
 
@@ -20,6 +21,10 @@ export default function WorkCard({ item, index = 0 }) {
       <div className={`wc-media ${src ? "" : gradientClass}`}>
         {src ? (
           <img className="wc-img" src={src} alt={item.media?.cardImageAlt ?? ""} loading="lazy" />
+        ) : illustrationSrc ? (
+          <div className="wc-illustration-frame">
+            <img className="wc-illustration" src={illustrationSrc} alt="" aria-hidden="true" loading="lazy" />
+          </div>
         ) : null}
         <div className="wc-scrim" aria-hidden="true" />
         <span className="wc-number" aria-hidden="true">

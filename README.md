@@ -22,6 +22,8 @@ says "placeholder"). To fill one in:
 ```jsonc
 "media": {
   "cardImage": "media/bank-card.jpg",        // thumbnail on the Case Studies grid
+  "cardIllustration": "media/bank-mark.svg", // shown instead of cardImage when that's still null —
+                                              // a spot illustration on the card's curated gradient
   "hero": {                                  // optional — a lead image/video right under the page title
     "type": "image",
     "src": "media/bank-hero.jpg",
@@ -44,6 +46,13 @@ Notes:
 
 - Any slot left as `null` keeps showing a placeholder — you can fill them in one
   at a time.
+- `cardIllustration` only renders when `cardImage` is still `null` — once you
+  add a real photo as `cardImage`, that takes over the card and the
+  illustration stops showing. Use an SVG with the fill colour baked in as a
+  literal value, not `currentColor` — the browser renders it through a plain
+  `<img>` tag, which doesn't inherit CSS, so `currentColor` resolves to black
+  instead of following the page. Use a light colour: the card is always
+  styled dark (dark scrim, light text) regardless of the site's theme toggle.
 - `alt` is the description read aloud by screen readers. Worth filling in.
 - `caption` is optional text shown under the image; leave as `null` for none.
 - For video, set `"type": "video"` and point `src` at either an `.mp4` in
