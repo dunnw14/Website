@@ -36,6 +36,24 @@
   transform: scale(1.07);
 }
 
+/* Spot illustration: sits whole (never cropped) in the upper portion of the
+   card, clear of the title/tags that anchor to the bottom. */
+.wc-illustration {
+  position: absolute;
+  top: 9%;
+  left: 11%;
+  right: 11%;
+  height: 59%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.92;
+  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wc:hover .wc-illustration {
+  transform: scale(1.045);
+}
+
 .wc-scrim {
   position: absolute;
   inset: 0;
@@ -153,13 +171,15 @@
 
 @media (prefers-reduced-motion: reduce) {
   .wc-img,
+  .wc-illustration,
   .wc-scrim,
   .wc-arrow,
   .wc-copy {
     transition: none;
   }
 
-  .wc:hover .wc-img {
+  .wc:hover .wc-img,
+  .wc:hover .wc-illustration {
     transform: none;
   }
 }
