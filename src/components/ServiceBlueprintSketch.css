@@ -1,5 +1,7 @@
 .bp-sketch {
   width: 100%;
+  transform: scale(1.2);
+  transform-origin: center;
 }
 
 .bp-sketch svg {
