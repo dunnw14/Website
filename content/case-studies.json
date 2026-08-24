@@ -741,30 +741,34 @@
         "cardImage": null,
         "cardImageAlt": "Major Australian Retailer — Service Design",
         "cardIllustration": "media/illustration-back-to-school.svg",
+        "hero": {
+          "type": "image",
+          "src": "media/bts-hero-education-blueprint.png",
+          "ratio": "4481 / 1791",
+          "alt": "Education Service Experience Blueprint spanning Engagement, Quotation, Order, Fulfilment and Post Sale, mapped separately for the CES, Parent Pay and SLS journeys",
+          "caption": "The full Education Service Experience Blueprint — CES, Parent Pay and SLS journeys mapped end to end"
+        },
         "workSamples": [
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Australian Retailer work sample 1",
-            "caption": null
+            "src": "media/bts-work-blueprint-workshop.png",
+            "ratio": "1024 / 629",
+            "alt": "The team mapping the Back to School service blueprint on a physical wall, working through the Engagement, Quotation, Review/Accept/Order, Checkout and Fulfilment stages",
+            "caption": "Blueprinting on the wall — mapping the journey stage by stage"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Australian Retailer work sample 2",
-            "caption": null
+            "src": "media/bts-work-fulfilment-synthesis.png",
+            "ratio": "1024 / 589",
+            "alt": "Digitising the blueprint on a shared board, zoomed in on the Fulfilment and Post Sale stages — Scheduling, Picking & Packing, Delivery/C&C and Invoicing",
+            "caption": "Digitising the workshop output — Fulfilment and Post Sale detail"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Australian Retailer work sample 3",
-            "caption": null
-          },
-          {
-            "type": "image",
-            "src": null,
-            "alt": "Major Australian Retailer work sample 4",
-            "caption": null
+            "src": "media/bts-work-school-pay-detail.png",
+            "ratio": "1024 / 574",
+            "alt": "School Pay blueprint detail across Engagement, Quotation, Review and acceptance, Credit application and Ordering and delivery, showing physical evidence, customer actions, front and back of stage interactions, support processes, and identified issues and opportunities",
+            "caption": "School Pay blueprint detail — actions, processes and opportunities by stage"
           }
         ]
       }
