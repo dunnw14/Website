@@ -357,24 +357,41 @@
         "cardImage": null,
         "cardImageAlt": "Major Australian Super Fund — Service Design",
         "cardIllustration": "media/illustration-super-fund.svg",
+        "hero": {
+          "type": "image",
+          "src": "media/superfund-hero-service-blueprint.png",
+          "ratio": "2928 / 1614",
+          "alt": "Full member cessation journey service blueprint, mapping phases from working through resignation, employer notification and informed decision-making, alongside the fund's actions, communications and identified member insights and opportunities at each stage",
+          "caption": "The end-to-end cessation service blueprint — phases, actions and opportunities mapped together"
+        },
         "workSamples": [
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Australian Super Fund work sample 1",
-            "caption": null
+            "src": "media/superfund-work-critical-moments.png",
+            "ratio": "2834 / 1520",
+            "alt": "Concept: a critical-moments map highlighting five key decision points in the cessation journey, each paired with a targeted response strategy",
+            "caption": "Concept: highlighting critical moments — five decision points, each paired with a response"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Australian Super Fund work sample 2",
-            "caption": null
+            "src": "media/superfund-work-engagement-map.png",
+            "ratio": "2524 / 1564",
+            "alt": "Detailed engagement mapping showing how each critical moment triggers specific outbound communications, educational content and one-on-one consultations across the pre-retirement, decision-making, transition and post-retirement phases",
+            "caption": "Engagement mapping — communications and support triggered at each critical moment"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Australian Super Fund work sample 3",
-            "caption": null
+            "src": "media/superfund-work-concept.png",
+            "ratio": "2996 / 1686",
+            "alt": "Concept: a personalised retirement-readiness dashboard with an interactive timeline, progress tracking and bite-sized learning modules organised by retirement phase",
+            "caption": "Concept: a personalised retirement dashboard with a progress-tracked learning journey"
+          },
+          {
+            "type": "image",
+            "src": "media/superfund-work-process.png",
+            "ratio": "2854 / 984",
+            "alt": "Research process across four stages: member segmentation, discussion guide design, one-on-one member interviews, and post-interview synthesis into recurring themes",
+            "caption": "The research process — from segmentation through to synthesis"
           }
         ]
       }
