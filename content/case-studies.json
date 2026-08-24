@@ -475,24 +475,48 @@
         "cardImage": null,
         "cardImageAlt": "Major Luxury Retailer — CX Strategy & E-comm Experience Design",
         "cardIllustration": "media/illustration-luxury-retail.svg",
+        "hero": {
+          "type": "image",
+          "src": "media/luxury-hero-complete-my-look-flow.png",
+          "ratio": "2400 / 1256",
+          "alt": "Four-screen flow of the Complete My Look concept: a customer asks the AI shopping assistant for a small bag to match an outfit, browses matching bag suggestions, confirms an item added to cart, and is offered complementary jewellery, accessories or jackets to complete the look",
+          "caption": "Complete My Look, end to end — from styling request to complementary suggestions"
+        },
         "workSamples": [
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Luxury Retailer work sample 1",
-            "caption": null
+            "src": "media/luxury-work-insight-nonlinear-shopping.png",
+            "ratio": "3028 / 1708",
+            "alt": "Customer insight: 'Create an experience that allows for nonlinear shopping' — customer quotes on the value of flexible returns and click-and-collect, alongside the reasoning for why it matters",
+            "caption": "Insight: designing for nonlinear shopping — flexible returns and click-and-collect"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Luxury Retailer work sample 2",
-            "caption": null
+            "src": "media/luxury-work-insight-go-to-brands.png",
+            "ratio": "3032 / 1710",
+            "alt": "Customer insight: 'Customers have a wardrobe of go-to brands' — customer quotes on how a small set of trusted brands earns a place in regular online shopping habits",
+            "caption": "Insight: customers keep a wardrobe of go-to brands they return to"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Major Luxury Retailer work sample 3",
-            "caption": null
+            "src": "media/luxury-work-concept-filter-for-me.png",
+            "ratio": "2548 / 1430",
+            "alt": "Concept: 'Filter for me' — personalised colour, style, occasion and price filters saved to a customer's profile, shown alongside a filtered bags category page",
+            "caption": "Concept: Filter for me — personalised filters saved to a customer's profile"
+          },
+          {
+            "type": "image",
+            "src": "media/luxury-work-concept-complete-my-look.png",
+            "ratio": "2546 / 1434",
+            "alt": "Concept testing: 'Complete my look' — a styled outfit shot paired with matching product suggestions customers can add to their look, including previously owned items",
+            "caption": "Concept testing: Complete my look — outfit-matched suggestions, including items already owned"
+          },
+          {
+            "type": "image",
+            "src": "media/luxury-work-concept-smart-shop.png",
+            "ratio": "3040 / 1712",
+            "alt": "Concept: 'Smart shop' — an AI shopping assistant that takes an uploaded photo and styling request, then asks clarifying questions to return tailored recommendations",
+            "caption": "Concept: Smart shop — an AI assistant that clarifies, then recommends"
           }
         ]
       }
