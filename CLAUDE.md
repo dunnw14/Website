@@ -108,11 +108,24 @@ again if this component is touched.
 and per-group `description` (optional — one group in CX Strategy has none,
 and the layout handles that). `accentColor` was dropped from sections: it
 was never wired to any CSS, a leftover from a multi-hue concept the
-single-accent system replaced. `Skills.jsx`/`Skills.css` render this as
-hairline-divided rows (label + description left, item list right) rather
-than the old card grid, and group labels are ink, not accent — the accent
-label text was the contrast failure logged below, so this rewrite removes it
-rather than fixing it in place.
+single-accent system replaced. Within a section, `Skills.jsx`/`Skills.css`
+render each group as a hairline-divided row (label + description left, item
+list right) rather than the old card grid, and group labels are ink, not
+accent — the accent label text was the contrast failure logged below, so
+this rewrite removes it rather than fixing it in place.
+
+The three sections (Service Design, CX Strategy, Agentic & Generative AI)
+sit behind tabs rather than all rendering top to bottom — Service Design is
+shown by default. Two layouts were tried (everything stacked vs. tabbed);
+tabbed won and is what's live, kept as the `skills-v1` bookmark. The tabs
+themselves are a bordered segmented-control pill group, not quiet
+text-with-underline — an earlier underline version read too much like plain
+nav text, so the active tab now gets a solid `--accent` fill
+(`--on-accent` text) to read unambiguously as a control. Tabs follow the
+WAI-ARIA tabs pattern: roving `tabindex`, arrow/Home/End key navigation,
+only the active section's panel is in the DOM. Worth knowing: this trades
+away having all capability content in view/indexable at once, in exchange
+for a shorter default page.
 
 Open, in rough priority order:
 
