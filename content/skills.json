@@ -1,84 +1,119 @@
 {
   "page": "Skills",
   "route": "/Skills",
-  "eyebrow": "CAPABILITIES",
-  "heading": "My Skills",
-  "intro": "A toolkit built across years of complex design engagements — spanning research, strategy, and delivery.",
+  "eyebrow": "EXPERTISE",
+  "heading": "Capabilities",
+  "lead": "Designing services, shaping strategy, and helping organisations deliver better customer experiences.",
+  "intro": "My experience spans the full service design lifecycle — from uncovering customer needs and defining future-state experiences through to embedding change across complex organisations. I work at the intersection of customer insight, business strategy, and delivery, helping teams make confident decisions and turn ideas into real-world outcomes.",
   "sections": [
     {
       "name": "Service Design",
-      "accentColor": "green",
+      "intro": "I design end-to-end services that balance customer needs with operational realities. My approach combines deep research, systems thinking, and collaborative design to solve complex business and customer problems.",
       "groups": [
         {
-          "label": "DISCOVERY & RESEARCH",
+          "label": "Research, Discovery & Insight",
+          "description": "Building a deep understanding of customers, behaviours, and organisational challenges to identify meaningful opportunities.",
           "items": [
-            "Qualitative & Ethnographic Research",
-            "Behavioural & Cognitive Insights",
-            "Customer Journey & Pain Point Mapping",
-            "Complex Service Blueprinting",
-            "Persona Development & JTBD Frameworks",
-            "Insight Synthesis & Opportunity Framing"
+            "Qualitative, ethnographic and generative research",
+            "Behavioural and cognitive insight development",
+            "Customer journey mapping and pain point analysis",
+            "Service blueprinting across complex ecosystems",
+            "Personas, Jobs to Be Done and behavioural frameworks",
+            "Insight synthesis and opportunity identification"
           ]
         },
         {
-          "label": "IDEATION & CONCEPTING",
+          "label": "Experience Design & Concept Development",
+          "description": "Transforming research into service concepts, experience strategies, and future-state journeys.",
           "items": [
-            "Concept Generation & Solution Framing",
-            "Co-Creation & Participatory Design",
-            "Experience Principles & Design Criteria"
+            "End-to-end service and experience design",
+            "Concept generation and opportunity framing",
+            "Co-design workshops and stakeholder facilitation",
+            "Experience principles and design frameworks",
+            "Future-state journey and ecosystem design"
           ]
         },
         {
-          "label": "PROTOTYPING & TESTING",
+          "label": "Prototyping, Validation & Iteration",
+          "description": "Testing ideas early to reduce risk and improve customer outcomes before delivery.",
           "items": [
-            "Concept & Prototype Testing",
-            "UX Research & Usability Testing",
-            "A/B & Multivariate Testing"
+            "Concept and prototype validation",
+            "UX research and usability testing",
+            "Experiment design and A/B testing",
+            "Evidence-based design iteration"
           ]
         },
         {
-          "label": "IMPLEMENTATION & EMBEDDING",
+          "label": "Delivery, Transformation & Adoption",
+          "description": "Supporting organisations to move from strategy into implementation through practical, customer-centred change.",
           "items": [
-            "Operationalising Service Design",
-            "Change Management & Adoption"
+            "Service implementation and operational design",
+            "Cross-functional delivery and collaboration",
+            "Design governance and continuous improvement"
           ]
         }
       ]
     },
     {
-      "name": "CX Strategy",
-      "accentColor": "orange",
+      "name": "Customer Experience Strategy",
+      "intro": "I help organisations define customer experience strategies that connect business objectives with meaningful customer value. My work often involves aligning multiple teams around a shared vision and translating strategy into actionable roadmaps.",
       "groups": [
         {
-          "label": "CX STRATEGY & TRANSFORMATION",
+          "label": "Strategy & Transformation",
           "items": [
-            "Future-State CX Visioning & Roadmapping",
-            "Omnichannel Experience Strategy",
-            "Service Model & Value Proposition Innovation",
-            "Emerging Technology Integration"
+            "Future-state experience vision and strategy",
+            "Customer experience transformation roadmaps",
+            "Omnichannel and ecosystem experience design",
+            "Service model and value proposition design",
+            "Emerging technology and AI strategy"
           ]
         },
         {
-          "label": "LEADERSHIP & INFLUENCE",
+          "label": "Leadership & Influence",
+          "description": "Working with senior stakeholders to build alignment, drive decision-making, and grow design capability.",
           "items": [
-            "Executive-Level Engagement & Storytelling",
-            "Cross-Functional Alignment",
-            "Mentoring & Capability Building",
-            "Design Culture & Continuous Improvement"
+            "Executive stakeholder engagement",
+            "Strategic storytelling and communication",
+            "Cross-functional leadership and facilitation",
+            "Building customer-centred ways of working"
           ]
         }
       ]
     },
     {
-      "name": "GenAI",
-      "accentColor": "blue",
+      "name": "Agentic & Generative AI",
+      "intro": "I explore how generative and agentic AI can transform both the way services are designed and the services themselves. I build my own AI-powered applications, agents and workflows to accelerate design practice, while exploring how agentic technology can become an integral part of future customer and employee experiences.",
       "groups": [
         {
-          "label": "GENAI COMPETENCIES",
+          "label": "AI-Powered Design & Delivery",
+          "description": "Using AI to augment research, strategy and service design — creating new ways to explore problems, synthesise complexity and move from insight to concept faster.",
           "items": [
-            "AI Enabled Workflows",
-            "Agent Creation",
-            "Service Design Acceleration"
+            "Generative AI for research, synthesis and strategic analysis",
+            "AI-assisted design workflows and rapid prototyping",
+            "Building custom AI applications, tools and workflows",
+            "Designing multi-step agentic workflows to automate complex tasks",
+            "Using AI to accelerate concept development and service prototyping"
+          ]
+        },
+        {
+          "label": "Agentic Service Design",
+          "description": "Exploring how AI agents can become active participants within future services — helping customers, employees and organisations navigate complexity, make decisions and complete tasks.",
+          "items": [
+            "Embedding AI agents into service and experience concepts",
+            "Designing agentic customer and employee experiences",
+            "Identifying opportunities for AI-driven service orchestration",
+            "Designing human–AI interactions, handoffs and escalation points",
+            "Prototyping future-state services enabled by autonomous and semi-autonomous AI"
+          ]
+        },
+        {
+          "label": "AI Strategy & Innovation",
+          "description": "Connecting emerging AI capabilities with real customer and business opportunities rather than treating AI as a standalone technology.",
+          "items": [
+            "Identifying opportunities for generative and agentic AI within services",
+            "Translating emerging AI capabilities into tangible experience concepts",
+            "Exploring how AI can reshape service models, operating models and value propositions",
+            "Rapidly prototyping AI-enabled propositions to test future possibilities"
           ]
         }
       ]

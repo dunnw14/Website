@@ -88,7 +88,8 @@ bug being reintroduced.
 ## Where things stand
 
 Done and live: the design tokens, case study cards, page titles and footer,
-site-wide left-edge alignment, and the mobile overflow fix.
+site-wide left-edge alignment, the mobile overflow fix, and the Skills page
+redesign.
 
 The Home hero visual is an animated hand-drawn "Service Blueprint" sketch
 (`src/components/ServiceBlueprintSketch.jsx`), not the earlier image collage.
@@ -102,19 +103,28 @@ drawn straight onto the dark theme's background — the same "invisible until
 rendered" failure mode as the other bugs logged below. Check both themes
 again if this component is touched.
 
+`content/skills.json` carries a page-level `lead` (one-line statement) and
+`intro` (longer paragraph) under the heading, then per-section `intro` text
+and per-group `description` (optional — one group in CX Strategy has none,
+and the layout handles that). `accentColor` was dropped from sections: it
+was never wired to any CSS, a leftover from a multi-hue concept the
+single-accent system replaced. `Skills.jsx`/`Skills.css` render this as
+hairline-divided rows (label + description left, item list right) rather
+than the old card grid, and group labels are ink, not accent — the accent
+label text was the contrast failure logged below, so this rewrite removes it
+rather than fixing it in place.
+
 Open, in rough priority order:
 
 - **Accent-coloured text fails contrast in the light theme** (1.83:1). It is
   fine as a fill, border or small mark, but not as text. Known users:
-  `.cv-job-company`, `.csd-subhead`, `.csd-phase-name`, `.skills-card-label`,
-  and the `.footer-link` / `.csd-pager-title` hovers. Fix these when working
-  the page they sit on; see the contrast table in `TOKENS.md`.
+  `.cv-job-company`, `.csd-subhead`, `.csd-phase-name`, and the
+  `.footer-link` / `.csd-pager-title` hovers. Fix these when working the page
+  they sit on; see the contrast table in `TOKENS.md`.
 - **CV page detail.** Left-weighted since the alignment change, with a wide
   empty band down the right — a known trade of that fix, not a regression.
   Still carries old language: apricot uppercase employer names (AKQA, ATO)
   and the old panel styling on "Core capabilities".
-- **Skills page.** Renders and aligns correctly but has never been audited
-  for leftovers of the old visual language.
 - **Real-device check.** Mobile was verified in Chromium with touch
   emulation, which will not catch Safari's behaviour around `100vh` and
   sticky headers. Worth opening the live site on a phone.
