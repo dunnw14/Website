@@ -863,24 +863,34 @@
         "cardImage": null,
         "cardImageAlt": "Luxury Architecture Brand — CX Strategy & Service Design",
         "cardIllustration": "media/illustration-architecture.svg",
+        "hero": {
+          "type": "image",
+          "src": "media/global-hero-customer-journey-blueprint.webp",
+          "ratio": "2500 / 972",
+          "alt": "End-to-end customer journey blueprint spanning Pre-engagement, Opportunity, Sales Order, Payment Received, Fulfilment and Re-engagement, with key moments, actions, pain points and system touchpoints mapped at each stage",
+          "caption": "The full customer journey blueprint — pre-engagement through to re-engagement"
+        },
         "workSamples": [
           {
             "type": "image",
-            "src": null,
-            "alt": "Luxury Architecture Brand work sample 1",
-            "caption": null
+            "src": "media/global-work-blueprinting-workshop.webp",
+            "ratio": "2500 / 1406",
+            "alt": "The team working through the journey blueprint on a wall, arranging colour-coded sticky notes across each stage",
+            "caption": "Blueprinting on the wall — working through the journey stage by stage"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Luxury Architecture Brand work sample 2",
-            "caption": null
+            "src": "media/global-work-remote-synthesis-call.webp",
+            "ratio": "2500 / 1409",
+            "alt": "The team reviewing the digitised customer funnel on a shared board during a remote workshop session",
+            "caption": "Digitising the blueprint together, stage by stage"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Luxury Architecture Brand work sample 3",
-            "caption": null
+            "src": "media/global-work-identified-opportunities.png",
+            "ratio": "2910 / 1584",
+            "alt": "Identified Opportunities plotted on a quadrant of optimisation versus transformation against indicative investment required, grouped into No Brainers, Game Changers, Housekeeping and Maintenance",
+            "caption": "Opportunities prioritised by impact and investment required"
           }
         ]
       }
