@@ -1,6 +1,6 @@
 .sk-head {
   max-width: 40rem;
-  margin-bottom: clamp(3rem, 2rem + 5vw, 6rem);
+  margin-bottom: clamp(2.5rem, 1.6rem + 4vw, 4.5rem);
 }
 
 .sk-title {
@@ -21,39 +21,63 @@
   max-width: 42rem;
 }
 
-.sk-section {
-  margin-bottom: clamp(3rem, 2rem + 5vw, 6rem);
-}
-
-.sk-section-head {
-  max-width: 42rem;
-  margin-bottom: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
-}
-
-.sk-section-name {
+.sk-tablist {
   display: flex;
-  align-items: center;
-  gap: 0.7rem;
+  gap: clamp(1.25rem, 0.8rem + 1.8vw, 2.25rem);
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.sk-tablist::-webkit-scrollbar {
+  display: none;
+}
+
+.sk-tab {
+  position: relative;
+  flex-shrink: 0;
+  padding-block: 0.9rem;
   font-family: var(--font-display);
-  font-size: var(--t-section);
+  font-size: 0.98rem;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  color: var(--ink-3);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s var(--ease);
+}
+
+.sk-tab:hover {
   color: var(--ink);
 }
 
-.sk-dot {
-  width: 0.42em;
-  height: 0.42em;
-  border-radius: 50%;
+.sk-tab[aria-selected="true"] {
+  color: var(--ink);
+}
+
+.sk-tab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
   background: var(--accent);
-  flex-shrink: 0;
+}
+
+.sk-panel {
+  outline: none;
 }
 
 .sk-section-intro {
-  margin-top: 0.9rem;
   font-size: 1rem;
   line-height: 1.65;
   color: var(--ink-2);
+  max-width: 42rem;
+  margin-bottom: clamp(0.5rem, 0.2rem + 1vw, 1rem);
 }
 
 .sk-groups {
