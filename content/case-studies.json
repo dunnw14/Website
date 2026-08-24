@@ -619,24 +619,32 @@
         "cardImage": null,
         "cardImageAlt": "Federal Government Agency — CX Digital Transformation & Service Design",
         "cardIllustration": "media/illustration-government-tax.svg",
+        "hero": {
+          "type": "video",
+          "src": "https://www.youtube.com/embed/cMZ1YqLedU0",
+          "caption": "Prototype walkthrough"
+        },
         "workSamples": [
           {
             "type": "image",
-            "src": null,
-            "alt": "Federal Government Agency work sample 1",
-            "caption": null
+            "src": "media/tax-work-future-experience-overview.png",
+            "ratio": "2422 / 1378",
+            "alt": "Future Experience Overview: how Field Guides, Contextual Guidance, Light Login and Expect It combine across the Identify, Find, Review and Use stages of the customer journey",
+            "caption": "Future Experience Overview — how the four concepts work together across the journey"
           },
           {
             "type": "image",
-            "src": null,
-            "alt": "Federal Government Agency work sample 2",
-            "caption": null
+            "src": "media/tax-work-concept-field-guides.png",
+            "ratio": "2428 / 1380",
+            "alt": "Concept: Field Guides — search results, a guided field-guide flow with progress tracking, and principle alignment against Instill Confidence, Provide Guidance and Tailor Information",
+            "caption": "Concept: Field Guides — forms, guides and calculators unified into one flow"
           },
           {
-            "type": "video",
-            "src": null,
-            "poster": null,
-            "caption": "Prototype walkthrough"
+            "type": "image",
+            "src": "media/tax-work-opportunity-map.png",
+            "ratio": "2408 / 1644",
+            "alt": "Opportunity map across Identify, Find, Review and Use — customer challenges, touchpoints, goals and prioritised opportunities at each stage",
+            "caption": "Mapping challenges and opportunities across the Identify, Find, Review and Use journey"
           }
         ]
       }
