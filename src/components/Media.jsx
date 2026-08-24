@@ -2,9 +2,9 @@ import { useLayoutEffect, useRef, useState } from "react";
 import "./Media.css";
 
 /**
- * Turns a path stored in content/*.json into a URL that works both locally and
- * on GitHub Pages (where everything is served under /Website/).
- * Absolute URLs are passed straight through.
+ * Turns a path stored in content/*.json into a URL that works both locally
+ * and once deployed, wherever the base path (import.meta.env.BASE_URL) puts
+ * it. Absolute URLs are passed straight through.
  */
 export function assetUrl(src) {
   if (!src) return null;

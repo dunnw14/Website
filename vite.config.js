@@ -4,16 +4,19 @@ import { copyFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 /**
- * GitHub Pages serves this project from https://<user>.github.io/Website/
- * so every asset URL needs the /Website/ prefix. Vercel (used for PR
- * previews) serves from the domain root instead, so it sets its own `VERCEL`
- * env var during the build — use that to pick the right base.
+ * GitHub Pages serves this project from the custom domain in public/CNAME
+ * (williamdunnportfolio.com), and Vercel (used for PR previews) serves from
+ * its own preview domain — both are the site root, so the base is always "/".
+ * Before the custom domain, GitHub Pages served from /Website/ and this
+ * switched on Vercel's own `VERCEL` build env var; a hardcoded /Website/
+ * base renders a completely blank Vercel preview (every asset 404s), so if
+ * this ever needs to branch again, branch it rather than hardcoding one path.
  */
-const BASE = process.env.VERCEL ? "/" : "/Website/";
+const BASE = "/";
 
 /**
  * The site uses client-side routing, but GitHub Pages only knows about real
- * files. Copying index.html to 404.html means any deep link (e.g. /Website/CV)
+ * files. Copying index.html to 404.html means any deep link (e.g. /CV)
  * still boots the app, which then renders the right page from the URL.
  */
 function spaFallback() {

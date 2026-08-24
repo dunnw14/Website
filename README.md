@@ -107,7 +107,7 @@ npm install     # once, to download dependencies
 npm run dev     # start a local preview
 ```
 
-That prints a link (usually <http://localhost:5173/Website/>) — open it in your
+That prints a link (usually <http://localhost:5173/>) — open it in your
 browser. It reloads automatically as you edit.
 
 To check the real production build before pushing:
@@ -131,19 +131,40 @@ settings are needed in GitHub:
    workflow only runs on pushes to `main`.
 
 After that, every push to `main` republishes the site automatically. You can
-watch progress in the **Actions** tab. The live URL will be:
+watch progress in the **Actions** tab. The live URL is:
 
 ```
-https://dunnw14.github.io/Website/
+https://williamdunnportfolio.com
 ```
 
-### If you rename the repo or use a custom domain
+(`https://dunnw14.github.io/Website/` still works — GitHub Pages redirects it
+to the custom domain automatically once one is set.)
 
-The site is served from a subfolder (`/Website/`), so that path is set in two
-places. Change both to match:
+### Custom domain setup
 
-- `vite.config.js` → the `BASE` constant
-- For a custom domain at the root of the domain, set `BASE = "/"`
+Two things point the site at a custom domain instead of the `/Website/`
+subfolder GitHub Pages uses by default:
+
+- `public/CNAME` — a one-line file with the domain (`williamdunnportfolio.com`).
+  Vite copies everything in `public/` into the build output as-is, so this
+  ends up at the root of the deployed site, which is where GitHub Pages looks
+  for it.
+- `vite.config.js`'s `BASE` constant — `"/"`, since a custom domain serves
+  from its own root rather than a repo subfolder.
+
+At your domain registrar, point DNS at GitHub Pages:
+
+- Apex domain (`williamdunnportfolio.com`): four `A` records to
+  `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
+- `www` subdomain, if you want `www.williamdunnportfolio.com` to work too: a
+  `CNAME` record to `dunnw14.github.io`.
+
+Once DNS propagates (can take a few hours), tick **Settings → Pages → Enforce
+HTTPS** — GitHub issues the certificate automatically.
+
+If you rename the GitHub repo instead of using a custom domain, the site goes
+back to being served from a subfolder matching the new repo name — update
+`public/CNAME` (delete it) and `vite.config.js`'s `BASE` to match.
 
 ---
 
@@ -170,7 +191,7 @@ Some details worth knowing:
 - **The font** (Inter) is bundled into the site rather than loaded from
   Google, so there are no third-party requests and nothing to break.
 - **Deep links work** — `404.html` is generated at build time so that refreshing
-  on a page like `/Website/cv` still loads correctly on GitHub Pages.
+  on a page like `/cv` still loads correctly on GitHub Pages.
 - **Motion is reduced automatically** for visitors who have "reduce motion"
   turned on in their operating system.
 

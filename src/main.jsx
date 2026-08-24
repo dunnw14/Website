@@ -9,7 +9,7 @@ import "./styles/app.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    {/* basename keeps routing correct when served from /Website/ on GitHub Pages */}
+    {/* basename tracks vite.config.js's base, so routing stays correct wherever the site is served from */}
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <App />
     </BrowserRouter>

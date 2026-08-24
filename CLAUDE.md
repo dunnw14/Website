@@ -182,11 +182,19 @@ Deploys run on push to `main` via `.github/workflows/deploy.yml`. Wait for the
 run to report `success` before telling the user something is live.
 
 PRs get a Vercel preview deployment (posted as a PR comment, aliased to
-`website-git-<branch>-will13-a645.vercel.app`). GitHub Pages serves the site
-from `/Website/`, but Vercel serves previews from the domain root — so
-`vite.config.js`'s `base` switches on Vercel's own `VERCEL` build env var
-(`process.env.VERCEL ? "/" : "/Website/"`). A hardcoded `/Website/` base
-renders a completely blank Vercel preview (every asset 404s), invisible in
-the diff and only obvious once the preview URL is actually opened.
-`vercel.json` adds the SPA rewrite Vercel needs for deep links, mirroring
-what the GitHub Pages `404.html` fallback does there.
+`website-git-<branch>-will13-a645.vercel.app`). `vercel.json` adds the SPA
+rewrite Vercel needs for deep links, mirroring what the GitHub Pages
+`404.html` fallback does there.
+
+The live site is `williamdunnportfolio.com`, a custom domain on GitHub Pages
+(`public/CNAME`, DNS at the registrar pointed at GitHub's IPs). Before this,
+GitHub Pages served from `/Website/` while Vercel previews served from the
+domain root, so `vite.config.js`'s `base` switched on Vercel's own `VERCEL`
+build env var — a hardcoded `/Website/` base rendered a completely blank
+Vercel preview (every asset 404s), invisible in the diff and only obvious
+once the preview URL was actually opened. Now that GitHub Pages also serves
+from the root (the custom domain, not a subfolder), `base` is just `"/"`
+unconditionally. If GitHub Pages ever goes back to serving from a subfolder
+(repo renamed, custom domain removed), that conditional needs to come back —
+don't hardcode `"/"` in that case, it's the same blank-Vercel-preview bug in
+the other direction.
