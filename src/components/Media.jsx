@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import "./Media.css";
 
 /**
@@ -98,6 +98,21 @@ function Placeholder({ label, failed }) {
  */
 export function Gallery({ items = [], label = "Work samples" }) {
   const [index, setIndex] = useState(0);
+  const [height, setHeight] = useState(null);
+  const slideRefs = useRef([]);
+
+  // Slides sit side by side in a flex row so they can be translated into
+  // view, which stretches the viewport to the tallest slide by default.
+  // Different items can carry very different `ratio`s, so we measure the
+  // active slide and pin the viewport to just its height.
+  useLayoutEffect(() => {
+    const el = slideRefs.current[index];
+    if (!el) return;
+    const observer = new ResizeObserver(([entry]) => setHeight(entry.contentRect.height));
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [index]);
+
   if (!items.length) return null;
 
   const total = items.length;
@@ -105,12 +120,13 @@ export function Gallery({ items = [], label = "Work samples" }) {
 
   return (
     <div className="gallery" aria-roledescription="carousel" aria-label={label}>
-      <div className="gallery-viewport">
+      <div className="gallery-viewport" style={height ? { height: `${height}px` } : undefined}>
         <div className="gallery-track" style={{ transform: `translate3d(-${index * 100}%, 0, 0)` }}>
           {items.map((item, i) => (
             <div
               className="gallery-slide"
               key={i}
+              ref={(el) => (slideRefs.current[i] = el)}
               aria-hidden={i !== index}
               // Keeps hidden slides out of the tab order.
               inert={i !== index ? "" : undefined}
