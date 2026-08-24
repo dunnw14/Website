@@ -61,10 +61,12 @@
 .gallery-viewport {
   overflow: hidden;
   border-radius: var(--radius-lg);
+  transition: height 0.65s var(--ease);
 }
 
 .gallery-track {
   display: flex;
+  align-items: flex-start;
   transition: transform 0.65s var(--ease);
   will-change: transform;
 }

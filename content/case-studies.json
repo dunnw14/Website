@@ -627,6 +627,13 @@
         "workSamples": [
           {
             "type": "image",
+            "src": "media/tax-work-opportunity-map.png",
+            "ratio": "2408 / 1644",
+            "alt": "Opportunity map across Identify, Find, Review and Use — customer challenges, touchpoints, goals and prioritised opportunities at each stage",
+            "caption": "Mapping challenges and opportunities across the Identify, Find, Review and Use journey"
+          },
+          {
+            "type": "image",
             "src": "media/tax-work-future-experience-overview.png",
             "ratio": "2422 / 1378",
             "alt": "Future Experience Overview: how Field Guides, Contextual Guidance, Light Login and Expect It combine across the Identify, Find, Review and Use stages of the customer journey",
@@ -638,13 +645,6 @@
             "ratio": "2428 / 1380",
             "alt": "Concept: Field Guides — search results, a guided field-guide flow with progress tracking, and principle alignment against Instill Confidence, Provide Guidance and Tailor Information",
             "caption": "Concept: Field Guides — forms, guides and calculators unified into one flow"
-          },
-          {
-            "type": "image",
-            "src": "media/tax-work-opportunity-map.png",
-            "ratio": "2408 / 1644",
-            "alt": "Opportunity map across Identify, Find, Review and Use — customer challenges, touchpoints, goals and prioritised opportunities at each stage",
-            "caption": "Mapping challenges and opportunities across the Identify, Find, Review and Use journey"
           }
         ]
       }
