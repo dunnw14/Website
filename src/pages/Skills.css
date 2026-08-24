@@ -22,9 +22,13 @@
 }
 
 .sk-tablist {
-  display: flex;
-  gap: clamp(1.25rem, 0.8rem + 1.8vw, 2.25rem);
-  border-bottom: 1px solid var(--line-soft);
+  display: inline-flex;
+  max-width: 100%;
+  gap: 0.3rem;
+  padding: 0.3rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--pill);
   margin-bottom: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
   overflow-x: auto;
   scrollbar-width: none;
@@ -35,36 +39,33 @@
 }
 
 .sk-tab {
-  position: relative;
   flex-shrink: 0;
-  padding-block: 0.9rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--pill);
   font-family: var(--font-display);
-  font-size: 0.98rem;
+  font-size: 0.93rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+  line-height: 1;
   white-space: nowrap;
-  color: var(--ink-3);
+  color: var(--ink-2);
   background: none;
   border: none;
   cursor: pointer;
-  transition: color 0.3s var(--ease);
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 
 .sk-tab:hover {
   color: var(--ink);
+  background: var(--surface-3);
 }
 
 .sk-tab[aria-selected="true"] {
-  color: var(--ink);
+  color: var(--on-accent);
+  background: var(--accent);
 }
 
-.sk-tab[aria-selected="true"]::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
+.sk-tab[aria-selected="true"]:hover {
   background: var(--accent);
 }
 
