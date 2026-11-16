@@ -6,6 +6,19 @@ import Reveal from "../components/Reveal.jsx";
 import useTitle from "../components/useTitle.js";
 import "./Home.css";
 
+/** Stops a hyphenated word like "human-centred" breaking across two lines. */
+function keepTogether(text) {
+  return text.split(/(\S+-\S+)/).map((part, i) =>
+    i % 2 ? (
+      <span key={i} style={{ whiteSpace: "nowrap" }}>
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  );
+}
+
 export default function Home() {
   useTitle(null);
   const { hero } = home;
@@ -79,7 +92,7 @@ export default function Home() {
     <>
       <section className="shell home-intro">
         <div>
-          <h1 className="display">{hero.tagline}</h1>
+          <h1 className="display">{keepTogether(hero.tagline)}</h1>
           <p className="lead grey">{hero.body[0]}</p>
         </div>
         {/* Sits opposite the statement on wide screens, under it on phones. */}
