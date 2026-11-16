@@ -10,6 +10,12 @@ wording without touching any code.
 
 ## Adding your images and videos
 
+> After adding or replacing any image, run `python3 scripts/optimise-media.py`
+> (needs Pillow: `pip install pillow`). It makes the small WebP copies the site
+> actually loads and records each image's size. Images are shown at their own
+> proportions — nothing is cropped — and each opens full size when clicked.
+> `cardImage`, `cardIllustration` and `ratio` are no longer used by the design.
+
 Every image and video slot is currently a **placeholder** (a dashed frame that
 says "placeholder"). To fill one in:
 

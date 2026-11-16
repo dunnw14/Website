@@ -1,208 +1,74 @@
 .cv-head {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
   flex-wrap: wrap;
-  margin-bottom: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 28px;
 }
 
-.cv-name {
-  font-family: var(--font-display);
-  font-size: var(--t-h2);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  color: var(--ink);
-  margin-top: 0.8rem;
+.cv-head .lead {
+  margin-top: 14px;
 }
-
-.cv-role {
-  margin-top: 1rem;
-  font-size: var(--t-lead);
-  color: var(--ink-2);
-}
-
-.cv-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-  padding-top: 0.7rem;
-}
-
-.cv-meta-item {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-size: var(--t-small);
-  color: var(--ink-2);
-}
-
-.cv-meta-item svg {
-  flex-shrink: 0;
-  color: var(--accent);
-}
-
-/* ---- Profile ------------------------------------------------------- */
 
 .cv-profile {
-  padding: clamp(1.5rem, 1.1rem + 1.5vw, 2.25rem);
-  background: var(--surface-2);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius-lg);
-  margin-bottom: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
-}
-
-.cv-profile-text {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  color: var(--ink-2);
-}
-
-.cv-section {
-  margin-bottom: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
-}
-
-/* ---- Experience ----------------------------------------------------- */
-
-.cv-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1.75rem, 1.2rem + 2.5vw, 3rem);
+  font-size: var(--t-h3);
+  line-height: 1.4;
+  letter-spacing: -0.008em;
+  max-width: 54ch;
 }
 
 .cv-job {
   display: grid;
-  grid-template-columns: minmax(9.5rem, 0.32fr) minmax(0, 1fr);
-  gap: clamp(1rem, 0.5rem + 2vw, 2.25rem);
+  grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+  gap: 12px 32px;
+  padding-block: 28px 32px;
+  border-top: 1px solid var(--line);
 }
 
-.cv-job-dates {
-  font-family: var(--font-display);
-  font-size: 0.86rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink);
+.cv-job:first-child {
+  border-top: 0;
+  padding-top: 0;
 }
 
-.cv-job-place {
-  margin-top: 0.3rem;
+.cv-job-when {
   font-size: var(--t-small);
-  color: var(--ink-3);
 }
 
-.cv-job-what {
-  padding-left: clamp(1rem, 0.5rem + 1.5vw, 1.75rem);
-  border-left: 1px solid var(--line-soft);
-}
-
-.cv-job-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
-  font-weight: 600;
-  letter-spacing: -0.028em;
-  line-height: 1.05;
-  color: var(--ink);
+.cv-job h3 {
+  font-size: var(--t-h3);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  line-height: 1.25;
 }
 
 .cv-job-company {
-  margin-top: 0.45rem;
-  font-family: var(--font-display);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
+  color: var(--green);
+  font-weight: 500;
+  margin-top: 2px;
 }
 
 .cv-job-desc {
-  margin-top: 1.05rem;
-  font-size: 0.96rem;
-  line-height: 1.65;
-  color: var(--ink-2);
+  margin-block: 14px 18px;
+  max-width: 66ch;
 }
 
-.cv-job-points {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  margin-top: 1.15rem;
+.cv-job .rule-list {
+  max-width: 66ch;
 }
 
-.cv-job-points li {
-  position: relative;
-  padding-left: 1.3rem;
-  font-size: 0.93rem;
-  line-height: 1.55;
-  color: var(--ink-3);
+.cv-columns {
+  columns: 3 220px;
+  column-gap: var(--g);
 }
 
-.cv-job-points li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.65;
-}
-
-/* ---- Capabilities ---------------------------------------------------- */
-
-.cv-capabilities {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.55rem;
-}
-
-.cv-capabilities li {
-  padding: 1rem 1.15rem;
-  background: var(--surface-2);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius);
-  font-size: 0.92rem;
-  color: var(--ink-2);
-  transition: border-color 0.35s var(--ease), transform 0.35s var(--ease);
-}
-
-.cv-capabilities li:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
-}
-
-.cv-industries {
-  gap: 0.55rem;
-}
-
-/* ---- Download -------------------------------------------------------- */
-
-.cv-cta {
-  display: flex;
-  justify-content: center;
-  margin-top: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
+.cv-columns li {
+  break-inside: avoid;
+  padding-block: 10px;
+  border-top: 1px solid var(--line);
 }
 
 @media (max-width: 820px) {
-  .cv-capabilities {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 620px) {
   .cv-job {
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
-  }
-
-  .cv-job-what {
-    padding-left: 0;
-    border-left: 0;
-  }
-
-  .cv-capabilities {
     grid-template-columns: 1fr;
   }
 }

@@ -13,11 +13,11 @@ export default function App() {
   const location = useLocation();
 
   return (
-    <div className="frame">
+    <>
       <ScrollToTop />
       <Nav />
       {/* Keying on pathname replays the fade for every navigation */}
-      <main className="app-main" key={location.pathname}>
+      <main className="app-main" id="main" key={location.pathname}>
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/case-studies" element={<CaseStudies />} />
@@ -28,6 +28,6 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

@@ -1,10 +1,16 @@
 import { useRef, useState } from "react";
-import { skills } from "../data/content.js";
-import Reveal from "../components/Reveal.jsx";
+import { useLocation } from "react-router-dom";
+import { label, skills } from "../data/content.js";
+import useTitle from "../components/useTitle.js";
 import "./Skills.css";
 
 export default function Skills() {
-  const [active, setActive] = useState(0);
+  useTitle(skills.heading);
+  // The home page links straight to a tab by passing { tab } in route state.
+  const requested = useLocation().state?.tab;
+  const [active, setActive] = useState(
+    Number.isInteger(requested) && skills.sections[requested] ? requested : 0
+  );
   const tabRefs = useRef([]);
   const section = skills.sections[active];
 
@@ -39,22 +45,15 @@ export default function Skills() {
   }
 
   return (
-    <div className="page">
-      <div className="shell">
-        <header className="sk-head">
-          <Reveal>
-            <p className="label">{skills.eyebrow}</p>
-            <h1 className="sk-title">{skills.heading}</h1>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <p className="lead sk-lead">{skills.lead}</p>
-          </Reveal>
-          <Reveal delay={0.14}>
-            <p className="sk-intro">{skills.intro}</p>
-          </Reveal>
+    <div className="shell">
+        <header className="page-head">
+          <p className="eyebrow">{label(skills.eyebrow)}</p>
+          <h1 className="display">{skills.heading}</h1>
+          <p className="lead">{skills.lead}</p>
+          <p>{skills.intro}</p>
         </header>
 
-        <Reveal delay={0.18} className="sk-tablist" role="tablist" aria-label="Capability areas">
+        <div className="sk-tablist" role="tablist" aria-label="Capability areas">
           {skills.sections.map((s, i) => (
             <button
               key={s.name}
@@ -71,7 +70,7 @@ export default function Skills() {
               {s.name}
             </button>
           ))}
-        </Reveal>
+        </div>
 
         <div
           role="tabpanel"
@@ -81,27 +80,24 @@ export default function Skills() {
           key={section.name}
           className="sk-panel"
         >
-          <Reveal>
-            <p className="sk-section-intro">{section.intro}</p>
-          </Reveal>
+          <p className="lead sk-section-intro">{section.intro}</p>
 
           <div className="sk-groups">
-            {section.groups.map((group, g) => (
-              <Reveal as="div" className="sk-group" key={group.label} delay={g * 0.06}>
-                <div className="sk-group-about">
-                  <h3 className="sk-group-label">{group.label}</h3>
-                  {group.description && <p className="sk-group-desc">{group.description}</p>}
+            {section.groups.map((group) => (
+              <div className="sk-group" key={group.label}>
+                <div>
+                  <h3>{group.label}</h3>
+                  {group.description && <p className="grey">{group.description}</p>}
                 </div>
-                <ul className="sk-group-items">
+                <ul className="rule-list">
                   {group.items.map((entry) => (
                     <li key={entry}>{entry}</li>
                   ))}
                 </ul>
-              </Reveal>
+              </div>
             ))}
           </div>
         </div>
-      </div>
     </div>
   );
 }

@@ -1,0 +1,305 @@
+{
+  "media/bank-work-billio-flow.png": {
+    "w": 3030,
+    "h": 862,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/bank-work-concept-one-pay.png": {
+    "w": 2298,
+    "h": 1384,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/bank-work-concept-pulse-check.png": {
+    "w": 2318,
+    "h": 1380,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/bank-work-concept-time-capsule.png": {
+    "w": 2286,
+    "h": 1380,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/bank-work-sprint-board.png": {
+    "w": 3028,
+    "h": 1892,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/bts-hero-education-blueprint.png": {
+    "w": 8962,
+    "h": 3582,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/bts-work-blueprint-workshop.png": {
+    "w": 1024,
+    "h": 629,
+    "widths": [
+      640,
+      1024
+    ]
+  },
+  "media/bts-work-fulfilment-synthesis.png": {
+    "w": 1024,
+    "h": 589,
+    "widths": [
+      640,
+      1024
+    ]
+  },
+  "media/bts-work-school-pay-detail.png": {
+    "w": 1024,
+    "h": 574,
+    "widths": [
+      640,
+      1024
+    ]
+  },
+  "media/global-hero-customer-journey-blueprint.webp": {
+    "w": 2500,
+    "h": 972,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/global-work-blueprinting-workshop.webp": {
+    "w": 2500,
+    "h": 1406,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/global-work-identified-opportunities.png": {
+    "w": 2910,
+    "h": 1584,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/global-work-remote-synthesis-call.webp": {
+    "w": 2500,
+    "h": 1409,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/luxury-hero-complete-my-look-flow.png": {
+    "w": 2400,
+    "h": 1256,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/luxury-work-concept-complete-my-look.png": {
+    "w": 2546,
+    "h": 1434,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/luxury-work-concept-filter-for-me.png": {
+    "w": 2548,
+    "h": 1430,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/luxury-work-concept-smart-shop.png": {
+    "w": 3040,
+    "h": 1712,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/luxury-work-insight-go-to-brands.png": {
+    "w": 3032,
+    "h": 1710,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/luxury-work-insight-nonlinear-shopping.png": {
+    "w": 3028,
+    "h": 1708,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/qsr-hero-all-journeys.png": {
+    "w": 2400,
+    "h": 1474,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/qsr-work-applied-learning.png": {
+    "w": 2200,
+    "h": 1237,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/qsr-work-current-state-map.png": {
+    "w": 2629,
+    "h": 2017,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/qsr-work-delivery-2-0.png": {
+    "w": 2200,
+    "h": 1237,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/qsr-work-pocket-order.png": {
+    "w": 2200,
+    "h": 1237,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/qsr-work-roadmap.png": {
+    "w": 2200,
+    "h": 1237,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/qsr-work-step-by-step.png": {
+    "w": 2200,
+    "h": 1237,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/superfund-hero-service-blueprint.png": {
+    "w": 2928,
+    "h": 1614,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/superfund-work-concept.png": {
+    "w": 2996,
+    "h": 1686,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/superfund-work-critical-moments.png": {
+    "w": 2834,
+    "h": 1520,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/superfund-work-engagement-map.png": {
+    "w": 2524,
+    "h": 1564,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/superfund-work-process.png": {
+    "w": 2854,
+    "h": 984,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/tax-work-concept-field-guides.png": {
+    "w": 2428,
+    "h": 1380,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/tax-work-future-experience-overview.png": {
+    "w": 2422,
+    "h": 1378,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  },
+  "media/tax-work-opportunity-map.png": {
+    "w": 2408,
+    "h": 1644,
+    "widths": [
+      640,
+      1200,
+      2000
+    ]
+  }
+}

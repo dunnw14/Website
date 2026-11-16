@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * Fades + lifts its children into view the first time they hit the viewport.
- * Falls back to "always visible" when IntersectionObserver isn't available.
+ * Falls back to "always visible" when IntersectionObserver isn't available;
+ * base.css switches the effect off entirely under prefers-reduced-motion.
  */
 export default function Reveal({ children, delay = 0, as: Tag = "div", className = "", ...rest }) {
   const ref = useRef(null);
@@ -22,7 +23,7 @@ export default function Reveal({ children, delay = 0, as: Tag = "div", className
           observer.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -6% 0px" }
     );
 
     observer.observe(node);
@@ -33,7 +34,7 @@ export default function Reveal({ children, delay = 0, as: Tag = "div", className
     <Tag
       ref={ref}
       className={`reveal ${visible ? "is-visible" : ""} ${className}`.trim()}
-      style={{ transitionDelay: `${delay}s` }}
+      style={delay ? { transitionDelay: `${delay}s` } : undefined}
       {...rest}
     >
       {children}

@@ -58,115 +58,82 @@ asserted rather than checked:
 file.** Do not report a multi-file edit as done on the strength of the command
 having run.
 
-Check both themes. The toggle persists in `localStorage` under `wd-theme`, and
-`index.html` sets it before first paint, so `prefers-color-scheme` alone will
-not switch it — set the storage key.
-
 ## Design language
 
-Settled deliberately; don't re-litigate without being asked.
+Redesigned November 2026 ("Plain Catalogue"). Settled deliberately; don't
+re-litigate without being asked.
 
-- **Restraint reads as expensive.** Fixes are usually subtractive.
-- **Sentence case** for nav, buttons and links. Wide-tracked uppercase earns
-  its place only on small labels and metadata.
-- **Accent is a reward, not decoration.** Apricot belongs on small elements
-  and hover states. Large accent display type tints the whole page.
-- **`--t-h2` is the ceiling** — hero statements and page titles. There is
-  deliberately no larger step; a 96px `--t-h1` used to exist and every page
-  title reached for it, so each page's title outgrew what it introduced.
-- **Measure is capped separately from container width.** Body copy past ~70
-  characters reads as a wall. Containers set the left edge; `max-width` on the
-  text sets the measure. These are separate jobs.
-- **One left edge.** All content aligns with the nav and footer. `.shell` and
-  `.shell-narrow` share an outer width; the narrow one caps its content column
-  instead of centring a smaller box.
+- **Simple, clear, minimalist.** White page, one typeface (Hanken Grotesk,
+  weights 400 and 500), hierarchy from size and space only.
+- **One colour, used for meaning.** Bottle green (`--green`) marks anything
+  clickable and fills the closing contact band — the only large block of
+  colour. Pale sage (`--sage`) sits behind artefacts so white documents read
+  as sheets of paper. No second accent, no dark theme, no theme toggle.
+- **The work is the imagery.** No illustration, no decoration. The home page
+  opens with the statement, then the catalogue strip: each project's artefact
+  at its own proportions, bottoms aligned. The strip must start on the first
+  screen — its heights and the intro's padding scale with viewport *height*
+  (`--u` in `Home.css`); check the fold at 1440x900 and on a phone if either
+  is touched.
+- **Strip images are service blueprints and journey maps first**, and the
+  Billio prototype flow for the bank. The choice lives in `HOME_FEATURE` in
+  `src/data/content.js`, along with which impact line is quoted as the
+  one-line outcome.
+- **Copy is never rewritten.** All wording comes from `content/*.json`
+  verbatim; the design may re-chunk it and choose which line to quote.
+  Labels stored in capitals are shown in sentence case via `label()`.
+- **Avoid the "AI-generated" look**: no giant headline with one coloured
+  word, no uppercase monospace labels, no 01/02 numbering, no status dots,
+  no cream background.
+- **Sentence case** everywhere. **`--t-display` is the ceiling** for type.
+- **One left edge.** Everything aligns to `.shell`; full-bleed strips use
+  `--edge` to line up with it.
 
-`src/styles/TOKENS.md` documents the tokens and, where it matters, why a token
-exists. Keep it current — several of the notes there exist to stop a specific
-bug being reintroduced.
+`src/styles/TOKENS.md` documents the tokens and the contrast table.
 
 ## Where things stand
 
-Done and live: the design tokens, case study cards, page titles and footer,
-site-wide left-edge alignment, the mobile overflow fix, and the Skills page
-redesign.
+Every page is built in the new design: Home, Case Studies, the case study
+template (all seven), Skills, CV and 404. Live since 16 Nov 2026. The
+previous design is bookmarked on the `pre-redesign-v1` branch.
 
-The Home hero visual is an animated hand-drawn "Service Blueprint" sketch
-(`src/components/ServiceBlueprintSketch.jsx`), not the earlier image collage.
-It's a faithful port of a supplied standalone SVG + Web Animations API asset:
-deterministic seeded wobble, staged draw-in over a 25s loop,
-`prefers-reduced-motion` fallback. It draws directly onto the hero's own
-background — no paper card, no border. Its ink strokes use `var(--ink)` /
-`var(--ink-2)` / `var(--ink-3)` rather than the asset's original hardcoded
-hex, specifically because those hardcoded darks were close to illegible once
-drawn straight onto the dark theme's background — the same "invisible until
-rendered" failure mode as the other bugs logged below. Check both themes
-again if this component is touched.
+- **Home** order: statement with the AKQA paragraph opposite it (stacks on
+  phones), the catalogue strip (drifts sideways slowly; pauses on hover,
+  focus, manual scroll and off screen; pause button; still under reduced
+  motion), the project index with a small second artefact per row on sage,
+  then About as a facts grid (Capabilities linking to each Skills tab via
+  route state, Experience, Industry Experience).
+- **Artefacts** on case study pages are capped at `min(66vh, 640px)` tall
+  so squarer images don't fill the screen; wide maps stay under the cap.
 
-`content/skills.json` carries a page-level `lead` (one-line statement) and
-`intro` (longer paragraph) under the heading, then per-section `intro` text
-and per-group `description` (optional — one group in CX Strategy has none,
-and the layout handles that). `accentColor` was dropped from sections: it
-was never wired to any CSS, a leftover from a multi-hue concept the
-single-accent system replaced. Within a section, `Skills.jsx`/`Skills.css`
-render each group as a hairline-divided row (label + description left, item
-list right) rather than the old card grid, and group labels are ink, not
-accent — the accent label text was the contrast failure logged below, so
-this rewrite removes it rather than fixing it in place.
+- **Case study template** runs in a fixed order: overview, hero artefact,
+  Background & Challenge, My Role, Process & Approach, Work Samples, Key
+  Deliverables, Impact & Outcomes, Reflection, pager. Artefacts sit on sage
+  bands at full width; very wide ones (ratio over 2.1) take a full row,
+  others sit two-up. Each opens the full-resolution original in a lightbox
+  (`Artefact` in `src/components/Media.jsx`) that zooms and scrolls, which is
+  what makes journey maps readable on a phone.
+- **Images** are served as resized WebP copies from `public/media/opt/`,
+  generated by `python3 scripts/optimise-media.py` (needs Pillow), which also
+  writes `src/data/media-sizes.json`. Re-run it whenever an image is added or
+  replaced, and commit the output. An image the script hasn't seen falls
+  back to its original file.
+- **Skills** keeps the tabbed layout and WAI-ARIA tabs behaviour from before
+  (tabbed beat stacked; the tabs are a bordered segmented control so they
+  don't read as nav text).
+- **Fonts** are self-hosted (`src/assets/fonts/`), no third-party requests.
 
-The three sections (Service Design, CX Strategy, Agentic & Generative AI)
-sit behind tabs rather than all rendering top to bottom — Service Design is
-shown by default. Two layouts were tried (everything stacked vs. tabbed);
-tabbed won and is what's live, kept as the `skills-v1` bookmark. The tabs
-themselves are a bordered segmented-control pill group, not quiet
-text-with-underline — an earlier underline version read too much like plain
-nav text, so the active tab now gets a solid `--accent` fill
-(`--on-accent` text) to read unambiguously as a control. Tabs follow the
-WAI-ARIA tabs pattern: roving `tabindex`, arrow/Home/End key navigation,
-only the active section's panel is in the DOM. Worth knowing: this trades
-away having all capability content in view/indexable at once, in exchange
-for a shorter default page.
+Open:
 
-Open, in rough priority order:
-
-- **Accent-coloured text fails contrast in the light theme** (1.83:1). It is
-  fine as a fill, border or small mark, but not as text. Known users:
-  `.cv-job-company`, `.csd-subhead`, `.csd-phase-name`, and the
-  `.footer-link` / `.csd-pager-title` hovers. Fix these when working the page
-  they sit on; see the contrast table in `TOKENS.md`.
-- **CV page detail.** Left-weighted since the alignment change, with a wide
-  empty band down the right — a known trade of that fix, not a regression.
-  Still carries old language: apricot uppercase employer names (AKQA, ATO)
-  and the old panel styling on "Core capabilities".
-- **Real-device check.** Mobile was verified in Chromium with touch
-  emulation, which will not catch Safari's behaviour around `100vh` and
-  sticky headers. Worth opening the live site on a phone.
-- **Not yet looked at:** landscape phone orientation; the nav drawer's
-  keyboard and screen-reader behaviour beyond confirming it opens and closes.
-- **Case study detail** small labels are still apricot micro-caps. That is
-  consistent with the accent rule, so probably fine — but it was never a
-  deliberate decision, so make one.
-
-The Major Australian Bank case study carries real imagery: an optional
-`media.hero` lead image (the Billio prototype, all six screens, rendered
-right under the page title with no carousel chrome since it's one item) plus
-a 4-item Work Samples carousel in its original spot (sprint board, then three
-concept explorations — Time Capsule, One Pay, Pulse Check). The other six
-case studies' detail-page `hero`/`workSamples` slots are still placeholders.
-`README.md` explains how to drop real images and the CV PDF in, including the
-optional `hero` slot and per-item `ratio` override.
-
-All 7 work cards (Home's featured grid and the full Case Studies grid — both
-render through `WorkCard.jsx`) have a client-supplied line illustration via
-`media.cardIllustration`, one per case study, vector-traced from the
-client's own reference art (not the site's hand-drawn sketch style). Source
-SVGs ship as `fill="currentColor"`, which only resolves against page CSS for
-*inline* SVG — these load through a plain `<img>`, an isolated context where
-that falls back to black, so each file in `public/media/illustration-*.svg`
-has its fill baked in as a literal colour instead. `.wc-media` is a two-row
-CSS grid (`1fr` illustration, `auto` title/tags) so each card's illustration
-fills whatever room its own title doesn't need, rather than every card
-sharing one fixed-size box tuned for the longest title.
+- **No contact email** in `content/home.json`, so every "Get in touch" link
+  goes to the CV page. **No CV PDF**, so the download button is disabled.
+- **Client names are visible inside two artefacts** ("bankwest" in the
+  Billio screens, "State Super Fund" on the journey map) while the copy
+  anonymises both clients. The user has been told; their call.
+- `cardImage` / `cardIllustration` in `case-studies.json` and the
+  `public/media/illustration-*.svg` files are no longer used by any page.
+- **Real-device check** still outstanding: verified in desktop Chrome and
+  Chrome's phone emulation only, not Safari.
 
 ## Workflow
 

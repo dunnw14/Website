@@ -1,71 +1,73 @@
 import { Link, useParams } from "react-router-dom";
-import { getCaseStudy, getNeighbours } from "../data/content.js";
-import { Gallery } from "../components/Media.jsx";
+import { getCaseStudy, getNeighbours, metaLine, sizeRatio } from "../data/content.js";
+import { Artefact } from "../components/Media.jsx";
 import Reveal from "../components/Reveal.jsx";
+import useTitle from "../components/useTitle.js";
 import NotFound from "./NotFound.jsx";
 import "./CaseStudyDetail.css";
 
-function Section({ label, children, delay = 0 }) {
+function Section({ label, children }) {
   return (
-    <Reveal as="section" className="csd-section" delay={delay}>
-      <h2 className="section-label">{label}</h2>
-      {children}
+    <Reveal as="section" className="split">
+      <h2>{label}</h2>
+      <div>{children}</div>
     </Reveal>
   );
 }
 
+/**
+ * One template for every case study, in a fixed order:
+ * overview → challenge → my role → approach → key artefacts → outcome.
+ */
 export default function CaseStudyDetail() {
   const { slug } = useParams();
   const item = getCaseStudy(slug);
+  useTitle(item?.title ?? "Page not found");
 
   if (!item) return <NotFound />;
 
   const { previous, next } = getNeighbours(slug);
   const { backgroundChallenge: bg, role } = item;
+  const hero = item.media?.hero;
+  const samples = (item.media?.workSamples ?? []).filter((m) => m?.src);
 
   return (
-    <article className="page csd">
-      <div className="shell-narrow">
-        <Link to="/case-studies" className="csd-back">
+    <article className="cs">
+      <div className="shell">
+        <Link to="/case-studies" className="link grey cs-back">
           <span aria-hidden="true">←</span> All Case Studies
         </Link>
 
-        <header className="csd-head">
-          <div className="tag-row">
-            {item.tags.map((tag) => (
-              <span className="tag" key={tag}>
-                {tag}
-              </span>
-            ))}
-          </div>
-          <h1 className="display csd-title">{item.title}</h1>
-          <p className="csd-subtitle">{item.subtitle}</p>
+        <header className="cs-head">
+          <p className="eyebrow">{metaLine(item)}</p>
+          <h1 className="display">{item.title}</h1>
+          <p className="lead cs-overview">{item.overview}</p>
         </header>
+      </div>
 
-        {item.media?.hero ? (
-          <Section label="Work Samples">
-            <Gallery items={[item.media.hero]} label={`${item.title} hero work sample`} />
-          </Section>
-        ) : null}
+      {hero?.src ? (
+        <div className="cs-band">
+          <div className={hero.type === "video" ? "shell cs-band-video" : "shell"}>
+            <Artefact item={hero} sizes="(max-width: 1480px) 94vw, 1400px" eager />
+          </div>
+        </div>
+      ) : null}
 
-        <Section label="Project Overview">
-          <p className="csd-prose">{item.overview}</p>
-        </Section>
-
+      <div className="shell cs-body">
         <Section label="Background &amp; Challenge">
-          <p className="csd-prose">{bg.intro}</p>
-          <div className="csd-split">
+          <p className="lead measure">{bg.intro}</p>
+          <div className="cs-two">
             <div>
-              <h3 className="csd-subhead">Challenges</h3>
-              <ul className="csd-list">
+              <h3>Challenges</h3>
+              <ul className="rule-list">
                 {bg.challenges.map((entry, i) => (
                   <li key={i}>{entry}</li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="csd-subhead">Goals</h3>
-              <ul className="csd-list csd-list-goals">
+              <h3>Goals</h3>
+              <ul className="rule-list">
                 {bg.goals.map((entry, i) => (
                   <li key={i}>{entry}</li>
                 ))}
@@ -75,44 +77,64 @@ export default function CaseStudyDetail() {
         </Section>
 
         <Section label="My Role &amp; Responsibilities">
-          <p className="csd-prose">{role.intro}</p>
-          <ul className="csd-role-grid">
+          <p className="lead measure">{role.intro}</p>
+          <dl className="cs-rows">
             {role.responsibilities.map((entry, i) => (
-              <li className="csd-role-card" key={i}>
-                <strong>{entry.title}</strong>
-                <span>{entry.desc}</span>
-              </li>
+              <div key={i}>
+                <dt>{entry.title}</dt>
+                <dd>{entry.desc}</dd>
+              </div>
             ))}
-          </ul>
+          </dl>
         </Section>
 
         <Section label="Process &amp; Approach">
-          <ol className="csd-process">
+          <ol className="cs-rows">
             {item.process.map((step, i) => (
-              <li className="csd-phase" key={i}>
-                <h3 className="csd-phase-name">{step.phase}</h3>
-                <p className="csd-phase-desc">{step.desc}</p>
+              <li key={i}>
+                <h3>{step.phase}</h3>
+                <p>{step.desc}</p>
               </li>
             ))}
           </ol>
         </Section>
+      </div>
 
-        <Section label="Work Samples">
-          <Gallery items={item.media?.workSamples ?? []} label={`${item.title} work samples`} />
-        </Section>
+      {samples.length ? (
+        <section className="cs-band cs-samples" aria-labelledby="cs-samples">
+          <div className="shell">
+            <h2 id="cs-samples">Work Samples</h2>
+            <div className="cs-sample-grid">
+              {samples.map((sample, i) => (
+                // Very wide artefacts (journey maps, process strips) take the
+                // full width; squarer ones sit two-up.
+                <Reveal key={i} className={sizeRatio(sample) > 2.1 ? "is-wide" : ""}>
+                  <Artefact
+                    item={sample}
+                    sizes={
+                      sizeRatio(sample) > 2.1
+                        ? "(max-width: 1480px) 94vw, 1400px"
+                        : "(max-width: 820px) 94vw, 46vw"
+                    }
+                  />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
+      <div className="shell cs-body">
         <Section label="Key Deliverables">
-          <ul className="tag-row csd-deliverables">
+          <ul className="rule-list measure">
             {item.keyDeliverables.map((entry, i) => (
-              <li className="pill" key={i}>
-                {entry}
-              </li>
+              <li key={i}>{entry}</li>
             ))}
           </ul>
         </Section>
 
         <Section label="Impact &amp; Outcomes">
-          <ul className="csd-list csd-list-goals">
+          <ul className="cs-impact">
             {item.impact.map((entry, i) => (
               <li key={i}>{entry}</li>
             ))}
@@ -120,30 +142,30 @@ export default function CaseStudyDetail() {
         </Section>
 
         <Section label="Reflection &amp; Learnings">
-          <ul className="csd-list">
+          <ul className="rule-list measure">
             {item.reflection.map((entry, i) => (
               <li key={i}>{entry}</li>
             ))}
           </ul>
         </Section>
 
-        <nav className="csd-pager" aria-label="Case study navigation">
+        <nav className="cs-pager" aria-label="Case study navigation">
           {previous ? (
-            <Link to={`/case-studies/${previous.slug}`} className="csd-pager-link is-prev">
-              <span className="csd-pager-label">
+            <Link to={`/case-studies/${previous.slug}`} className="cs-pager-link">
+              <span className="grey">
                 <span aria-hidden="true">←</span> Previous
               </span>
-              <span className="csd-pager-title">{previous.title}</span>
+              <span className="cs-pager-title">{previous.title}</span>
             </Link>
           ) : (
             <span />
           )}
           {next ? (
-            <Link to={`/case-studies/${next.slug}`} className="csd-pager-link is-next">
-              <span className="csd-pager-label">
+            <Link to={`/case-studies/${next.slug}`} className="cs-pager-link is-next">
+              <span className="grey">
                 Next <span aria-hidden="true">→</span>
               </span>
-              <span className="csd-pager-title">{next.title}</span>
+              <span className="cs-pager-title">{next.title}</span>
             </Link>
           ) : (
             <span />

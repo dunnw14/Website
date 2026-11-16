@@ -1,149 +1,90 @@
-.sk-head {
-  max-width: 40rem;
-  margin-bottom: clamp(2.5rem, 1.6rem + 4vw, 4.5rem);
-}
-
-.sk-title {
-  font-size: var(--t-h2);
-  color: var(--ink);
-  margin-top: 0.8rem;
-}
-
-.sk-lead {
-  margin-top: 1.25rem;
-}
-
-.sk-intro {
-  margin-top: 1rem;
-  font-size: var(--t-body);
-  line-height: 1.7;
-  color: var(--ink-2);
-  max-width: 42rem;
-}
-
+/* The three capability areas sit behind tabs (WAI-ARIA tabs pattern). They
+   are a bordered segmented control, not underlined text, so they can't be
+   mistaken for navigation; the active one takes the green fill. */
 .sk-tablist {
   display: inline-flex;
-  max-width: 100%;
-  gap: 0.3rem;
-  padding: 0.3rem;
-  background: var(--surface-2);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--pill);
-  margin-bottom: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.sk-tablist::-webkit-scrollbar {
-  display: none;
+  flex-wrap: wrap;
+  border: 1px solid var(--green);
+  border-radius: 2px;
 }
 
 .sk-tab {
-  flex-shrink: 0;
-  padding: 0.7rem 1.2rem;
-  border-radius: var(--pill);
-  font-family: var(--font-display);
-  font-size: 0.93rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1;
-  white-space: nowrap;
-  color: var(--ink-2);
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
+  padding: 11px 20px;
+  color: var(--green);
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sk-tab + .sk-tab {
+  border-left: 1px solid var(--green);
 }
 
 .sk-tab:hover {
-  color: var(--ink);
-  background: var(--surface-3);
+  background: var(--sage);
 }
 
 .sk-tab[aria-selected="true"] {
-  color: var(--on-accent);
-  background: var(--accent);
+  background: var(--green);
+  color: var(--on-green);
 }
 
-.sk-tab[aria-selected="true"]:hover {
-  background: var(--accent);
+.sk-tab:focus-visible {
+  outline-offset: 2px;
 }
 
 .sk-panel {
-  outline: none;
+  padding-top: clamp(32px, 4vw, 56px);
+  animation: page-in 0.4s var(--ease) both;
 }
 
 .sk-section-intro {
-  font-size: 1rem;
-  line-height: 1.65;
-  color: var(--ink-2);
-  max-width: 42rem;
-  margin-bottom: clamp(0.5rem, 0.2rem + 1vw, 1rem);
-}
-
-.sk-groups {
-  display: flex;
-  flex-direction: column;
+  max-width: 62ch;
+  margin-bottom: clamp(32px, 4vw, 56px);
 }
 
 .sk-group {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(1.25rem, 0.6rem + 2.5vw, 3rem);
-  padding-block: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
-  border-top: 1px solid var(--line-soft);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 16px var(--g);
+  padding-block: clamp(28px, 3.5vw, 48px);
+  border-top: 1px solid var(--ink);
 }
 
-.sk-group-label {
-  font-family: var(--font-display);
+.sk-group h3 {
   font-size: var(--t-h3);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  line-height: 1.25;
 }
 
-.sk-group-desc {
-  margin-top: 0.6rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--ink-2);
-  max-width: 30ch;
+.sk-group h3 + p {
+  margin-top: 10px;
+  max-width: 44ch;
 }
 
-.sk-group-items {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+.sk-group .rule-list > li:first-child {
+  border-top: 0;
+  padding-top: 4px;
 }
 
-.sk-group-items li {
-  position: relative;
-  padding-left: 1.3rem;
-  font-size: 0.97rem;
-  line-height: 1.5;
-  color: var(--ink-2);
-}
-
-.sk-group-items li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.7;
-}
-
-@media (max-width: 760px) {
+@media (max-width: 820px) {
   .sk-group {
     grid-template-columns: 1fr;
-    gap: 0.9rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .sk-tablist {
+    display: flex;
+    flex-direction: column;
   }
 
-  .sk-group-desc {
-    max-width: none;
+  .sk-tab {
+    text-align: left;
+  }
+
+  .sk-tab + .sk-tab {
+    border-left: 0;
+    border-top: 1px solid var(--green);
   }
 }

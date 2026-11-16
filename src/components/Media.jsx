@@ -1,4 +1,5 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import sizes from "../data/media-sizes.json";
 import "./Media.css";
 
 /**
@@ -14,142 +15,118 @@ export function assetUrl(src) {
 
 const isEmbed = (src) => /youtube\.com|youtu\.be|vimeo\.com|player\./i.test(src || "");
 
+/** Pixel size of an original, from scripts/optimise-media.py. */
+export const sizeOf = (src) => sizes[src] ?? null;
+
 /**
- * One media slot. Renders the real asset once `src` is filled in inside
- * content/case-studies.json — until then it shows a labelled placeholder so
- * the layout is already correct.
+ * An image served from the resized WebP copies in public/media/opt/, with
+ * width/height set so the page never jumps while it loads. Falls back to the
+ * original file for anything the optimise script hasn't seen yet.
  */
-export function MediaFrame({ item, ratio = "16 / 10", label = "Image" }) {
-  const [failed, setFailed] = useState(false);
-  const src = assetUrl(item?.src);
-  const type = item?.type ?? "image";
-
-  const showPlaceholder = !src || failed;
-
+export function Picture({ src, alt = "", sizes: sizesAttr = "100vw", eager = false, ...rest }) {
+  const meta = sizeOf(src);
+  if (!meta) {
+    return <img src={assetUrl(src)} alt={alt} loading={eager ? "eager" : "lazy"} decoding="async" {...rest} />;
+  }
+  const stem = src.replace(/^media\//, "").replace(/\.[^.]+$/, "");
+  const variant = (w) => assetUrl(`media/opt/${stem}-${w}.webp`);
   return (
-    <figure className="media" style={{ "--ratio": ratio }}>
-      <div className="media-frame">
-        {showPlaceholder ? (
-          <Placeholder label={type === "video" ? "Video" : label} failed={failed} />
-        ) : type === "video" ? (
-          isEmbed(item.src) ? (
+    <img
+      src={variant(meta.widths[meta.widths.length - 1])}
+      srcSet={meta.widths.map((w) => `${variant(w)} ${w}w`).join(", ")}
+      sizes={sizesAttr}
+      width={meta.w}
+      height={meta.h}
+      alt={alt}
+      loading={eager ? "eager" : "lazy"}
+      decoding="async"
+      {...rest}
+    />
+  );
+}
+
+/**
+ * One artefact on a case study page: the image at page width, its caption,
+ * and a button that opens the full-resolution original in a lightbox so
+ * journey maps and blueprints can actually be read — including on a phone,
+ * where the lightbox scrolls in both directions.
+ */
+export function Artefact({ item, sizes: sizesAttr, eager = false }) {
+  const dialog = useRef(null);
+  const [open, setOpen] = useState(false);
+  const [zoomed, setZoomed] = useState(false);
+
+  useEffect(() => {
+    const node = dialog.current;
+    if (!node) return;
+    if (open && !node.open) node.showModal();
+    if (!open && node.open) node.close();
+  }, [open]);
+
+  if (!item?.src) return null;
+
+  if (item.type === "video") {
+    return (
+      <figure className="artefact">
+        <div className="artefact-video">
+          {isEmbed(item.src) ? (
             <iframe
-              className="media-el"
-              src={src}
-              title={item.caption || "Video"}
+              src={item.src}
+              title={item.caption || item.alt || "Video"}
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
           ) : (
-            <video
-              className="media-el"
-              src={src}
-              poster={assetUrl(item.poster) ?? undefined}
-              controls
-              preload="metadata"
-              onError={() => setFailed(true)}
-            />
-          )
-        ) : (
-          <img
-            className="media-el"
-            src={src}
-            alt={item.alt ?? ""}
-            loading="lazy"
-            decoding="async"
-            onError={() => setFailed(true)}
-          />
-        )}
-      </div>
-      {item?.caption ? <figcaption className="media-caption">{item.caption}</figcaption> : null}
-    </figure>
-  );
-}
-
-function Placeholder({ label, failed }) {
-  return (
-    <div className="media-placeholder" role="img" aria-label={`${label} placeholder`}>
-      <svg viewBox="0 0 32 32" width="26" height="26" fill="none" aria-hidden="true">
-        {label === "Video" ? (
-          <>
-            <rect x="3" y="7" width="26" height="18" rx="2.5" stroke="currentColor" strokeWidth="1.4" />
-            <path d="M13.6 12.8 20.5 16l-6.9 3.2v-6.4Z" fill="currentColor" />
-          </>
-        ) : (
-          <>
-            <rect x="3" y="6" width="26" height="20" rx="2.5" stroke="currentColor" strokeWidth="1.4" />
-            <circle cx="11.5" cy="13" r="2.2" stroke="currentColor" strokeWidth="1.4" />
-            <path d="m5 22 6.6-6.1a2 2 0 0 1 2.7 0L20 21" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-            <path d="m18 19 3.3-3a2 2 0 0 1 2.7 0L27 19" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-          </>
-        )}
-      </svg>
-      <span className="media-placeholder-label">
-        {failed ? `${label} not found` : `${label} placeholder`}
-      </span>
-    </div>
-  );
-}
-
-/**
- * The "Work Samples" carousel: one item at a time with prev/next and a counter,
- * matching the layout of the original site.
- */
-export function Gallery({ items = [], label = "Work samples" }) {
-  const [index, setIndex] = useState(0);
-  const [height, setHeight] = useState(null);
-  const slideRefs = useRef([]);
-
-  // Slides sit side by side in a flex row so they can be translated into
-  // view, which stretches the viewport to the tallest slide by default.
-  // Different items can carry very different `ratio`s, so we measure the
-  // active slide and pin the viewport to just its height.
-  useLayoutEffect(() => {
-    const el = slideRefs.current[index];
-    if (!el) return;
-    const observer = new ResizeObserver(([entry]) => setHeight(entry.contentRect.height));
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [index]);
-
-  if (!items.length) return null;
-
-  const total = items.length;
-  const go = (dir) => setIndex((i) => Math.min(total - 1, Math.max(0, i + dir)));
+            <video src={assetUrl(item.src)} poster={assetUrl(item.poster) ?? undefined} controls preload="metadata" />
+          )}
+        </div>
+        {item.caption ? <figcaption>{item.caption}</figcaption> : null}
+      </figure>
+    );
+  }
 
   return (
-    <div className="gallery" aria-roledescription="carousel" aria-label={label}>
-      <div className="gallery-viewport" style={height ? { height: `${height}px` } : undefined}>
-        <div className="gallery-track" style={{ transform: `translate3d(-${index * 100}%, 0, 0)` }}>
-          {items.map((item, i) => (
-            <div
-              className="gallery-slide"
-              key={i}
-              ref={(el) => (slideRefs.current[i] = el)}
-              aria-hidden={i !== index}
-              // Keeps hidden slides out of the tab order.
-              inert={i !== index ? "" : undefined}
-            >
-              <MediaFrame item={item} ratio={item.ratio} label={`Work sample ${i + 1}`} />
+    <figure className="artefact">
+      <button
+        className="artefact-open"
+        onClick={() => setOpen(true)}
+        aria-label={`View larger: ${item.alt || item.caption || "image"}`}
+      >
+        <Picture src={item.src} alt={item.alt ?? ""} sizes={sizesAttr} eager={eager} />
+        <span className="artefact-plus" aria-hidden="true">
+          +
+        </span>
+      </button>
+      {item.caption ? <figcaption>{item.caption}</figcaption> : null}
+
+      <dialog
+        ref={dialog}
+        className="lightbox"
+        onClose={() => {
+          setOpen(false);
+          setZoomed(false);
+        }}
+        onClick={(e) => {
+          if (e.target === dialog.current) setOpen(false);
+        }}
+      >
+        {open ? (
+          <>
+            <button className="lightbox-close" onClick={() => setOpen(false)} autoFocus>
+              Close
+            </button>
+            <div className={zoomed ? "lightbox-stage is-zoomed" : "lightbox-stage"}>
+              {/* The original, not a resized copy: this is where detail matters. */}
+              <img
+                src={assetUrl(item.src)}
+                alt={item.alt ?? ""}
+                onClick={() => setZoomed((z) => !z)}
+              />
             </div>
-          ))}
-        </div>
-      </div>
-
-      {total > 1 ? (
-        <div className="gallery-controls">
-          <button className="gallery-btn" onClick={() => go(-1)} disabled={index === 0}>
-            <span aria-hidden="true">←</span> Previous
-          </button>
-          <span className="gallery-count" aria-live="polite">
-            {index + 1} / {total}
-          </span>
-          <button className="gallery-btn" onClick={() => go(1)} disabled={index === total - 1}>
-            Next <span aria-hidden="true">→</span>
-          </button>
-        </div>
-      ) : null}
-    </div>
+          </>
+        ) : null}
+      </dialog>
+    </figure>
   );
 }

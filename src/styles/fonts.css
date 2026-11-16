@@ -1,14 +1,14 @@
 /* ------------------------------------------------------------------
-   Self-hosted variable fonts (latin subset) — no third-party requests.
-   Inter carries both the display and body voice — the type system is
-   deliberately single-family.
-   Files live in src/assets/fonts/ and are hashed into the build by Vite.
+   Self-hosted variable font (latin subset) — no third-party requests.
+   Hanken Grotesk is the only family on the site: one quiet grotesque in
+   two weights, so hierarchy comes from size and space, not from type.
+   The file lives in src/assets/fonts/ and is hashed into the build by Vite.
    ------------------------------------------------------------------ */
 
 @font-face {
-  font-family: "Inter";
-  src: url("../assets/fonts/inter-latin.woff2") format("woff2-variations");
-  font-weight: 300 600;
+  font-family: "Hanken Grotesk";
+  src: url("../assets/fonts/hanken-grotesk-latin.woff2") format("woff2-variations");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,

@@ -1,181 +1,284 @@
-/* ============================================================
-   Hero — full-bleed, image-led, oversized type
-   ============================================================ */
-
-.hero {
-  position: relative;
-  overflow: hidden;
-  padding-top: clamp(3.5rem, 2rem + 6vw, 7rem);
-  padding-bottom: clamp(2rem, 1.2rem + 4vw, 4.5rem);
+/* The intro is deliberately short so the catalogue strip starts on the
+   first screen: its padding and the strip's heights both scale with the
+   viewport height, not just its width. */
+.home-intro {
+  padding-block: clamp(28px, 6.5vh, 84px) clamp(28px, 5vh, 60px);
 }
 
-.hero-inner {
-  position: relative;
-  z-index: 1;
+.home-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(2rem, 1rem + 4vw, 5rem);
-  align-items: center;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: 20px var(--g);
+  align-items: end;
 }
 
-.hero-eyebrow {
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--ink-3);
-  margin: 0 0 1.25rem;
+.home-intro h1 {
+  max-width: 19ch;
 }
 
-.hero-headline {
-  font-size: clamp(2.4rem, 1.5rem + 4.2vw, 4.8rem);
-  font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-  margin: 0 0 1.5rem;
-  max-width: 13ch;
-  text-wrap: balance;
+.home-intro h1 + p {
+  margin-top: clamp(16px, 2.6vh, 28px);
+  max-width: 46ch;
 }
 
-.hero-lede {
-  font-size: var(--t-lead);
-  line-height: 1.55;
-  color: var(--ink-2);
-  max-width: 42ch;
-  margin: 0 0 2.25rem;
+/* Bottom-aligned with the line under the statement, and narrow, so it reads
+   as a quiet aside rather than a second headline. */
+.home-intro-aside {
+  max-width: 40ch;
+  justify-self: end;
 }
 
-.hero-ctas {
+/* ---- Catalogue strip ---------------------------------------------- */
+
+.home-band {
+  /* Height of the tallest artefact. */
+  --u: clamp(170px, 35vh, 340px);
+  background: var(--sage);
+  padding-block: clamp(24px, 4vh, 48px) 14px;
+}
+
+.home-strip {
   display: flex;
-  align-items: center;
-  gap: 1.75rem;
-  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: clamp(18px, 2vw, 34px);
+  padding: 8px var(--edge) 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
-.hero-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.95rem 1.6rem;
-  border-radius: var(--pill);
-  background: var(--ink);
-  color: var(--page);
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: transform 0.4s var(--ease-back), background-color 0.35s var(--ease);
-}
-
-.hero-btn:hover {
-  transform: scale(1.045);
-  background: var(--accent);
-  color: var(--on-accent);
-}
-
-.hero-btn svg {
-  transition: transform 0.35s var(--ease);
-}
-
-.hero-btn:hover svg {
-  transform: translate(2px, -2px);
-}
-
-.hero-link {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--ink-2);
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 0.15rem;
-  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
-}
-
-.hero-link:hover {
-  color: var(--ink);
-  border-color: var(--ink);
-}
-
-/* ---- Hero visual (ServiceBlueprintSketch) --------------------------- */
-
-.hero-visual {
+.home-strip::-webkit-scrollbar {
   display: none;
 }
 
-/* ============================================================
-   Selected Work
-   ============================================================ */
+.home-strip-item {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--t-small);
+  line-height: 1.35;
+}
+
+.home-strip-item img {
+  height: calc(var(--u) * var(--f));
+  width: auto;
+  max-width: none;
+  margin-bottom: 14px;
+  background: var(--white);
+  box-shadow: 0 1px 2px rgba(17, 40, 28, 0.1), 0 12px 28px -16px rgba(17, 40, 28, 0.3);
+  transition: transform 0.45s var(--ease);
+}
+
+.home-strip-item:hover img {
+  transform: translateY(-6px);
+}
+
+.home-strip-title {
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.home-strip-item:hover .home-strip-title {
+  color: var(--green);
+}
+
+.home-strip-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.home-strip-controls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--green);
+  font-size: 18px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.home-strip-pause {
+  font-size: 11px !important;
+  letter-spacing: 1px;
+}
+
+/* Nothing drifts under reduced motion, so there is nothing to pause. */
+@media (prefers-reduced-motion: reduce) {
+  .home-strip-pause {
+    display: none;
+  }
+}
+
+.home-strip-controls button:hover {
+  background: var(--green);
+  color: var(--on-green);
+}
+
+/* ---- Work index ---------------------------------------------------- */
 
 .home-work {
-  position: relative;
-  padding-top: clamp(2.5rem, 1rem + 4vw, 5.5rem);
-  padding-bottom: var(--section-y);
+  border-top: 0;
+  padding-top: var(--section-y);
 }
 
-.home-work-head {
-  margin-bottom: clamp(2rem, 1.4rem + 2vw, 3.5rem);
+.home-rows > li {
+  border-top: 1px solid var(--line);
 }
 
-.home-work-eyebrow {
-  color: var(--accent);
-  margin-bottom: 0.75rem;
+.home-rows > li:last-child {
+  border-bottom: 1px solid var(--line);
 }
 
-.home-work-title {
-  font-size: clamp(2rem, 1.3rem + 3vw, 3.4rem);
-  font-weight: 700;
-  line-height: 1.04;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-  margin: 0 0 1.5rem;
-  max-width: 18ch;
-}
-
-.home-work-grid {
+/* Each row: a small artefact on sage, the title and sector, then the
+   outcome. The thumbnails break up the text and show a second piece of work
+   per project, different from the strip above. */
+.home-row {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(1rem, 0.6rem + 1.2vw, 1.75rem);
+  grid-template-columns: clamp(120px, 12vw, 176px) minmax(0, 5fr) minmax(0, 4fr);
+  grid-template-rows: auto 1fr;
+  gap: 4px clamp(20px, 2.4vw, 36px);
+  padding-block: 18px;
+  align-items: baseline;
 }
 
-.home-work-item {
-  display: flex;
+.home-row-thumb {
+  grid-row: 1 / span 2;
+  align-self: center;
+  aspect-ratio: 16 / 10;
+  background: var(--sage);
+  padding: 8px;
+  overflow: hidden;
 }
 
-.home-work-item > * {
+.home-row-thumb img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.45s var(--ease);
 }
 
-/* ============================================================
-   Responsive
-   ============================================================ */
-
-@media (min-width: 860px) {
-  .hero-visual {
-    display: block;
-  }
+.home-row:hover .home-row-thumb img {
+  transform: scale(1.06);
 }
 
-@media (max-width: 859px) {
-  .hero-inner {
+.home-row h3 {
+  grid-column: 2;
+  align-self: end;
+  font-size: var(--t-h3);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  line-height: 1.25;
+  transition: color 0.2s;
+}
+
+.home-row-meta {
+  grid-column: 2;
+  align-self: start;
+  font-size: var(--t-small);
+}
+
+.home-row-outcome {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+
+.home-row > * {
+  transition: opacity 0.25s, color 0.2s;
+}
+
+/* Hovering one row quietens the others. */
+.home-rows:hover .home-row:not(:hover) > * {
+  opacity: 0.4;
+}
+
+.home-row:hover h3 {
+  color: var(--green);
+}
+
+/* ---- About --------------------------------------------------------- */
+
+.home-about {
+  margin-top: var(--section-y);
+}
+
+.home-about-lead {
+  font-size: var(--t-title);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  max-width: 34ch;
+}
+
+/* Three columns of facts under the lead: capabilities, experience,
+   industries. Scannable in a glance, each a way into the detail. */
+.home-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px var(--g);
+  margin-top: clamp(40px, 5vw, 64px);
+}
+
+.home-fact h3 {
+  font-size: var(--t-small);
+  font-weight: 500;
+  color: var(--green);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.home-fact li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.home-fact li .grey {
+  font-size: var(--t-small);
+  white-space: nowrap;
+}
+
+.home-fact-more {
+  display: inline-block;
+  margin-top: 18px;
+}
+
+@media (max-width: 820px) {
+  .home-facts {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 1024px) {
-  .home-work-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  .home-work-grid {
+  .home-intro {
     grid-template-columns: 1fr;
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-btn,
-  .hero-btn svg {
-    transition: none;
-    animation: none;
+  .home-intro-aside {
+    justify-self: start;
+    font-size: var(--t-small);
+  }
+
+  .home-band {
+    --u: clamp(150px, 30vh, 230px);
+  }
+
+  .home-row {
+    grid-template-columns: 96px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+
+  .home-row-thumb {
+    grid-row: 1 / span 2;
+    align-self: start;
+  }
+
+  .home-row-outcome {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-top: 10px;
+  }
+
+  .home-rows:hover .home-row:not(:hover) > * {
+    opacity: 1;
   }
 }

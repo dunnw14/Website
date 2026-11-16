@@ -1,126 +1,132 @@
-.media {
-  margin: 0;
+.artefact figcaption {
+  margin-top: 12px;
+  font-size: var(--t-small);
+  color: var(--grey);
+  max-width: 70ch;
 }
 
-.media-frame {
+/* The frame shrinks to the image, so a height-capped artefact sits
+   left-aligned on its band rather than floating in a full-width white box. */
+.artefact-open {
   position: relative;
-  aspect-ratio: var(--ratio, 16 / 10);
-  overflow: hidden;
-  border-radius: var(--radius);
-  background: var(--surface-3);
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  cursor: zoom-in;
+  background: var(--white);
+  box-shadow: 0 1px 2px rgba(17, 40, 28, 0.1), 0 14px 32px -18px rgba(17, 40, 28, 0.3);
 }
 
-.media-el {
+/* Capped at about two-thirds of the screen height so a squarer artefact
+   never fills the whole screen. Wide maps stay under the cap and keep the
+   full width they need; detail is always one click away in the lightbox. */
+.artefact-open img {
+  width: auto;
+  max-width: 100%;
+  max-height: min(66vh, 640px);
+}
+
+.artefact-plus {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: var(--green);
+  color: var(--on-green);
+  font-size: 20px;
+  line-height: 1;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.2s, transform 0.3s var(--ease);
+}
+
+.artefact-open:hover .artefact-plus,
+.artefact-open:focus-visible .artefact-plus {
+  opacity: 1;
+  transform: none;
+}
+
+@media (hover: none) {
+  .artefact-plus {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.artefact-video {
+  aspect-ratio: 16 / 9;
+  background: var(--ink);
+}
+
+.artefact-video iframe,
+.artefact-video video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   border: 0;
+}
+
+/* ---- Lightbox ------------------------------------------------------ */
+
+.lightbox {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--white);
+}
+
+.lightbox::backdrop {
+  background: var(--white);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 2;
+  padding: 9px 16px;
+  background: var(--green);
+  color: var(--on-green);
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+.lightbox-close:focus-visible {
+  outline-offset: 2px;
+}
+
+.lightbox-stage {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: grid;
+  place-items: center;
+  padding: 64px 16px 16px;
+}
+
+.lightbox-stage img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: zoom-in;
+}
+
+/* Zoomed: the original at its own size, scrollable in both directions. */
+.lightbox-stage.is-zoomed {
   display: block;
 }
 
-.media-caption {
-  margin-top: 0.9rem;
-  font-size: var(--t-small);
-  color: var(--ink-3);
-}
-
-/* ---- Placeholder ------------------------------------------------- */
-
-.media-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.85rem;
-  color: var(--placeholder-ink);
-  background: var(--placeholder-bg);
-  border: 1.5px dashed var(--line);
-  border-radius: inherit;
-  /* Hatch so empty slots read as deliberately empty, not broken */
-  background-image: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 11px,
-    var(--placeholder-hatch) 11px,
-    var(--placeholder-hatch) 12px
-  );
-}
-
-.media-placeholder-label {
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-/* ---- Gallery ----------------------------------------------------- */
-
-.gallery-viewport {
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  transition: height 0.65s var(--ease);
-}
-
-.gallery-track {
-  display: flex;
-  align-items: flex-start;
-  transition: transform 0.65s var(--ease);
-  will-change: transform;
-}
-
-.gallery-slide {
-  flex: 0 0 100%;
-  min-width: 0;
-}
-
-.gallery-slide .media-frame {
-  border-radius: var(--radius-lg);
-}
-
-.gallery-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1.25rem;
-}
-
-.gallery-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.15rem;
-  border: 1px solid var(--line);
-  border-radius: var(--pill);
-  font-family: var(--font-display);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-  transition: color 0.3s var(--ease), border-color 0.3s var(--ease),
-    background-color 0.3s var(--ease), opacity 0.3s var(--ease);
-}
-
-.gallery-btn:hover:not(:disabled) {
-  color: var(--on-accent);
-  background: var(--accent);
-  border-color: var(--accent);
-}
-
-.gallery-btn:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
-
-.gallery-count {
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--ink-3);
-  font-variant-numeric: tabular-nums;
+.lightbox-stage.is-zoomed img {
+  max-width: none;
+  max-height: none;
+  cursor: zoom-out;
 }

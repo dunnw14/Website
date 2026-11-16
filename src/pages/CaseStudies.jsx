@@ -1,32 +1,47 @@
-import { caseStudies, caseStudiesPage } from "../data/content.js";
-import WorkCard from "../components/WorkCard.jsx";
+import { Link } from "react-router-dom";
+import { caseStudies, caseStudiesPage, featureImage, label, metaLine, outcomeOf } from "../data/content.js";
+import { Picture } from "../components/Media.jsx";
 import Reveal from "../components/Reveal.jsx";
+import useTitle from "../components/useTitle.js";
 import "./CaseStudies.css";
 
 export default function CaseStudies() {
-  return (
-    <div className="page csl">
-      <div className="shell">
-        <header className="csl-head">
-          <Reveal>
-            <p className="label csl-eyebrow">{caseStudiesPage.eyebrow}</p>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h1 className="csl-title">{caseStudiesPage.heading}</h1>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="csl-intro">{caseStudiesPage.intro}</p>
-          </Reveal>
-        </header>
+  useTitle(caseStudiesPage.heading);
 
-        <div className="csl-grid">
-          {caseStudies.map((item, i) => (
-            <Reveal key={item.slug} delay={(i % 3) * 0.08} className="csl-grid-item">
-              <WorkCard item={item} index={i} />
+  return (
+    <div className="shell">
+      <header className="page-head">
+        <p className="eyebrow">{label(caseStudiesPage.eyebrow)}</p>
+        <h1 className="display">{caseStudiesPage.heading}</h1>
+        <p className="lead">{caseStudiesPage.intro}</p>
+      </header>
+
+      <ul className="csl">
+        {caseStudies.map((item, i) => {
+          const image = featureImage(item);
+          return (
+            <Reveal as="li" key={item.slug}>
+              <Link to={`/case-studies/${item.slug}`} className="csl-item">
+                <div className="csl-text">
+                  <h2>{item.title}</h2>
+                  <p className="grey">{metaLine(item)}</p>
+                  <p className="csl-outcome">{outcomeOf(item)}</p>
+                </div>
+                {image ? (
+                  <div className="csl-media">
+                    <Picture
+                      src={image.src}
+                      alt={image.alt ?? ""}
+                      sizes="(max-width: 820px) 100vw, 55vw"
+                      eager={i === 0}
+                    />
+                  </div>
+                ) : null}
+              </Link>
             </Reveal>
-          ))}
-        </div>
-      </div>
+          );
+        })}
+      </ul>
     </div>
   );
 }
